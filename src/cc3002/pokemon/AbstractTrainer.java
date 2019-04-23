@@ -3,15 +3,31 @@ package cc3002.pokemon;
 import java.util.List;
 public abstract class AbstractTrainer implements ITrainer{
 
-    private List<ICards> PokeStockList;
-    private List<ICards> PokeDeckList;
-    private ITrainer ActivePoke;
+    private List<IPokemon> PokeStockList;
+    private List<IPokemon> PokeDeck;
+    private IPokemon ActivePoke;
 
-    protected AbstractTrainer(ITrainer ActivePoke, List<ICards> PokeDeckList, List<ICards> PokeStockList) {
+    protected AbstractTrainer(IPokemon ActivePoke, List<IPokemon> pokeDeck, List<IPokemon> PokeStockList) {
         this.ActivePoke = ActivePoke;
-        this.PokeDeckList = PokeDeckList;
+        this.PokeDeck = pokeDeck;
         this.PokeStockList = PokeStockList;
     }
 
+    public void addPokemonToDeck(IPokemon pokemon){
+        if (PokeDeck.size()<5){
+            this.PokeDeck.add(pokemon);
+        }
+    }
 
+    public void addActivePokemon(IPokemon pokemon){
+        this.ActivePoke=pokemon;
+    }
+
+    public String getActivePokemon(){
+        return this.ActivePoke.getName();
+    }
+
+    public int sizePokeDeck(){
+        return this.PokeDeck.size();
+    }
 }

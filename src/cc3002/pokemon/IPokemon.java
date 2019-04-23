@@ -15,7 +15,7 @@ import cc3002.pokemon.water.WaterEnergy;
 
 import java.util.List;
 
-public interface IPokemon {
+public interface IPokemon{
 
   //region Properties
 
