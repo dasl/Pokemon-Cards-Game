@@ -19,8 +19,6 @@ public class FirePokemon extends AbstractPokemon{
     super(name, hp, attackList);
   }
 
-  @Override
-  public void receiveFireEnergy(FireEnergy energy) { receiveEnergy(energy); }
 
   @Override
   public void receiveWaterAttack(WaterAttack attack) {

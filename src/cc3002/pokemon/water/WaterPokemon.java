@@ -11,7 +11,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 /**
  * Class that represents a water type Pokémon.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public class WaterPokemon extends AbstractPokemon {
 
@@ -26,7 +26,6 @@ public class WaterPokemon extends AbstractPokemon {
     super(name, hp, attackList);
   }
 
-  public void receiveWaterEnergy(WaterEnergy energy) { receiveEnergy(energy); }
   @Override
   public void receiveWaterAttack(WaterAttack attack) {
     receiveResistantAttack(attack);

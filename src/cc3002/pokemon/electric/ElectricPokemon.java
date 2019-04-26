@@ -23,6 +23,5 @@ public class ElectricPokemon extends AbstractPokemon {
         super(name, hp, attackList);
     }
 
-    @Override
-    public void receiveElectricEnergy(ElectricEnergy energy) {receiveEnergy(energy);}
+
 }

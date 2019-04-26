@@ -23,6 +23,5 @@ public class PsychicPokemon extends AbstractPokemon {
         super(name, hp, attackList);
     }
 
-    @Override
-    public void receivePsychicEnergy(PsychicEnergy energy) {receiveEnergy(energy);}
+
 }

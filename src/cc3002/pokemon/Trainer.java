@@ -14,4 +14,6 @@ public class Trainer extends AbstractTrainer{
         this.ActivePoke=pokemon;
     }
 
+
+
 }

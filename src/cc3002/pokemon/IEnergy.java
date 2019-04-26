@@ -2,7 +2,7 @@ package cc3002.pokemon;
 
 
 public interface IEnergy{
-    void applyEnergyTo(IPokemon other);
-
-    boolean abilityEnabled();
+    void EnergieType(IEnergy energy);
+    void getEnergy(IEnergy energy);
+    String getType(IEnergy type);
 }

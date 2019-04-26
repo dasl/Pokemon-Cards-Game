@@ -6,7 +6,7 @@ import cc3002.pokemon.IPokemon;
 /**
  * This class defines the logic of a water type attack.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public class WaterAttack extends AbstractAttack {
 

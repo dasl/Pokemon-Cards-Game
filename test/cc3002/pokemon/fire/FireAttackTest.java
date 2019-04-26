@@ -3,10 +3,16 @@ package cc3002.pokemon.fire;
 import static org.junit.Assert.*;
 
 import cc3002.pokemon.IAttack;
+import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.electric.ElectricEnergy;
+import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.grass.GrassPokemon;
+import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.normal.NormalPokemon;
+import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
+import cc3002.pokemon.water.WaterEnergy;
 import cc3002.pokemon.water.WaterPokemon;
 import java.util.ArrayList;
 import org.junit.Before;
@@ -18,6 +24,12 @@ import org.junit.Test;
  * @author Ignacio Slater Muñoz
  */
 public class FireAttackTest {
+  private FireEnergy fireEnergy;
+  private WaterEnergy waterEnergy;
+  private ElectricEnergy electricEnergy;
+  private GrassEnergy grassEnergy;
+  private NormalEnergy normalEnergy;
+  private PsychicEnergy psychicEnergy;
 
   private IAttack fireAttack;
   private IPokemon
@@ -47,12 +59,21 @@ public class FireAttackTest {
     fireAttack.attack(treecko);
     fireAttack.attack(totodile);
     fireAttack.attack(audino);
-
     assertEquals(90, charmander.getHP());
     assertEquals(20, treecko.getHP());
     assertEquals(90, totodile.getHP());
     assertEquals(60, audino.getHP());
   }
+
+@Test
+  public void RequiredEnergies(){
+  fireAttack.setFireRequiredEnergies(fireEnergy);
+  assertEquals(1,fireAttack.getFireRequiredEnergies());
+  fireAttack.setFireRequiredEnergies(fireEnergy);
+  fireAttack.setFireRequiredEnergies(fireEnergy);
+  assertEquals(3,fireAttack.getFireRequiredEnergies());
+}
+
 
   @Test
   public void equalsTest() {

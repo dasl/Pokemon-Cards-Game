@@ -1,6 +1,13 @@
 package cc3002.pokemon;
 
 
+import cc3002.pokemon.electric.ElectricEnergy;
+import cc3002.pokemon.fire.FireEnergy;
+import cc3002.pokemon.grass.GrassEnergy;
+import cc3002.pokemon.normal.NormalEnergy;
+import cc3002.pokemon.psychic.PsychicEnergy;
+import cc3002.pokemon.water.WaterEnergy;
+
 /**
  * Common interface for all the attacks. Every attack have a name and a base damage, and should be
  * able to damage a Pokémon.
@@ -17,6 +24,21 @@ public interface IAttack {
    */
   void attack(IPokemon other);
 
+
+
+
+  void setFireRequiredEnergies(FireEnergy energy);
+
+  void setWaterRequiredEnergies(WaterEnergy energy);
+
+  void setElectricRequiredEnergies(ElectricEnergy energy);
+
+  void setPsychicRequiredEnergies(PsychicEnergy energy);
+
+  void setGrassRequiredEnergies(GrassEnergy energy);
+
+  void setNormaleRequiredEnergies(NormalEnergy energy);
+
   /**
    * Getter for the base damage.
    *
@@ -30,4 +52,17 @@ public interface IAttack {
    * @return Name of the attack.
    */
   String getName();
+
+
+  int getFireRequiredEnergies();
+
+  int getGrassRequiredEnergies();
+
+  int getElectricRequiredEnergies();
+
+  int getNormalRequiredEnergies();
+
+  int getWaterRequiredEnergies();
+
+  int getPsychicRequiredEnergies();
 }

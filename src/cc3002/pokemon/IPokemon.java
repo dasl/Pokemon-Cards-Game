@@ -24,15 +24,26 @@ public interface IPokemon{
    */
   String getName();
 
-  /**
+    int getFireEnergies();
+
+  int getWaterEnergies();
+
+  int getElectricEnergies();
+
+  int getGrassEnergies();
+
+  int getNormalEnergies();
+
+  int getPsychicEnergies();
+
+    boolean isBeAbleToAtack();
+
+    /**
    * @return Pokémon's hit points
    */
   int getHP();
   /**
-   * @return Energies with all the Pokémon attacks.
-   */
-  int getEnergies();
-  /**
+
    * @return List with all the Pokémon attacks.
    */
   List<IAttack> getAttacks();

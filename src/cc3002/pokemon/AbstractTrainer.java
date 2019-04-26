@@ -1,7 +1,14 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.electric.ElectricAttack;
+import cc3002.pokemon.fire.FireAttack;
+import cc3002.pokemon.grass.GrassAttack;
+import cc3002.pokemon.normal.NormalAttack;
+import cc3002.pokemon.psychic.PsychicAttack;
+import cc3002.pokemon.water.WaterAttack;
+
 import java.util.List;
-public abstract class AbstractTrainer implements ITrainer{
+public abstract class AbstractTrainer implements IActivePokemon{
 
     private List<IPokemon> PokeStockList;
     private List<IPokemon> PokeDeck;
@@ -23,6 +30,12 @@ public abstract class AbstractTrainer implements ITrainer{
         this.ActivePoke=pokemon;
     }
 
+    public void setActivePokemon(IPokemon pokemon){
+        if(PokeDeck.contains(pokemon)){
+            this.ActivePoke = pokemon;
+        }
+    }
+
     public String getActivePokemon(){
         return this.ActivePoke.getName();
     }
@@ -30,4 +43,7 @@ public abstract class AbstractTrainer implements ITrainer{
     public int sizePokeDeck(){
         return this.PokeDeck.size();
     }
+
+
+
 }

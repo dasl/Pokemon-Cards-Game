@@ -4,12 +4,19 @@ import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 
 public class ElectricEnergy implements IEnergy {
+
     @Override
-    public void applyEnergyTo(IPokemon other) {
-        other.receiveElectricEnergy(this);
+    public void EnergieType(IEnergy energy) {
+
     }
+
     @Override
-    public boolean abilityEnabled(){
-        return true;
+    public void getEnergy(IEnergy energy) {
+
+    }
+
+    @Override
+    public String getType(IEnergy type) {
+        return null;
     }
 }

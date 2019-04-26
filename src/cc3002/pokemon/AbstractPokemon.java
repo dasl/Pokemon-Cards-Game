@@ -13,6 +13,7 @@ import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,9 +27,15 @@ public abstract class AbstractPokemon implements IPokemon {
 
   private String name;
   private int hp;
+  private boolean beAbleToAtack;
   private List<IAttack> attackList;
   private IAttack selectedAttack;
-  private int Energies = 0;
+  private List<WaterEnergy> waterEnergies;
+  private List<FireEnergy> fireEnergies;
+  private List<ElectricEnergy> electricEnergies;
+  private List<GrassEnergy > grassEnergies;
+  private List<PsychicEnergy> psychicEnergies;
+  private List<NormalEnergy> normalEnergies;
 
   /**
    * Creates a new Pokémon.
@@ -40,31 +47,36 @@ public abstract class AbstractPokemon implements IPokemon {
   protected AbstractPokemon(String name, int hp, List<IAttack> attackList) {
     this.name = name;
     this.hp = hp;
+    this.beAbleToAtack = false;
     this.attackList = attackList;
+    this.waterEnergies = new ArrayList<>();
+    this.fireEnergies = new ArrayList<>();
+    this.electricEnergies = new ArrayList<>();
+    this.grassEnergies = new ArrayList<>();
+    this.psychicEnergies = new ArrayList<>();
+    this.normalEnergies = new ArrayList<>();
   }
 
-    public void receiveEnergy(IEnergy energy) { this.Energies += 1;}
-
     @Override
-    public void receiveWaterEnergy(WaterEnergy energy) { receiveEnergy(energy);}
+    public void receiveWaterEnergy(WaterEnergy energy) { this.waterEnergies.add(energy);}
 
 
     @Override
-    public void receiveGrassEnergy(GrassEnergy energy) {receiveEnergy(energy);}
+    public void receiveGrassEnergy(GrassEnergy energy) {this.grassEnergies.add(energy);}
 
 
     @Override
-    public void receiveFireEnergy(FireEnergy energy) { receiveEnergy(energy); }
+    public void receiveFireEnergy(FireEnergy energy) { this.fireEnergies.add(energy);}
 
   @Override
-    public void receiveNormalEnergy(NormalEnergy energy) { receiveEnergy(energy);}
+    public void receiveNormalEnergy(NormalEnergy energy) {this.normalEnergies.add(energy);}
 
 
     @Override
-    public void receivePsychicEnergy(PsychicEnergy energy) {receiveEnergy(energy);}
+    public void receivePsychicEnergy(PsychicEnergy energy) {this.psychicEnergies.add(energy);}
 
     @Override
-    public void receiveElectricEnergy(ElectricEnergy energy) {receiveEnergy(energy);}
+    public void receiveElectricEnergy(ElectricEnergy energy) {this.electricEnergies.add(energy);}
 
 
 
@@ -140,10 +152,39 @@ public abstract class AbstractPokemon implements IPokemon {
   }
 
   @Override
-  public int getEnergies() {
-    return Energies;
+  public int getFireEnergies() {
+    return this.fireEnergies.size();
   }
 
+  @Override
+  public int getWaterEnergies() {
+    return this.waterEnergies.size();
+  }
+
+  @Override
+  public int getElectricEnergies() {
+    return this.electricEnergies.size();
+  }
+
+  @Override
+  public int getGrassEnergies() {
+    return this.grassEnergies.size();
+  }
+
+  @Override
+  public int getNormalEnergies() {
+    return this.normalEnergies.size();
+  }
+
+  @Override
+  public int getPsychicEnergies() {
+    return this.psychicEnergies.size();
+  }
+
+  @Override
+  public boolean isBeAbleToAtack(){
+      return this.beAbleToAtack;
+  }
   @Override
   public int getHP() {
     return hp;

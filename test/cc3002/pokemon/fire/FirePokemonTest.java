@@ -69,12 +69,15 @@ public class FirePokemonTest {
 
   @Test
   public void receiveFireEnergy(){
-    assertEquals(0, charmander.getEnergies());
+    assertEquals(0, charmander.getFireEnergies());
     charmander.receiveFireEnergy(fireEnergy);
-    assertEquals(1, charmander.getEnergies());
-//    charmander.receiveWaterEnergy(waterEnergy);
-    assertEquals(1, charmander.getEnergies());
-    assertEquals(0, audino.getEnergies());
+    assertEquals(1, charmander.getFireEnergies());
+    charmander.receiveFireEnergy(fireEnergy);
+    assertEquals(0, audino.getFireEnergies());
+    assertEquals(2, charmander.getFireEnergies());
+    assertEquals(0, charmander.getWaterEnergies());
+    assertEquals(0, charmander.getElectricEnergies());
+    assertEquals(0, charmander.getGrassEnergies());
 
   }
 

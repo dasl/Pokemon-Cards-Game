@@ -25,6 +25,5 @@ public class NormalPokemon extends AbstractPokemon {
   public NormalPokemon(String name, int hp, List<IAttack> attackList) {
     super(name, hp, attackList);
   }
-  @Override
-  public void receiveNormalEnergy(NormalEnergy energy) { receiveEnergy(energy);}
+
 }
