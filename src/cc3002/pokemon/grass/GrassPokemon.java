@@ -20,12 +20,8 @@ public class GrassPokemon extends AbstractPokemon {
     super(name, hp, attackList);
   }
 
-  public void receiveWaterAttack(WaterAttack attack) {
-    receiveResistantAttack(attack);
-  }
-
   @Override
-  public void receiveGrassAttack(GrassAttack attack) {
+  public void receiveWaterAttack(WaterAttack attack) {
     receiveResistantAttack(attack);
   }
 

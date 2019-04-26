@@ -5,10 +5,12 @@ import static org.junit.Assert.assertNull;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.grass.GrassAttack;
 import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.normal.NormalPokemon;
 
+import cc3002.pokemon.psychic.PsychicAttack;
 import cc3002.pokemon.water.WaterAttack;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,20 +24,23 @@ public class FirePokemonTest {
   private IPokemon
       audino,
       charmander;
-  private FireEnergy fireEnergy;
-  private WaterEnergy waterEnergy;
   private FireAttack fireAttack;
   private GrassAttack grassAttack;
   private NormalAttack normalAttack;
   private WaterAttack waterAttack;
+  private PsychicAttack psychicAttack;
+  private ElectricAttack electricAttack;
+  private FireEnergy fireEnergy;
 
 
   @Before
   public void setUp() {
+    psychicAttack = new PsychicAttack("Confusion", 50);
     fireAttack = new FireAttack("Ember", 40);
     grassAttack = new GrassAttack("Vine Whip", 45);
     normalAttack = new NormalAttack("Pound", 40);
     waterAttack = new WaterAttack("Bubble", 40);
+    electricAttack = new ElectricAttack("Thunder Shock",30);
 
     audino = new NormalPokemon("Audino", 100, new ArrayList<>());
     charmander = new FirePokemon("Charmander", 100,
@@ -92,14 +97,14 @@ public class FirePokemonTest {
   public void receiveGrassAttack() {
     assertEquals(100, charmander.getHP());
     charmander.receiveGrassAttack(grassAttack);
-    assertEquals(85, charmander.getHP());
+    assertEquals(55, charmander.getHP());
   }
 
   @Test
   public void receiveFireAttack() {
     assertEquals(100, charmander.getHP());
     charmander.receiveFireAttack(fireAttack);
-    assertEquals(90, charmander.getHP());
+    assertEquals(60, charmander.getHP());
   }
 
   @Test
@@ -108,4 +113,19 @@ public class FirePokemonTest {
     charmander.receiveNormalAttack(normalAttack);
     assertEquals(60, charmander.getHP());
   }
+
+  @Test
+  public void receiveElectricAttack() {
+    assertEquals(100, charmander.getHP());
+    charmander.receiveElectricAttack(electricAttack);
+    assertEquals(70, charmander.getHP());
+  }
+
+  @Test
+  public void receivePsychicAttack() {
+    assertEquals(100, charmander.getHP());
+    charmander.receivePsychicAttack(psychicAttack);
+    assertEquals(50, charmander.getHP());
+  }
+
 }

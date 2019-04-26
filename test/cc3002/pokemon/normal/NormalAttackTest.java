@@ -46,7 +46,7 @@ public class NormalAttackTest {
 
     assertEquals(60, charmander.getHP());
     assertEquals(60, treecko.getHP());
-    assertEquals(60, totodile.getHP());
+    assertEquals(90, totodile.getHP());
     assertEquals(60, audino.getHP());
   }
 

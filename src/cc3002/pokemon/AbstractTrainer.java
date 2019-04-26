@@ -7,12 +7,17 @@ public abstract class AbstractTrainer{
     private List<IPokemon> PokeStockList;
     private List<IPokemon> PokeDeck;
     private IPokemon ActivePoke;
+    private static int PockeDeckID = 0;
+
+
 
     protected AbstractTrainer(IPokemon ActivePoke, List<IPokemon> pokeDeck, List<IPokemon> PokeStockList) {
         this.ActivePoke = ActivePoke;
         this.PokeDeck = pokeDeck;
         this.PokeStockList = PokeStockList;
+        this.PockeDeckID += 1;
     }
+
 
     public void addPokemonToDeck(IPokemon pokemon){
         if (PokeDeck.size()<5){

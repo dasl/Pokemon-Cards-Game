@@ -15,6 +15,14 @@ import java.util.List;
 public class FirePokemon extends AbstractPokemon{
 
 
+  /**
+   * Creates a new Fire Pokémon.
+   *
+   * @param name  Pokémon's name.
+   * @param hp  Pokémon's hit points.
+   * @param attackList  Pokémon's attacks.
+   */
+
   public FirePokemon(String name, int hp, List<IAttack> attackList) {
     super(name, hp, attackList);
   }
@@ -25,13 +33,4 @@ public class FirePokemon extends AbstractPokemon{
     receiveWeaknessAttack(attack);
   }
 
-  @Override
-  public void receiveGrassAttack(GrassAttack attack) {
-    receiveResistantAttack(attack);
-  }
-
-  @Override
-  public void receiveFireAttack(FireAttack attack) {
-    receiveResistantAttack(attack);
-  }
 }

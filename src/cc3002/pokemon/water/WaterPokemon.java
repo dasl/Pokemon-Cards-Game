@@ -2,6 +2,7 @@ package cc3002.pokemon.water;
 
 import cc3002.pokemon.AbstractPokemon;
 import cc3002.pokemon.IAttack;
+import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.grass.GrassAttack;
 import cc3002.pokemon.normal.NormalAttack;
@@ -27,8 +28,8 @@ public class WaterPokemon extends AbstractPokemon {
   }
 
   @Override
-  public void receiveWaterAttack(WaterAttack attack) {
-    receiveResistantAttack(attack);
+  public void receiveElectricAttack(ElectricAttack attack) {
+    receiveWeaknessAttack(attack);
   }
 
   @Override
@@ -37,7 +38,7 @@ public class WaterPokemon extends AbstractPokemon {
   }
 
   @Override
-  public void receiveFireAttack(FireAttack attack) {
+  public void receiveNormalAttack(NormalAttack attack) {
     receiveResistantAttack(attack);
   }
 }

@@ -67,7 +67,7 @@ public class WaterPokemonTest {
   public void receiveWaterAttack() {
     assertEquals(100, totodile.getHP());
     totodile.receiveWaterAttack(waterAttack);
-    assertEquals(90, totodile.getHP());
+    assertEquals(60, totodile.getHP());
   }
 
   @Test
@@ -81,13 +81,13 @@ public class WaterPokemonTest {
   public void receiveFireAttack() {
     assertEquals(100, totodile.getHP());
     totodile.receiveFireAttack(fireAttack);
-    assertEquals(90, totodile.getHP());
+    assertEquals(60, totodile.getHP());
   }
 
   @Test
   public void receiveNormalAttack() {
     assertEquals(100, totodile.getHP());
     totodile.receiveNormalAttack(normalAttack);
-    assertEquals(60, totodile.getHP());
+    assertEquals(90, totodile.getHP());
   }
 }

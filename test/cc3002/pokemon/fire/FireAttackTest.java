@@ -59,9 +59,9 @@ public class FireAttackTest {
     fireAttack.attack(treecko);
     fireAttack.attack(totodile);
     fireAttack.attack(audino);
-    assertEquals(90, charmander.getHP());
+    assertEquals(60, charmander.getHP());
     assertEquals(20, treecko.getHP());
-    assertEquals(90, totodile.getHP());
+    assertEquals(60, totodile.getHP());
     assertEquals(60, audino.getHP());
   }
 

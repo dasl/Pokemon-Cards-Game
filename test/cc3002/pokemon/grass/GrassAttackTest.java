@@ -50,10 +50,10 @@ public class GrassAttackTest {
     grassAttack.attack(totodile);
     grassAttack.attack(audino);
 
-    assertEquals(85, charmander.getHP());
-    assertEquals(85, treecko.getHP());
+    assertEquals(55, charmander.getHP());
+    assertEquals(55, treecko.getHP());
     assertEquals(10, totodile.getHP());
-    assertEquals(55, audino.getHP());
+    assertEquals(10, audino.getHP());
   }
 
   @Test

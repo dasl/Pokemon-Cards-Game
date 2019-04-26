@@ -14,9 +14,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Tests set for the FireAttack class.
+ * Tests set for the Psychic class.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public class WaterAttackTest {
 
@@ -51,7 +51,7 @@ public class WaterAttackTest {
 
     assertEquals(20, charmander.getHP());
     assertEquals(90, treecko.getHP());
-    assertEquals(90, totodile.getHP());
+    assertEquals(60, totodile.getHP());
     assertEquals(60, audino.getHP());
   }
 

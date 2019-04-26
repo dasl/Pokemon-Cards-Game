@@ -71,7 +71,7 @@ public class NormalPokemonTest {
   public void receiveGrassAttack() {
     assertEquals(100, audino.getHP());
     audino.receiveGrassAttack(grassAttack);
-    assertEquals(55, audino.getHP());
+    assertEquals(10, audino.getHP());
   }
 
   @Test
