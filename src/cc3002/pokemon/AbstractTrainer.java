@@ -1,14 +1,8 @@
 package cc3002.pokemon;
 
-import cc3002.pokemon.electric.ElectricAttack;
-import cc3002.pokemon.fire.FireAttack;
-import cc3002.pokemon.grass.GrassAttack;
-import cc3002.pokemon.normal.NormalAttack;
-import cc3002.pokemon.psychic.PsychicAttack;
-import cc3002.pokemon.water.WaterAttack;
 
 import java.util.List;
-public abstract class AbstractTrainer implements IActivePokemon{
+public abstract class AbstractTrainer{
 
     private List<IPokemon> PokeStockList;
     private List<IPokemon> PokeDeck;
@@ -26,9 +20,6 @@ public abstract class AbstractTrainer implements IActivePokemon{
         }
     }
 
-    public void addActivePokemon(IPokemon pokemon){
-        this.ActivePoke=pokemon;
-    }
 
     public void setActivePokemon(IPokemon pokemon){
         if(PokeDeck.contains(pokemon)){
@@ -36,7 +27,11 @@ public abstract class AbstractTrainer implements IActivePokemon{
         }
     }
 
-    public String getActivePokemon(){
+    public IPokemon getActivePokemon()  {
+        return this.ActivePoke;
+    }
+
+    public String getActivePokemonName(){
         return this.ActivePoke.getName();
     }
 
@@ -44,6 +39,39 @@ public abstract class AbstractTrainer implements IActivePokemon{
         return this.PokeDeck.size();
     }
 
+    public boolean pokeIsBeAbleToAtackWith (IPokemon pokemon, IAttack ActiveAttack){
+        boolean couldBeActived = false;
+        int currentlyFireEnergies = pokemon.getFireEnergies();
+        int currentlyWaterEnergies = pokemon.getWaterEnergies();
+        int currentlyElectricEnergies = pokemon.getElectricEnergies();
+        int currentlyPsychicEnergies = pokemon.getPsychicEnergies();
+        int currentlyNormalEnergies = pokemon.getNormalEnergies();
+        int currentlyGrassEnergies = pokemon.getGrassEnergies();
 
+        for(IAttack attacke : pokemon.getAttackList())
+        {
+            if(ActiveAttack.getName().equals(attacke.getName())){
+                if (attacke.getFireRequiredEnergies()<= currentlyFireEnergies
+                        && attacke.getElectricRequiredEnergies()<= currentlyElectricEnergies
+                        && attacke.getGrassRequiredEnergies() <= currentlyGrassEnergies
+                        && attacke.getNormalRequiredEnergies() <= currentlyNormalEnergies
+                        && attacke.getPsychicRequiredEnergies() <= currentlyPsychicEnergies
+                        && attacke.getWaterRequiredEnergies() <= currentlyWaterEnergies) {
+                    couldBeActived = true;
+                }
+                else {
+                    couldBeActived = false;
+                }
 
+            }
+        }
+        return  couldBeActived;
+    }
+
+    public void DeadPokemon(IPokemon pokemon){
+        if (pokemon.getHP()<=0){
+            this.ActivePoke=PokeDeck.get(0);
+            this.PokeDeck.remove(0);
+        }
+    }
 }

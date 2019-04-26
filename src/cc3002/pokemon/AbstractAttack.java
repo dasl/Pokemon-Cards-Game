@@ -57,7 +57,7 @@ public abstract class AbstractAttack implements IAttack {
   @Override
   public void setGrassRequiredEnergies(GrassEnergy energy) {this.grassRequiredEnergies.add(energy); }
   @Override
-  public void setNormaleRequiredEnergies(NormalEnergy energy) {this.normalRequiredEnergies.add(energy); }
+  public void setNormalRequiredEnergies(NormalEnergy energy) {this.normalRequiredEnergies.add(energy); }
 
 
   @Override

@@ -10,10 +10,6 @@ public class Trainer extends AbstractTrainer{
         super(ActivePoke, PokeDeckList, PokeStockList);
     }
 
-    public void addActivePokemon(IPokemon pokemon){
-        this.ActivePoke=pokemon;
-    }
-
 
 
 }

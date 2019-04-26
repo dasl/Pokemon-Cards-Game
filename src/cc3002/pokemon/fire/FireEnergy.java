@@ -3,24 +3,22 @@ package cc3002.pokemon.fire;
 import cc3002.pokemon.AbstractEnergy;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
-
+/**
+ * Class that represents a Fire type Energy.
+ *
+ * @author Diego Sandoval Leiva
+ */
 public class FireEnergy extends AbstractEnergy {
-    private IEnergy type;
-    private String energyTagType;
 
 
-    @Override
-    public void EnergieType(IEnergy energy) {
-        this.type = energy;
+    /**
+     * Creates a new attack.
+     *
+     * @param energy Energy Type
+     */
+    protected FireEnergy(IEnergy energy) {
+        super(energy);
     }
 
-    @Override
-    public void getEnergy(IEnergy energy) {
 
-    }
-
-    @Override
-    public String getType(IEnergy energy){
-        return this.energyTagType;
-    }
 }

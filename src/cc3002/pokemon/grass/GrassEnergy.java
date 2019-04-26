@@ -1,22 +1,23 @@
 package cc3002.pokemon.grass;
 
+import cc3002.pokemon.AbstractEnergy;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 
-public class GrassEnergy implements IEnergy {
+/**
+ * Class that represents a Grass type Energy.
+ *
+ * @author Diego Sandoval Leiva
+ */
 
-    @Override
-    public void EnergieType(IEnergy energy) {
+public class GrassEnergy extends AbstractEnergy{
 
-    }
-
-    @Override
-    public void getEnergy(IEnergy energy) {
-
-    }
-
-    @Override
-    public String getType(IEnergy type) {
-        return null;
+    /**
+     * Creates a new attack.
+     *
+     * @param energy Energy Type
+     */
+    protected GrassEnergy(IEnergy energy) {
+        super(energy);
     }
 }

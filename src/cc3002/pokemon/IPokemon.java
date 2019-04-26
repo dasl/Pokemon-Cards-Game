@@ -36,6 +36,8 @@ public interface IPokemon{
 
   int getPsychicEnergies();
 
+    List<IAttack> getAttackList();
+
     boolean isBeAbleToAtack();
 
     /**
@@ -153,4 +155,5 @@ public interface IPokemon{
   void receiveElectricEnergy(ElectricEnergy energy);
 
 
+    void setAttacks(IAttack attack);
 }

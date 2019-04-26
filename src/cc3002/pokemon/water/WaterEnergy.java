@@ -1,28 +1,24 @@
 package cc3002.pokemon.water;
 
+import cc3002.pokemon.AbstractEnergy;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 
 /**
- * Class that represents a water type Energy.
+ * Class that represents a Water type Energy.
  *
  * @author Diego Sandoval Leiva
  */
 
-public class WaterEnergy implements IEnergy {
+public class WaterEnergy extends AbstractEnergy{
 
-    @Override
-    public void EnergieType(IEnergy energy) {
 
-    }
-
-    @Override
-    public void getEnergy(IEnergy energy) {
-
-    }
-
-    @Override
-    public String getType(IEnergy type) {
-        return null;
+    /**
+     * Creates a new attack.
+     *
+     * @param energy Energy Type
+     */
+    protected WaterEnergy(IEnergy energy) {
+        super(energy);
     }
 }

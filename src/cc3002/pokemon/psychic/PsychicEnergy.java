@@ -1,28 +1,23 @@
 package cc3002.pokemon.psychic;
 
+import cc3002.pokemon.AbstractEnergy;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 
 /**
- * Class that represents a normal type Energy.
+ * Class that represents a Psychic type Energy.
  *
  * @author Diego Sandoval Leiva
  */
 
-public class PsychicEnergy implements IEnergy{
+public class PsychicEnergy extends AbstractEnergy{
 
-    @Override
-    public void EnergieType(IEnergy energy) {
-
-    }
-
-    @Override
-    public void getEnergy(IEnergy energy) {
-
-    }
-
-    @Override
-    public String getType(IEnergy type) {
-        return null;
+    /**
+     * Creates a new attack.
+     *
+     * @param energy Energy Type
+     */
+    protected PsychicEnergy(IEnergy energy) {
+        super(energy);
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Class that represents a fire type Pokémon.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public class FirePokemon extends AbstractPokemon{
 

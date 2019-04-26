@@ -182,6 +182,11 @@ public abstract class AbstractPokemon implements IPokemon {
   }
 
   @Override
+  public List<IAttack> getAttackList(){
+    return this.attackList;
+  }
+
+  @Override
   public boolean isBeAbleToAtack(){
       return this.beAbleToAtack;
   }
@@ -200,4 +205,9 @@ public abstract class AbstractPokemon implements IPokemon {
     return selectedAttack;
   }
   //endregion
+
+  @Override
+  public void setAttacks(IAttack attack){
+    this.attackList.add(attack);
+  }
 }

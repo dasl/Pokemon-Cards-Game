@@ -1,12 +1,19 @@
 package cc3002.pokemon;
 
 public abstract class AbstractEnergy implements IEnergy {
-    private String energyType;
-    protected IEnergy type;
+    private IEnergy type;
 
-    @Override
-    public void EnergieType(IEnergy energy) {
+    /**
+     * Creates a new attack.
+     *
+     * @param energy Energy Type
+     */
+    protected AbstractEnergy(IEnergy energy) {
         this.type = energy;
     }
+
+
+    @Override
+    public IEnergy getType() {return this.type;}
 
 }

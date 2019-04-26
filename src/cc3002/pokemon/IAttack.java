@@ -37,7 +37,7 @@ public interface IAttack {
 
   void setGrassRequiredEnergies(GrassEnergy energy);
 
-  void setNormaleRequiredEnergies(NormalEnergy energy);
+  void setNormalRequiredEnergies(NormalEnergy energy);
 
   /**
    * Getter for the base damage.

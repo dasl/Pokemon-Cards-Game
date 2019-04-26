@@ -1,22 +1,24 @@
 package cc3002.pokemon.normal;
 
+import cc3002.pokemon.AbstractEnergy;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 
-public class NormalEnergy implements IEnergy {
+/**
+ * Class that represents a Normal type Energy.
+ *
+ * @author Diego Sandoval Leiva
+ */
 
-    @Override
-    public void EnergieType(IEnergy energy) {
+public class NormalEnergy extends AbstractEnergy {
 
-    }
 
-    @Override
-    public void getEnergy(IEnergy energy) {
-
-    }
-
-    @Override
-    public String getType(IEnergy type) {
-        return null;
+    /**
+     * Creates a new attack.
+     *
+     * @param energy Energy Type
+     */
+    protected NormalEnergy(IEnergy energy) {
+        super(energy);
     }
 }
