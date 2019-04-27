@@ -20,7 +20,11 @@ public class WaterAttack extends AbstractAttack {
   public WaterAttack(String name, int baseDamage,String text) {
     super(name, baseDamage,text);
   }
-
+  /**
+   * Performs a water type attack.
+   *
+   * @param other Pokémon that receives the attack.
+   */
   @Override
   public void attack(IPokemon other) {
     other.receiveWaterAttack(this);

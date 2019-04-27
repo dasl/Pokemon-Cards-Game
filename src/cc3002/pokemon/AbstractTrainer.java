@@ -12,20 +12,31 @@ import java.util.List;
 
 public abstract class AbstractTrainer{
 
-    private List<IPokemon> PokeStockList;
+
     private List<IPokemon> PokeDeck;
     private IPokemon ActivePoke;
     private static int PockeDeckID = 0;
 
+    /**
+     * Creates a new Trainer.
+     *
+     * @param ActivePoke  Active Pokemon.
+     * @param pokeDeck PokeDeck.
 
+     */
 
-    protected AbstractTrainer(IPokemon ActivePoke, List<IPokemon> pokeDeck, List<IPokemon> PokeStockList) {
+    protected AbstractTrainer(IPokemon ActivePoke, List<IPokemon> pokeDeck) {
         this.ActivePoke = ActivePoke;
         this.PokeDeck = pokeDeck;
-        this.PokeStockList = PokeStockList;
         PockeDeckID += 1;
     }
 
+
+    /**
+     * Add a new pokemon to the pokedeck.
+     *
+     * @param pokemon Active Pokemon.
+     */
 
     public void addPokemonToDeck(IPokemon pokemon){
         if (PokeDeck.size()<5){
@@ -33,22 +44,49 @@ public abstract class AbstractTrainer{
         }
     }
 
-
+    /**
+     * Setter of a pokemon to the Active Pokemon.
+     *
+     * @param pokemon Active Pokemon.
+     */
     public void setActivePokemon(IPokemon pokemon){
             this.ActivePoke = pokemon;
     }
 
+    /**
+     * Getter of a Active Pokemon.
+     *
+     */
     public IPokemon getActivePokemon()  {
         return this.ActivePoke;
     }
 
+
+    /**
+     * Getter of  Active Pokemon name's.
+     *
+     */
     public String getActivePokemonName(){
         return this.ActivePoke.getName();
     }
 
+
+    /**
+     * Getter of pockedeck sizes.
+     *
+     */
     public int sizePokeDeck(){
         return this.PokeDeck.size();
     }
+
+
+    /**
+     * Checker of a pokemon and Attack.
+     * Check if a pokemon is able to us an specific attack
+     *
+     * @param pokemon Active Pokemon.
+     * @param ActiveAttack Active Attack.
+     */
 
     public boolean pokeIsBeAbleToAtackWith (IPokemon pokemon, IAttack ActiveAttack){
         boolean couldBeActived = false;
@@ -79,6 +117,12 @@ public abstract class AbstractTrainer{
         return  couldBeActived;
     }
 
+
+    /**
+     * Changer of a dead pokemon to an alive one.
+     *
+     * @param pokemon Active Pokemon.
+     */
     public void DeadPokemon(IPokemon pokemon){
         if (pokemon.getHP()<=0){
             this.ActivePoke=PokeDeck.get(0);

@@ -11,9 +11,9 @@ import java.util.List;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * Class that represents a normal type Pokémon.
+ * Class that represents a Normal type Pokémon.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandovcal Leiva
  */
 public class NormalPokemon extends AbstractPokemon {
 

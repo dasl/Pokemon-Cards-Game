@@ -11,14 +11,14 @@ package cc3002.pokemon.electric;
         import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
- * Class that represents a normal type Pokémon.
+ * Class that represents a electric type Pokémon.
  *
  * @author Diego Sandoval Leiva
  */
 public class ElectricPokemon extends AbstractPokemon {
 
     /**
-     * Creates a new normal Pokémon.
+     * Creates a new electric Pokémon.
      *
      * @param name  Pokémon's name.
      * @param hp  Pokémon's hit points.

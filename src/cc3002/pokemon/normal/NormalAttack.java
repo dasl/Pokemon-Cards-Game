@@ -21,8 +21,7 @@ public class NormalAttack extends AbstractAttack {
   }
 
   /**
-   * An attack damages a Pokémon based on the attack's base damage, it's type and the type of the
-   * Pokémon that receives the attack.
+   * Performs a normal type attack.
    *
    * @param other Pokémon that receives the attack.
    */

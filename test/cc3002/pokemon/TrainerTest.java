@@ -43,8 +43,8 @@ public class TrainerTest {
         pikachu = new ElectricPokemon("Pikachu", 100, new ArrayList<>());
         totodile = new WaterPokemon("Totodile", 100, new ArrayList<>());
         audino = new NormalPokemon("Audino", 100, new ArrayList<>());
-        juanito = new Trainer(charmander,new ArrayList<>(),new ArrayList<>());
-        Ash = new Trainer(audino,new ArrayList<>(),new ArrayList<>());
+        juanito = new Trainer(charmander,new ArrayList<>());
+        Ash = new Trainer(audino,new ArrayList<>());
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");
         fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
         combolozicoAttack = new NormalAttack("Combolozico", 200,"The best attack of game, is lethal");

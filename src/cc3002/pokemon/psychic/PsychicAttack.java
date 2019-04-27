@@ -4,7 +4,7 @@ import cc3002.pokemon.AbstractAttack;
         import cc3002.pokemon.IPokemon;
 
 /**
- * This class defines the logic of a normal type attack.
+ * This class defines the logic of a Pyschic type attack.
  *
  * @author Diego Sandoval Leiva
  */

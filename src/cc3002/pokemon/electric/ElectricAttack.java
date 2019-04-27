@@ -9,7 +9,7 @@ import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.psychic.PsychicEnergy;
 
 /**
- * This class defines the logic of a normal type attack.
+ * This class defines the logic of a electric type attack.
  *
  * @author Diego Sandoval Leiva
  */
@@ -26,8 +26,7 @@ public class ElectricAttack extends AbstractAttack {
     }
 
     /**
-     * An attack damages a Pokémon based on the attack's base damage, it's type and the type of the
-     * Pokémon that receives the attack.
+     * Performs a electric type attack.
      *
      * @param other Pokémon that receives the attack.
      */

@@ -7,7 +7,7 @@ import cc3002.pokemon.water.WaterAttack;
 /**
  * This class defines the logic of a grass type attack.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public class GrassAttack extends AbstractAttack {
 
@@ -22,7 +22,6 @@ public class GrassAttack extends AbstractAttack {
 
   /**
    * Performs a grass type attack.
-   * {@inheritDoc}
    *
    * @param other Pokémon that receives the attack.
    */

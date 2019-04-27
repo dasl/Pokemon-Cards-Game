@@ -7,6 +7,12 @@ import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.water.WaterAttack;
 import java.util.List;
 
+
+/**
+ * Class that represents a Grass type Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
 public class GrassPokemon extends AbstractPokemon {
 
   /**

@@ -32,7 +32,6 @@ public class FireAttack extends AbstractAttack {
 
   /**
    * Performs a fire type attack.
-   * {@inheritDoc}
    *
    * @param other Pokémon that receives the attack.
    */
