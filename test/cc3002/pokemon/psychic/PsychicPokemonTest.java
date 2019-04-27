@@ -23,6 +23,12 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+/**
+ * Tests set for the PsychicPokemon class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class PsychicPokemonTest {
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
     private IPokemon

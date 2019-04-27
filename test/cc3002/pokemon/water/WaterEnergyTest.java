@@ -7,6 +7,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Tests set for the WaterEnergy class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class WaterEnergyTest {
     private IEnergy waterEnergy;
 

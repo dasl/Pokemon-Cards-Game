@@ -7,6 +7,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Tests set for the PsychicEnergy class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
+
 public class PsychicEnergyTest {
     private IEnergy psychicEnergy;
 

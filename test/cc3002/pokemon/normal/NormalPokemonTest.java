@@ -22,6 +22,13 @@ import cc3002.pokemon.water.WaterEnergy;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Tests set for the NormalPokemon class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
+
 public class NormalPokemonTest {
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
   private IPokemon

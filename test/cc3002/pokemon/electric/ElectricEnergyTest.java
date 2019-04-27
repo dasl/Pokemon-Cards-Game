@@ -1,6 +1,12 @@
 package cc3002.pokemon.electric;
 
 
+/**
+ * Tests set for the ElectricEnergy class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 import cc3002.pokemon.IEnergy;
 import org.junit.Before;
 import org.junit.Test;

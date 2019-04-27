@@ -25,6 +25,12 @@ import cc3002.pokemon.psychic.PsychicEnergy;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Tests set for the WaterPokemon class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class WaterPokemonTest {
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
   private IPokemon

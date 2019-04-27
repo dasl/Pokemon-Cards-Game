@@ -20,6 +20,12 @@ import cc3002.pokemon.water.WaterPokemon;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Tests set for the Trainer class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class TrainerTest {
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
     private IPokemon
@@ -56,20 +62,16 @@ public class TrainerTest {
         pyshicEnergy = new PsychicEnergy();
         normalEnergy = new NormalEnergy();
 
-
+        // Addind attacks to the pokemon.
         charmander.setAttacks(fireAttack);
         charmander.setAttacks(combolozicoAttack);
-
+        // Setting the pokedeck.
         Ash.setActivePokemon(charmander);
         Ash.addPokemonToDeck(pikachu);
         Ash.addPokemonToDeck(charmander);
         Ash.addPokemonToDeck(totodile);
         Ash.addPokemonToDeck(treecko);
         Ash.addPokemonToDeck(audino);
-
-
-
-
 
     }
 

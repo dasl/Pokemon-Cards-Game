@@ -6,6 +6,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * Tests set for the FireEnergy class.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class FireEnergyTest {
     private IEnergy fireEnergy;
 
