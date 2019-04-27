@@ -14,8 +14,13 @@ import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
 
 import java.util.List;
-
-public interface IPokemon{
+/**
+ *An interface was made with the main objective of being able to carry out a double dispatch and with this being able to apply the
+ *properties of each attack and identify how the attack affects a receiving pokemon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+public interface IPokemon extends ICard{
 
   //region Properties
 
@@ -24,23 +29,42 @@ public interface IPokemon{
    */
   String getName();
 
-    int getFireEnergies();
+  /**
+   * @return Pokémon's fire energies
+   */
+  int getFireEnergies();
 
+  /**
+   * @return Pokémon's water energies
+   */
   int getWaterEnergies();
-
+  /**
+   * @return Pokémon's electric energies
+   */
   int getElectricEnergies();
 
+  /**
+   * @return Pokémon's grass energies
+   */
   int getGrassEnergies();
 
+  /**
+   * @return Pokémon's normal energies
+   */
   int getNormalEnergies();
 
+  /**
+   * @return Pokémon's psychic energies
+   */
   int getPsychicEnergies();
 
-    List<IAttack> getAttackList();
+  /**
+   * @return Pokémon's attack list
+   */
+  List<IAttack> getAttackList();
 
-    boolean isBeAbleToAtack();
 
-    /**
+  /**
    * @return Pokémon's hit points
    */
   int getHP();
@@ -155,5 +179,7 @@ public interface IPokemon{
   void receiveElectricEnergy(ElectricEnergy energy);
 
 
-    void setAttacks(IAttack attack);
+  void setAttacks(IAttack attack);
+
+  void receiveEnergy(IEnergy fireEnergy);
 }

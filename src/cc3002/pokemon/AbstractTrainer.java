@@ -2,6 +2,14 @@ package cc3002.pokemon;
 
 
 import java.util.List;
+
+/**
+ * Abstract class that represents a generic Trainer. This class contains the necessary methods to
+ * create a Pockedeck, an active pokemon, identify if a pokemon is dead or if a pokemon is able to attack.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public abstract class AbstractTrainer{
 
     private List<IPokemon> PokeStockList;
@@ -15,7 +23,7 @@ public abstract class AbstractTrainer{
         this.ActivePoke = ActivePoke;
         this.PokeDeck = pokeDeck;
         this.PokeStockList = PokeStockList;
-        this.PockeDeckID += 1;
+        PockeDeckID += 1;
     }
 
 
@@ -27,9 +35,7 @@ public abstract class AbstractTrainer{
 
 
     public void setActivePokemon(IPokemon pokemon){
-        if(PokeDeck.contains(pokemon)){
             this.ActivePoke = pokemon;
-        }
     }
 
     public IPokemon getActivePokemon()  {

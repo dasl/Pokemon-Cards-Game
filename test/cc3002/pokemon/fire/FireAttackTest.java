@@ -8,6 +8,7 @@ import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.grass.GrassPokemon;
+import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.normal.NormalPokemon;
 import cc3002.pokemon.psychic.PsychicEnergy;
@@ -21,17 +22,12 @@ import org.junit.Test;
 /**
  * Tests set for the FireAttack class.
  * 
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public class FireAttackTest {
-  private FireEnergy fireEnergy;
-  private WaterEnergy waterEnergy;
-  private ElectricEnergy electricEnergy;
-  private GrassEnergy grassEnergy;
-  private NormalEnergy normalEnergy;
-  private PsychicEnergy psychicEnergy;
+  private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
 
-  private IAttack fireAttack;
+  private IAttack fireAttack, normalAttack;
   private IPokemon
       charmander,
       treecko,
@@ -40,11 +36,18 @@ public class FireAttackTest {
 
   @Before
   public void setUp() {
-    fireAttack = new FireAttack("Ember", 40);
+    fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
+    normalAttack = new NormalAttack("Combito", 50,"The best attack of game, is lethal");
     charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
     treecko = new GrassPokemon("Treecko", 100, new ArrayList<>());
     totodile = new WaterPokemon("Totodile", 100, new ArrayList<>());
     audino = new NormalPokemon("Audino", 100, new ArrayList<>());
+    waterEnergy = new WaterEnergy();
+    fireEnergy = new FireEnergy();
+    electricEnergy = new ElectricEnergy();
+    grassEnergy = new GrassEnergy();
+    pyshicEnergy = new PsychicEnergy();
+    normalEnergy = new NormalEnergy();
   }
 
   @Test
@@ -67,19 +70,25 @@ public class FireAttackTest {
 
 @Test
   public void RequiredEnergies(){
-  fireAttack.setFireRequiredEnergies(fireEnergy);
+  fireAttack.receiveEnergy(waterEnergy);
+  fireAttack.receiveEnergy(fireEnergy);
   assertEquals(1,fireAttack.getFireRequiredEnergies());
-  fireAttack.setFireRequiredEnergies(fireEnergy);
-  fireAttack.setFireRequiredEnergies(fireEnergy);
+  fireAttack.receiveEnergy(fireEnergy);
+  fireAttack.receiveEnergy(fireEnergy);
   assertEquals(3,fireAttack.getFireRequiredEnergies());
+  assertEquals(0,fireAttack.getPsychicRequiredEnergies());
+  fireAttack.receiveEnergy(pyshicEnergy);
+  assertEquals(1,fireAttack.getPsychicRequiredEnergies());
+  assertEquals(1,fireAttack.getWaterRequiredEnergies());
+  assertEquals(0,normalAttack.getWaterRequiredEnergies());
 }
 
 
   @Test
   public void equalsTest() {
-    assertEquals(fireAttack, new FireAttack("Ember", 40));
-    assertNotEquals(fireAttack, new FireAttack("Ember", 30));
-    assertNotEquals(fireAttack, new FireAttack("Not Ember", 40));
-    assertNotEquals(fireAttack, new WaterAttack("Ember", 40));
+    assertEquals(fireAttack, new FireAttack("Ember", 40,"An attack that may inflict a burn."));
+    assertNotEquals(fireAttack, new FireAttack("Ember", 30,"An attack that may inflict a burn."));
+    assertNotEquals(fireAttack, new FireAttack("Not Ember", 40,"An attack that may inflict a burn."));
+    assertNotEquals(fireAttack, new WaterAttack("Ember", 40,"An attack that may inflict a burn."));
   }
 }

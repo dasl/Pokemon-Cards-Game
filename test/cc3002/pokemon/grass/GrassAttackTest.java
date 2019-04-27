@@ -4,11 +4,18 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import cc3002.pokemon.IAttack;
+import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
+import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.fire.FirePokemon;
+import cc3002.pokemon.normal.NormalAttack;
+import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.normal.NormalPokemon;
+import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
+import cc3002.pokemon.water.WaterEnergy;
 import cc3002.pokemon.water.WaterPokemon;
 import java.util.ArrayList;
 import org.junit.Before;
@@ -17,11 +24,12 @@ import org.junit.Test;
 /**
  * Tests set for the GrassAttack class.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public class GrassAttackTest {
+  private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
 
-  private IAttack grassAttack;
+  private IAttack grassAttack, normalAttack;
   private IPokemon
       charmander,
       treecko,
@@ -30,11 +38,19 @@ public class GrassAttackTest {
 
   @Before
   public void setUp() {
-    grassAttack = new GrassAttack("Vine Whip", 45);
+    grassAttack = new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.");
+    normalAttack = new NormalAttack("Combito", 50,"The best attack of game, is lethal");
     charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
     treecko = new GrassPokemon("Treecko", 100, new ArrayList<>());
     totodile = new WaterPokemon("Totodile", 100, new ArrayList<>());
     audino = new NormalPokemon("Audino", 100, new ArrayList<>());
+    waterEnergy = new WaterEnergy();
+    fireEnergy = new FireEnergy();
+    electricEnergy = new ElectricEnergy();
+    grassEnergy = new GrassEnergy();
+    pyshicEnergy = new PsychicEnergy();
+    normalEnergy = new NormalEnergy();
+
   }
 
   @Test
@@ -57,10 +73,25 @@ public class GrassAttackTest {
   }
 
   @Test
+  public void RequiredEnergies(){
+    grassAttack.receiveEnergy(grassEnergy);
+    grassAttack.receiveEnergy(fireEnergy);
+    assertEquals(1,grassAttack.getGrassRequiredEnergies());
+    grassAttack.receiveEnergy(fireEnergy);
+    grassAttack.receiveEnergy(fireEnergy);
+    assertEquals(3,grassAttack.getFireRequiredEnergies());
+    assertEquals(0,grassAttack.getPsychicRequiredEnergies());
+    grassAttack.receiveEnergy(pyshicEnergy);
+    assertEquals(1,grassAttack.getPsychicRequiredEnergies());
+    assertEquals(0,grassAttack.getWaterRequiredEnergies());
+    assertEquals(0,normalAttack.getWaterRequiredEnergies());
+  }
+
+  @Test
   public void equalsTest() {
-    assertEquals(grassAttack, new GrassAttack("Vine Whip", 45));
-    assertNotEquals(grassAttack, new GrassAttack("Vine Whip", 30));
-    assertNotEquals(grassAttack, new GrassAttack("Not Vine Whip", 45));
-    assertNotEquals(grassAttack, new FireAttack("Vine Whip", 45));
+    assertEquals(grassAttack, new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines."));
+    assertNotEquals(grassAttack, new GrassAttack("Vine Whip", 30,"Whips the foe with slender vines."));
+    assertNotEquals(grassAttack, new GrassAttack("Not Vine Whip", 45,"Whips the foe with slender vines."));
+    assertNotEquals(grassAttack, new FireAttack("Vine Whip", 45,"Whips the foe with slender vines."));
   }
 }

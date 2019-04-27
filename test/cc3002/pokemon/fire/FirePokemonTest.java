@@ -6,11 +6,15 @@ import static org.junit.Assert.assertNull;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricAttack;
+import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.grass.GrassAttack;
+import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.normal.NormalAttack;
+import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.normal.NormalPokemon;
 
 import cc3002.pokemon.psychic.PsychicAttack;
+import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,9 +22,13 @@ import java.util.Arrays;
 import cc3002.pokemon.water.WaterEnergy;
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Tests set for the FirePokemon class.
+ *
+ * @author Diego Sandoval Leiva
+ */
 public class FirePokemonTest {
-
+  private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
   private IPokemon
       audino,
       charmander;
@@ -30,17 +38,23 @@ public class FirePokemonTest {
   private WaterAttack waterAttack;
   private PsychicAttack psychicAttack;
   private ElectricAttack electricAttack;
-  private FireEnergy fireEnergy;
+
 
 
   @Before
   public void setUp() {
-    psychicAttack = new PsychicAttack("Confusion", 50);
-    fireAttack = new FireAttack("Ember", 40);
-    grassAttack = new GrassAttack("Vine Whip", 45);
-    normalAttack = new NormalAttack("Pound", 40);
-    waterAttack = new WaterAttack("Bubble", 40);
-    electricAttack = new ElectricAttack("Thunder Shock",30);
+    psychicAttack = new PsychicAttack("Confusion", 50,"A Psychic-type attack. Has a one-in-ten chance of leaving the target confused.");
+    fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
+    grassAttack = new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.");
+    normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
+    waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
+    electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
+    waterEnergy = new WaterEnergy();
+    fireEnergy = new FireEnergy();
+    electricEnergy = new ElectricEnergy();
+    grassEnergy = new GrassEnergy();
+    psychicEnergy = new PsychicEnergy();
+    normalEnergy = new NormalEnergy();
 
     audino = new NormalPokemon("Audino", 100, new ArrayList<>());
     charmander = new FirePokemon("Charmander", 100,
@@ -58,12 +72,33 @@ public class FirePokemonTest {
   }
 
   @Test
+  public void cardType(){
+    assertEquals("Pokemon",charmander.getCardType());
+  }
+
+
+  @Test
+  public void receiveEnergies(){
+    assertEquals(0, charmander.getFireEnergies());
+    charmander.receiveEnergy(fireEnergy);
+    assertEquals(1, charmander.getFireEnergies());
+    charmander.receiveEnergy(electricEnergy);
+    charmander.receiveEnergy(waterEnergy);
+    charmander.receiveEnergy(grassEnergy);
+    assertEquals(1, charmander.getFireEnergies());
+    assertEquals(1, charmander.getWaterEnergies());
+    assertEquals(1, charmander.getElectricEnergies());
+    assertEquals(1, charmander.getGrassEnergies());
+  }
+
+  @Test
   public void selectAttackTest() {
     charmander.selectAttack(0);
     assertEquals(fireAttack, charmander.getSelectedAttack());
     charmander.selectAttack(1);
     assertEquals(normalAttack, charmander.getSelectedAttack());
   }
+
 
   @Test
   public void attackTest() {
@@ -72,19 +107,6 @@ public class FirePokemonTest {
     assertEquals(60, audino.getHP());
   }
 
-  @Test
-  public void receiveFireEnergy(){
-    assertEquals(0, charmander.getFireEnergies());
-    charmander.receiveFireEnergy(fireEnergy);
-    assertEquals(1, charmander.getFireEnergies());
-    charmander.receiveFireEnergy(fireEnergy);
-    assertEquals(0, audino.getFireEnergies());
-    assertEquals(2, charmander.getFireEnergies());
-    assertEquals(0, charmander.getWaterEnergies());
-    assertEquals(0, charmander.getElectricEnergies());
-    assertEquals(0, charmander.getGrassEnergies());
-
-  }
 
   @Test
   public void receiveWaterAttack() {

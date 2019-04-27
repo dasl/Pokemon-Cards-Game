@@ -17,8 +17,8 @@ public class WaterAttack extends AbstractAttack {
    * @param name Attack's name.
    * @param baseDamage Attack's base damage.
    */
-  public WaterAttack(String name, int baseDamage) {
-    super(name, baseDamage);
+  public WaterAttack(String name, int baseDamage,String text) {
+    super(name, baseDamage,text);
   }
 
   @Override

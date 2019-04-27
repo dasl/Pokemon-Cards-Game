@@ -1,8 +1,6 @@
 package cc3002.pokemon.grass;
 
-import cc3002.pokemon.AbstractEnergy;
-import cc3002.pokemon.IEnergy;
-import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.*;
 
 /**
  * Class that represents a Grass type Energy.
@@ -11,13 +9,26 @@ import cc3002.pokemon.IPokemon;
  */
 
 public class GrassEnergy extends AbstractEnergy{
+    private String NameType = "Grass";
 
     /**
-     * Creates a new attack.
+     * Creates a new Grass Energy.
      *
-     * @param energy Energy Type
      */
-    protected GrassEnergy(IEnergy energy) {
-        super(energy);
+    public GrassEnergy() { }
+
+    @Override
+    public String getEnergyNameType() {
+        return this.NameType;
+    }
+
+    @Override
+    public void addInto(AbstractAttack abstractAttack) {
+        abstractAttack.setGrassRequiredEnergies(this);
+    }
+
+    @Override
+    public void addToPoke(AbstractPokemon abstractPokemon) {
+        abstractPokemon.receiveGrassEnergy(this);
     }
 }

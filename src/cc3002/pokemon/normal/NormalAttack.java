@@ -16,8 +16,8 @@ public class NormalAttack extends AbstractAttack {
    * @param name Attack name
    * @param baseDamage Base damage of the attack
    */
-  public NormalAttack(String name, int baseDamage) {
-    super(name, baseDamage);
+  public NormalAttack(String name, int baseDamage,String text) {
+    super(name, baseDamage,text);
   }
 
   /**

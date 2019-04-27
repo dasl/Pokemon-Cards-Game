@@ -1,8 +1,6 @@
 package cc3002.pokemon.water;
 
-import cc3002.pokemon.AbstractEnergy;
-import cc3002.pokemon.IEnergy;
-import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.*;
 
 /**
  * Class that represents a Water type Energy.
@@ -11,14 +9,26 @@ import cc3002.pokemon.IPokemon;
  */
 
 public class WaterEnergy extends AbstractEnergy{
-
+    private String NameType = "Water";
 
     /**
-     * Creates a new attack.
+     * Creates a new Water Energy.
      *
-     * @param energy Energy Type
      */
-    protected WaterEnergy(IEnergy energy) {
-        super(energy);
+    public WaterEnergy() { }
+
+    @Override
+    public String getEnergyNameType() {
+        return this.NameType;
+    }
+
+    @Override
+    public void addInto(AbstractAttack abstractAttack) {
+        abstractAttack.setWaterRequiredEnergies(this);
+    }
+
+    @Override
+    public void addToPoke(AbstractPokemon abstractPokemon) {
+        abstractPokemon.receiveWaterEnergy(this);
     }
 }

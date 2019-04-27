@@ -1,8 +1,6 @@
 package cc3002.pokemon.normal;
 
-import cc3002.pokemon.AbstractEnergy;
-import cc3002.pokemon.IEnergy;
-import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.*;
 
 /**
  * Class that represents a Normal type Energy.
@@ -11,14 +9,26 @@ import cc3002.pokemon.IPokemon;
  */
 
 public class NormalEnergy extends AbstractEnergy {
-
+    private String NameType = "Normal";
 
     /**
-     * Creates a new attack.
+     * Creates a new Normal Energy.
      *
-     * @param energy Energy Type
      */
-    protected NormalEnergy(IEnergy energy) {
-        super(energy);
+    public NormalEnergy() { }
+
+    @Override
+    public String getEnergyNameType() {
+        return this.NameType;
+    }
+
+    @Override
+    public void addInto(AbstractAttack abstractAttack) {
+        abstractAttack.setNormalRequiredEnergies(this);
+    }
+
+    @Override
+    public void addToPoke(AbstractPokemon abstractPokemon) {
+        abstractPokemon.receiveNormalEnergy(this);
     }
 }

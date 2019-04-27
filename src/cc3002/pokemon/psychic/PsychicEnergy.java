@@ -1,8 +1,6 @@
 package cc3002.pokemon.psychic;
 
-import cc3002.pokemon.AbstractEnergy;
-import cc3002.pokemon.IEnergy;
-import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.*;
 
 /**
  * Class that represents a Psychic type Energy.
@@ -11,13 +9,26 @@ import cc3002.pokemon.IPokemon;
  */
 
 public class PsychicEnergy extends AbstractEnergy{
-
+    private String NameType = "Psychic";
     /**
      * Creates a new attack.
      *
-     * @param energy Energy Type
+
      */
-    protected PsychicEnergy(IEnergy energy) {
-        super(energy);
+    public PsychicEnergy() { }
+
+    @Override
+    public String getEnergyNameType() {
+        return this.NameType;
+    }
+
+    @Override
+    public void addInto(AbstractAttack abstractAttack) {
+        abstractAttack.setPsychicRequiredEnergies(this);
+    }
+
+    @Override
+    public void addToPoke(AbstractPokemon abstractPokemon) {
+        abstractPokemon.receivePsychicEnergy(this);
     }
 }

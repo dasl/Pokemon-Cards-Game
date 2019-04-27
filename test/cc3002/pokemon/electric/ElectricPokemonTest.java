@@ -1,13 +1,17 @@
 package cc3002.pokemon.electric;
 
+import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.fire.FirePokemon;
 import cc3002.pokemon.grass.GrassAttack;
+import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.normal.NormalAttack;
+import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.normal.NormalPokemon;
 import cc3002.pokemon.psychic.PsychicAttack;
+import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
 import org.junit.Before;
@@ -17,13 +21,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
-
+/**
+ * Tests set for the ElectricPokemon class.
+ *
+ * @author Diego Sandoval Leiva
+ */
 public class ElectricPokemonTest {
-
+    private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
     private IPokemon
             audino,
-            pikachu,
-            charmander;
+            pikachu;
     private FireAttack fireAttack;
     private GrassAttack grassAttack;
     private NormalAttack normalAttack;
@@ -34,15 +41,23 @@ public class ElectricPokemonTest {
 
     @Before
     public void setUp() {
-        psychicAttack = new PsychicAttack("Confusion", 50);
-        fireAttack = new FireAttack("Ember", 40);
-        grassAttack = new GrassAttack("Vine Whip", 45);
-        normalAttack = new NormalAttack("Pound", 40);
-        waterAttack = new WaterAttack("Bubble", 40);
-        electricAttack = new ElectricAttack("Thunder Shock",30);
+        psychicAttack = new PsychicAttack("Confusion", 50,"A Psychic-type attack. Has a one-in-ten chance of leaving the target confused.");
+        fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
+        grassAttack = new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.");
+        normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
+        waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
+        electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
         audino = new NormalPokemon("Audino", 100, new ArrayList<>());
         pikachu = new ElectricPokemon("Pikachu", 100,
                 new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
+
+        waterEnergy = new WaterEnergy();
+        fireEnergy = new FireEnergy();
+        electricEnergy = new ElectricEnergy();
+        grassEnergy = new GrassEnergy();
+        psychicEnergy = new PsychicEnergy();
+        normalEnergy = new NormalEnergy();
+
     }
 
     @Test
@@ -53,6 +68,25 @@ public class ElectricPokemonTest {
         assertEquals(electricAttack, pikachu.getAttacks().get(0));
         assertEquals(normalAttack, pikachu.getAttacks().get(1));
         assertNull(pikachu.getSelectedAttack());
+    }
+
+    @Test
+    public void cardType(){
+        assertEquals("Pokemon",pikachu.getCardType());
+    }
+
+    @Test
+    public void receiveEnergies(){
+        assertEquals(0, pikachu.getFireEnergies());
+        pikachu.receiveEnergy(fireEnergy);
+        assertEquals(1, pikachu.getFireEnergies());
+        pikachu.receiveEnergy(electricEnergy);
+        pikachu.receiveEnergy(waterEnergy);
+        pikachu.receiveEnergy(grassEnergy);
+        assertEquals(1, pikachu.getFireEnergies());
+        assertEquals(1, pikachu.getWaterEnergies());
+        assertEquals(1, pikachu.getElectricEnergies());
+        assertEquals(1, pikachu.getGrassEnergies());
     }
 
     @Test

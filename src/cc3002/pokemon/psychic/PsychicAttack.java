@@ -16,8 +16,8 @@ public class PsychicAttack extends AbstractAttack {
      * @param name Attack name
      * @param baseDamage Base damage of the attack
      */
-    public PsychicAttack(String name, int baseDamage) {
-        super(name, baseDamage);
+    public PsychicAttack(String name, int baseDamage,String text) {
+        super(name, baseDamage,text);
     }
 
     /**

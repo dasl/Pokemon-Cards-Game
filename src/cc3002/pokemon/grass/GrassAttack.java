@@ -16,8 +16,8 @@ public class GrassAttack extends AbstractAttack {
    *  @param name Attack name
    * @param baseDamage Base damage of the attack
    */
-  public GrassAttack(String name, int baseDamage) {
-    super(name, baseDamage);
+  public GrassAttack(String name, int baseDamage,String text) {
+    super(name, baseDamage,text);
   }
 
   /**

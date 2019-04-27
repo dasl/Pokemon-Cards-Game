@@ -20,14 +20,14 @@ public abstract class AbstractAttack implements IAttack {
 
 
   private int baseDamage;
+  private String text;
   private String name;
-  private List<FireEnergy> fireRequiredEnergies;
-  private List<WaterEnergy> waterRequiredEnergies;
-  private List<ElectricEnergy> electricRequiredEnergies;
-  private List<GrassEnergy > grassRequiredEnergies;
-  private List<PsychicEnergy> psychicRequiredEnergies;
-  private List<NormalEnergy> normalRequiredEnergies;
-
+  private List<IEnergy> fireRequiredEnergies,
+          waterRequiredEnergies,
+          electricRequiredEnergies,
+          grassRequiredEnergies,
+          psychicRequiredEnergies,
+          normalRequiredEnergies;
 
   /**
    * Creates a new attack.
@@ -35,9 +35,10 @@ public abstract class AbstractAttack implements IAttack {
    * @param name Attack name
    * @param baseDamage Base damage of the attack
    */
-  protected AbstractAttack(String name, int baseDamage) {
+  protected AbstractAttack(String name, int baseDamage,String text) {
     this.baseDamage = baseDamage;
     this.name = name;
+    this.text = text;
     this.fireRequiredEnergies = new ArrayList<>();
     this.waterRequiredEnergies = new ArrayList<>();
     this.grassRequiredEnergies = new ArrayList<>();
@@ -60,6 +61,10 @@ public abstract class AbstractAttack implements IAttack {
   public void setNormalRequiredEnergies(NormalEnergy energy) {this.normalRequiredEnergies.add(energy); }
 
 
+  public void receiveEnergy(IEnergy energy){
+    energy.addInto(this);
+  }
+
   @Override
   public int getBaseDamage() {
     return baseDamage;
@@ -69,6 +74,9 @@ public abstract class AbstractAttack implements IAttack {
   public String getName() {
     return name;
   }
+
+  @Override
+  public String getText() {return text;}
   //endregion
 
 

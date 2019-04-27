@@ -21,13 +21,12 @@ import java.util.List;
  * attack and receive damage, and definitions to get the properties of each Pokémon, like its name
  * and hp.
  *
- * @author Ignacio Slater Muñoz
+ * @author Diego Sandoval Leiva
  */
 public abstract class AbstractPokemon implements IPokemon {
-
+  private String typeCard;
   private String name;
   private int hp;
-  private boolean beAbleToAtack;
   private List<IAttack> attackList;
   private IAttack selectedAttack;
   private List<WaterEnergy> waterEnergies;
@@ -45,9 +44,9 @@ public abstract class AbstractPokemon implements IPokemon {
    * @param attackList  Pokémon's attacks.
    */
   protected AbstractPokemon(String name, int hp, List<IAttack> attackList) {
+    this.typeCard = "Pokemon";
     this.name = name;
     this.hp = hp;
-    this.beAbleToAtack = false;
     this.attackList = attackList;
     this.waterEnergies = new ArrayList<>();
     this.fireEnergies = new ArrayList<>();
@@ -60,17 +59,14 @@ public abstract class AbstractPokemon implements IPokemon {
     @Override
     public void receiveWaterEnergy(WaterEnergy energy) { this.waterEnergies.add(energy);}
 
-
     @Override
     public void receiveGrassEnergy(GrassEnergy energy) {this.grassEnergies.add(energy);}
-
 
     @Override
     public void receiveFireEnergy(FireEnergy energy) { this.fireEnergies.add(energy);}
 
-  @Override
+    @Override
     public void receiveNormalEnergy(NormalEnergy energy) {this.normalEnergies.add(energy);}
-
 
     @Override
     public void receivePsychicEnergy(PsychicEnergy energy) {this.psychicEnergies.add(energy);}
@@ -78,10 +74,12 @@ public abstract class AbstractPokemon implements IPokemon {
     @Override
     public void receiveElectricEnergy(ElectricEnergy energy) {this.electricEnergies.add(energy);}
 
-
+    public void receiveEnergy(IEnergy energy){
+      energy.addToPoke(this);
+    }
 
     @Override
-  public void selectAttack(int index) {
+    public void selectAttack(int index) {
     selectedAttack = attackList.get(index);
   }
 
@@ -147,6 +145,11 @@ public abstract class AbstractPokemon implements IPokemon {
 
   //region Properties
   @Override
+  public String getCardType(){
+    return typeCard;
+  }
+
+  @Override
   public String getName() {
     return name;
   }
@@ -186,10 +189,7 @@ public abstract class AbstractPokemon implements IPokemon {
     return this.attackList;
   }
 
-  @Override
-  public boolean isBeAbleToAtack(){
-      return this.beAbleToAtack;
-  }
+
   @Override
   public int getHP() {
     return hp;
@@ -204,10 +204,11 @@ public abstract class AbstractPokemon implements IPokemon {
   public IAttack getSelectedAttack() {
     return selectedAttack;
   }
-  //endregion
+
 
   @Override
   public void setAttacks(IAttack attack){
     this.attackList.add(attack);
   }
+  //endregion
 }
