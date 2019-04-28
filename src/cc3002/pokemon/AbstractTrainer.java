@@ -10,7 +10,7 @@ import java.util.List;
  * @author Diego Sandoval Leiva
  */
 
-public abstract class AbstractTrainer{
+public abstract class AbstractTrainer implements ITrainer{
 
 
     private List<IPokemon> PokeDeck;
@@ -45,6 +45,9 @@ public abstract class AbstractTrainer{
         }
     }
 
+
+
+
     /**
      * Setter of a pokemon to the Active Pokemon.
      *
@@ -62,6 +65,9 @@ public abstract class AbstractTrainer{
     public IPokemon getActivePokemon(){
         return this.ActivePoke;
     }
+
+
+
 
 
     /**
@@ -158,4 +164,5 @@ public abstract class AbstractTrainer{
 
         }
     }
+
 }

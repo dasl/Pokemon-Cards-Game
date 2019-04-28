@@ -47,8 +47,8 @@ public class GrassPokemonTest {
     waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
 
-    charmander = new FirePokemon("Charmander",100, new ArrayList<>());
-    treecko = new GrassPokemon("Treecko", 100,
+    charmander = new FirePokemon("Charmander",1,100, new ArrayList<>());
+    treecko = new GrassPokemon("Treecko", 1,100,
         new ArrayList<>(Arrays.asList(grassAttack, normalAttack)));
 
     waterEnergy = new WaterEnergy();

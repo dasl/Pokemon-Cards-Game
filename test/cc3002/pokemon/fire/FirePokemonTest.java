@@ -56,8 +56,8 @@ public class FirePokemonTest {
     psychicEnergy = new PsychicEnergy();
     normalEnergy = new NormalEnergy();
 
-    audino = new NormalPokemon("Audino", 100, new ArrayList<>());
-    charmander = new FirePokemon("Charmander", 100,
+    audino = new NormalPokemon("Audino", 1,100, new ArrayList<>());
+    charmander = new FirePokemon("Charmander",1, 100,
         new ArrayList<>(Arrays.asList(fireAttack, normalAttack)));
   }
 

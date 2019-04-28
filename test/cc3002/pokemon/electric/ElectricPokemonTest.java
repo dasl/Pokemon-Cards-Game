@@ -47,8 +47,8 @@ public class ElectricPokemonTest {
         normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
         waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
         electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
-        audino = new NormalPokemon("Audino", 100, new ArrayList<>());
-        pikachu = new ElectricPokemon("Pikachu", 100,
+        audino = new NormalPokemon("Audino",1, 100, new ArrayList<>());
+        pikachu = new ElectricPokemon("Pikachu", 1,100,
                 new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
 
         waterEnergy = new WaterEnergy();

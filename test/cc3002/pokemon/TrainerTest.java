@@ -46,12 +46,11 @@ public class TrainerTest {
     @Before
     public void setUp() {
         // Creating pokemons
-        charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
-        charmanderjuanito = new FirePokemon("CharmanderJuanin", 100, new ArrayList<>());
-        treecko = new GrassPokemon("Treecko", 100, new ArrayList<>());
-        totodile = new WaterPokemon("Totodile", 100, new ArrayList<>());
-        audino = new NormalPokemon("Audino",100, new ArrayList<>());
-        pikachu = new ElectricPokemon("Pikachu",100, new ArrayList<>());
+        ;
+        treecko = new GrassPokemon("Treecko", 1,100, new ArrayList<>());
+        totodile = new WaterPokemon("Totodile", 1,100, new ArrayList<>());
+        audino = new NormalPokemon("Audino",1,100, new ArrayList<>());
+        pikachu = new ElectricPokemon("Pikachu",1,100, new ArrayList<>());
 
         // Creating attacks
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");
@@ -67,8 +66,10 @@ public class TrainerTest {
         normalEnergy = new NormalEnergy();
 
         // Creating trainers
-        juanito = new Trainer("Juanoide",charmanderjuanito,new ArrayList<>());
-        Ash = new Trainer("Ash",audino,new ArrayList<>());
+        charmander = new FirePokemon("Charmander", 1,100, new ArrayList<>());
+        juanito = new Trainer("Juanoide",charmander,new ArrayList<>());
+        charmander = new FirePokemon("Charmander de Ash", 1,100, new ArrayList<>());
+        Ash = new Trainer("Ash",charmander,new ArrayList<>());
 
         // Adding attacks to the pokemon.
         charmander.setAttacks(fireAttack);
@@ -76,11 +77,9 @@ public class TrainerTest {
 
         // Setting the pokedeck.
         Ash.setActivePokemon(charmander);
-//        Ash.addPokemonToDeck(pikachu);
-        Ash.addPokemonToDeck(charmander);
-        Ash.addPokemonToDeck(charmander);
-//        Ash.addPokemonToDeck(totodile);
-        Ash.addPokemonToDeck(charmander);
+        Ash.addPokemonToDeck(pikachu);
+        Ash.addPokemonToDeck(audino);
+        Ash.addPokemonToDeck(totodile);
         Ash.addPokemonToDeck(treecko);
         Ash.addPokemonToDeck(audino);
 
@@ -90,14 +89,14 @@ public class TrainerTest {
     @Test
     public void constructorTest() {
         assertEquals("Juanoide",juanito.getName());
-        assertEquals("Charmander", Ash.getActivePokemonName());
+        assertEquals("Charmander de Ash", Ash.getActivePokemonName());
 
     }
 
     @Test
     public void changeActivePokeon(){
-        assertEquals("Charmander", Ash.getActivePokemonName());
-        assertEquals("CharmanderJuanin", juanito.getActivePokemonName());
+        assertEquals("Charmander de Ash", Ash.getActivePokemonName());
+        assertEquals("Charmander", juanito.getActivePokemonName());
     }
 
     @Test
@@ -122,13 +121,15 @@ public class TrainerTest {
         // Active pokemon name is equal to the adversary active pokemon
         assertFalse(Ash.getActivePokemonName().equals(juanito.getActivePokemonName()));
         // Active pokemon is not equal to the adversary active pokemon
-        assertNotEquals(Ash.getActivePokemon(),juanito.getActivePokemonName());
+        Ash.setActivePokemon(charmander);
+        juanito.setActivePokemon(charmander);
+        assertEquals(Ash.getActivePokemon(),juanito.getActivePokemon());
 
     }
 
     @Test
     public void ableToAtack(){
-        assertEquals("Charmander", Ash.getActivePokemonName());
+        assertEquals("Charmander de Ash", Ash.getActivePokemonName());
         // Charging the energies requires into the attack.
         combolozicoAttack.receiveEnergy(normalEnergy);
         combolozicoAttack.receiveEnergy(normalEnergy);
@@ -140,7 +141,6 @@ public class TrainerTest {
         Ash.getActivePokemon().receiveEnergy(normalEnergy);
         Ash.getActivePokemon().receiveEnergy(normalEnergy);
         assertEquals(Ash.getActivePokemon().getNormalEnergies(),3);
-        assertEquals(juanito.getActivePokemon().getNormalEnergies(),0);
         assertTrue(Ash.pokeIsBeAbleToAtackWith(Ash.getActivePokemon(),combolozicoAttack));
     }
 
@@ -153,13 +153,13 @@ public class TrainerTest {
         waterAttack.attack(Ash.getActivePokemon());
         assertEquals(Ash.getActivePokemon().getHP(),0);
         Ash.DeadPokemon(Ash.getActivePokemon());
-        assertEquals("Charmander", Ash.getActivePokemonName());
+        assertEquals("Pikachu", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
         Ash.DeadPokemon(Ash.getActivePokemon());
-        assertEquals("Charmander", Ash.getActivePokemonName());
+        assertEquals("Audino", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
         Ash.DeadPokemon(Ash.getActivePokemon());
-        assertEquals("Charmander", Ash.getActivePokemonName());
+        assertEquals("Totodile", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
         Ash.DeadPokemon(Ash.getActivePokemon());
         assertEquals("Treecko", Ash.getActivePokemonName());

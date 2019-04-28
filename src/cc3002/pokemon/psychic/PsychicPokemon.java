@@ -20,11 +20,12 @@ public class PsychicPokemon extends AbstractPokemon {
      * Creates a new psychic Pokémon.
      *
      * @param name  Pokémon's name.
+     * @param id Pokémon's id.
      * @param hp  Pokémon's hit points.
      * @param attackList  Pokémon's attacks.
      */
-    public PsychicPokemon(String name,int hp, List<IAttack> attackList) {
-        super(name, hp, attackList);
+    public PsychicPokemon(String name,int id,int hp, List<IAttack> attackList) {
+        super(name,id,hp, attackList);
     }
 
     @Override

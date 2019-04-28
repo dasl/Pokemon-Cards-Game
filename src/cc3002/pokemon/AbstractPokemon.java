@@ -26,6 +26,7 @@ import java.util.List;
 public abstract class AbstractPokemon implements IPokemon {
   private String typeCard;
   private String name;
+  private int id;
   private int hp;
   private List<IAttack> attackList;
   private IAttack selectedAttack;
@@ -43,9 +44,10 @@ public abstract class AbstractPokemon implements IPokemon {
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  protected AbstractPokemon(String name, int hp, List<IAttack> attackList) {
+  protected AbstractPokemon(String name,int id, int hp, List<IAttack> attackList) {
     this.typeCard = "Pokemon";
     this.name = name;
+    this.id = id;
     this.hp = hp;
     this.attackList = attackList;
     this.waterEnergies = new ArrayList<>();
@@ -54,6 +56,7 @@ public abstract class AbstractPokemon implements IPokemon {
     this.grassEnergies = new ArrayList<>();
     this.psychicEnergies = new ArrayList<>();
     this.normalEnergies = new ArrayList<>();
+
   }
 
   /**
