@@ -69,7 +69,6 @@ public interface IPokemon extends ICard{
    */
   int getHP();
 
-    int getId();
 
     /**
 

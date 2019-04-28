@@ -24,8 +24,8 @@ public class WaterPokemon extends AbstractPokemon {
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  public WaterPokemon(String name,int id ,int hp, List<IAttack> attackList) {
-    super(name,id, hp, attackList);
+  public WaterPokemon(String name,int hp, List<IAttack> attackList) {
+    super(name, hp, attackList);
   }
 
   @Override

@@ -47,8 +47,8 @@ public class GrassPokemonTest {
     waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
 
-    charmander = new FirePokemon("Charmander",1,100, new ArrayList<>());
-    treecko = new GrassPokemon("Treecko",1, 100,
+    charmander = new FirePokemon("Charmander",100, new ArrayList<>());
+    treecko = new GrassPokemon("Treecko", 100,
         new ArrayList<>(Arrays.asList(grassAttack, normalAttack)));
 
     waterEnergy = new WaterEnergy();
@@ -63,7 +63,6 @@ public class GrassPokemonTest {
   public void constructorTest() {
     assertEquals("Treecko", treecko.getName());
     assertEquals(100, treecko.getHP());
-    assertEquals(1, treecko.getId());
     assertEquals(2, treecko.getAttacks().size());
     assertEquals(grassAttack, treecko.getAttacks().get(0));
     assertEquals(normalAttack, treecko.getAttacks().get(1));

@@ -21,12 +21,11 @@ public class NormalPokemon extends AbstractPokemon {
    * Creates a new normal Pokémon.
    *
    * @param name  Pokémon's name.
-   * @param id  Pokémon's id.
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  public NormalPokemon(String name,int id, int hp, List<IAttack> attackList) {
-    super(name,id, hp, attackList);
+  public NormalPokemon(String name, int hp, List<IAttack> attackList) {
+    super(name, hp, attackList);
   }
   @Override
   public void receivePsychicAttack(PsychicAttack attack) {

@@ -27,7 +27,6 @@ public abstract class AbstractPokemon implements IPokemon {
   private String typeCard;
   private String name;
   private int hp;
-  private int id;
   private List<IAttack> attackList;
   private IAttack selectedAttack;
   private List<WaterEnergy> waterEnergies;
@@ -44,9 +43,8 @@ public abstract class AbstractPokemon implements IPokemon {
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  protected AbstractPokemon(String name,int id, int hp, List<IAttack> attackList) {
+  protected AbstractPokemon(String name, int hp, List<IAttack> attackList) {
     this.typeCard = "Pokemon";
-    this.id = id;
     this.name = name;
     this.hp = hp;
     this.attackList = attackList;
@@ -271,10 +269,6 @@ public abstract class AbstractPokemon implements IPokemon {
     return hp;
   }
 
-  @Override
-  public int getId() {
-    return id;
-  }
 
   @Override
   public List<IAttack> getAttacks() {
@@ -293,8 +287,10 @@ public abstract class AbstractPokemon implements IPokemon {
 
 
   @Override
-  public void setAttacks(IAttack attack){
-    this.attackList.add(attack);
+  public void setAttacks(IAttack attack) {
+    if (attackList.size() < 4) {
+      this.attackList.add(attack);
+    }
   }
   //endregion
 }

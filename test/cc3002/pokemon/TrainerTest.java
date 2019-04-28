@@ -30,7 +30,8 @@ public class TrainerTest {
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
     private IPokemon
             charmander,
-            treecko,
+            charmanderjuanito,
+             treecko,
             totodile,
             audino,
             pikachu;
@@ -44,17 +45,20 @@ public class TrainerTest {
 
     @Before
     public void setUp() {
-        charmander = new FirePokemon("Charmander",1, 100, new ArrayList<>());
-        treecko = new GrassPokemon("Treecko",1, 100, new ArrayList<>());
-        totodile = new WaterPokemon("Totodile",1, 100, new ArrayList<>());
-        audino = new NormalPokemon("Audino",1, 100, new ArrayList<>());
-        pikachu = new ElectricPokemon("Pikachu",1,100, new ArrayList<>());
-        juanito = new Trainer(charmander,new ArrayList<>());
-        Ash = new Trainer(audino,new ArrayList<>());
+        // Creating pokemons
+        charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
+        charmanderjuanito = new FirePokemon("CharmanderJuanin", 100, new ArrayList<>());
+        treecko = new GrassPokemon("Treecko", 100, new ArrayList<>());
+        totodile = new WaterPokemon("Totodile", 100, new ArrayList<>());
+        audino = new NormalPokemon("Audino",100, new ArrayList<>());
+        pikachu = new ElectricPokemon("Pikachu",100, new ArrayList<>());
+
+        // Creating attacks
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");
         fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
         combolozicoAttack = new NormalAttack("Combolozico", 200,"The best attack of game, is lethal");
 
+        // Creating energies
         waterEnergy = new WaterEnergy();
         fireEnergy = new FireEnergy();
         electricEnergy = new ElectricEnergy();
@@ -62,9 +66,14 @@ public class TrainerTest {
         pyshicEnergy = new PsychicEnergy();
         normalEnergy = new NormalEnergy();
 
-        // Addind attacks to the pokemon.
+        // Creating trainers
+        juanito = new Trainer("Juanoide",charmanderjuanito,new ArrayList<>());
+        Ash = new Trainer("Ash",audino,new ArrayList<>());
+
+        // Adding attacks to the pokemon.
         charmander.setAttacks(fireAttack);
         charmander.setAttacks(combolozicoAttack);
+
         // Setting the pokedeck.
         Ash.setActivePokemon(charmander);
         Ash.addPokemonToDeck(pikachu);
@@ -85,7 +94,7 @@ public class TrainerTest {
     @Test
     public void changeActivePokeon(){
         assertEquals("Charmander", Ash.getActivePokemonName());
-        assertEquals("Charmander", juanito.getActivePokemonName());
+        assertEquals("CharmanderJuanin", juanito.getActivePokemonName());
     }
 
     @Test
@@ -104,6 +113,19 @@ public class TrainerTest {
     }
 
     @Test
+    public void adversaryDeck(){
+        // Juanito vs Ash
+        assertFalse(Ash.getPokeDeck().equals(juanito.getPokeDeck()));
+        // Active pokemon name is equal to the adversary active pokemon
+        assertFalse(Ash.getActivePokemonName().equals(juanito.getActivePokemonName()));
+        // Active pokemon is not equal to the adversary active pokemon
+        assertFalse(Ash.getSameActivePokemon(juanito));
+        // Active pokemon is not equal to the adversary active pokemon
+        assertNotEquals(Ash.getActivePokemon(),juanito.getActivePokemonName());
+
+    }
+
+    @Test
     public void ableToAtack(){
         assertEquals("Charmander", Ash.getActivePokemonName());
         // Charging the energies requires into the attack.
@@ -116,6 +138,8 @@ public class TrainerTest {
         Ash.getActivePokemon().receiveEnergy(normalEnergy);
         Ash.getActivePokemon().receiveEnergy(normalEnergy);
         Ash.getActivePokemon().receiveEnergy(normalEnergy);
+        assertEquals(Ash.getActivePokemon().getNormalEnergies(),3);
+        assertEquals(juanito.getActivePokemon().getNormalEnergies(),0);
         assertTrue(Ash.pokeIsBeAbleToAtackWith(Ash.getActivePokemon(),combolozicoAttack));
     }
 

@@ -18,10 +18,9 @@ public class Trainer extends AbstractTrainer{
      * @param ActivePoke  Pokémon's name.
      * @param PokeDeckList  Pokémon's hit points.
      */
-    public Trainer(IPokemon ActivePoke, List<IPokemon> PokeDeckList) {
-        super(ActivePoke, PokeDeckList);
+    public Trainer(String name, IPokemon ActivePoke, List<IPokemon> PokeDeckList) {
+        super(name,ActivePoke, PokeDeckList);
     }
-
 
 
 }

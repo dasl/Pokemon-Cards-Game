@@ -15,7 +15,8 @@ public abstract class AbstractTrainer{
 
     private List<IPokemon> PokeDeck;
     private IPokemon ActivePoke;
-    private static int PockeDeckID = 0;
+    private String name;
+
 
     /**
      * Creates a new Trainer.
@@ -25,10 +26,10 @@ public abstract class AbstractTrainer{
 
      */
 
-    protected AbstractTrainer(IPokemon ActivePoke, List<IPokemon> pokeDeck) {
+    protected AbstractTrainer(String name, IPokemon ActivePoke, List<IPokemon> pokeDeck) {
         this.ActivePoke = ActivePoke;
         this.PokeDeck = pokeDeck;
-        PockeDeckID += 1;
+        this.name = name;
     }
 
 
@@ -57,9 +58,46 @@ public abstract class AbstractTrainer{
      * Getter of a Active Pokemon.
      *
      */
-    public IPokemon getActivePokemon()  {
+
+    public IPokemon getActivePokemon(){
         return this.ActivePoke;
     }
+
+    /**
+     * Compare if a trainer has the same activepokemon with another one.
+     *
+     * @param trainer as Trainer
+     */
+    public boolean getSameActivePokemon(Trainer trainer)  {
+        boolean IsSame=false;
+        if(trainer.getName().equals(this.getName())&& trainer.getActivePokemonName().equals(this.getActivePokemonName()))
+         return IsSame;
+        return IsSame;
+    }
+
+
+    /**
+     * Getter of  Active Pokemon name's.
+     *
+     */
+    public String getName(){
+        return this.name;
+    }
+
+
+    /**
+     * Checks if this attack is equal to another.
+     *
+     * @param obj Object to compare this attack.
+     * @return <code>true</code> if the objects are equal, <code>false</code> otherwise.
+     */
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj instanceof IPokemon && ((Trainer) obj).getName() == name;
+    }
+
+
 
 
     /**
@@ -80,6 +118,13 @@ public abstract class AbstractTrainer{
     }
 
 
+    /**
+     * Getter of pockedeck.
+     *
+     */
+    public List<IPokemon> getPokeDeck(){
+        return PokeDeck;
+    }
     /**
      * Checker of a pokemon and Attack.
      * Check if a pokemon is able to us an specific attack
