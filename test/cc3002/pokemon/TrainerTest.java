@@ -76,9 +76,11 @@ public class TrainerTest {
 
         // Setting the pokedeck.
         Ash.setActivePokemon(charmander);
-        Ash.addPokemonToDeck(pikachu);
+//        Ash.addPokemonToDeck(pikachu);
         Ash.addPokemonToDeck(charmander);
-        Ash.addPokemonToDeck(totodile);
+        Ash.addPokemonToDeck(charmander);
+//        Ash.addPokemonToDeck(totodile);
+        Ash.addPokemonToDeck(charmander);
         Ash.addPokemonToDeck(treecko);
         Ash.addPokemonToDeck(audino);
 
@@ -144,17 +146,20 @@ public class TrainerTest {
 
     @Test
     public void DeadActivePokemon(){
+        Ash.getActivePokemon().receiveEnergy(normalEnergy);
+        Ash.getActivePokemon().receiveEnergy(normalEnergy);
+        Ash.getActivePokemon().receiveEnergy(normalEnergy);
         assertEquals(Ash.getActivePokemon().getHP(),100);
         waterAttack.attack(Ash.getActivePokemon());
         assertEquals(Ash.getActivePokemon().getHP(),0);
         Ash.DeadPokemon(Ash.getActivePokemon());
-        assertEquals("Pikachu", Ash.getActivePokemonName());
+        assertEquals("Charmander", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
         Ash.DeadPokemon(Ash.getActivePokemon());
         assertEquals("Charmander", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
         Ash.DeadPokemon(Ash.getActivePokemon());
-        assertEquals("Totodile", Ash.getActivePokemonName());
+        assertEquals("Charmander", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
         Ash.DeadPokemon(Ash.getActivePokemon());
         assertEquals("Treecko", Ash.getActivePokemonName());

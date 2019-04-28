@@ -70,6 +70,11 @@ public interface IPokemon extends ICard{
   int getHP();
 
 
+  /**
+   * Reset Pokémon's energies.
+   */
+  void resetEnergies();
+
     /**
 
    * @return List with all the Pokémon attacks.

@@ -269,6 +269,16 @@ public abstract class AbstractPokemon implements IPokemon {
     return hp;
   }
 
+  @Override
+  public void resetEnergies(){
+    this.electricEnergies.clear();
+    this.waterEnergies.clear();
+    this.fireEnergies.clear();
+    this.psychicEnergies.clear();
+    this.normalEnergies.clear();
+    this.grassEnergies.clear();
+  }
+
 
   @Override
   public List<IAttack> getAttacks() {

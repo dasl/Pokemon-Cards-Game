@@ -152,8 +152,10 @@ public abstract class AbstractTrainer{
      */
     public void DeadPokemon(IPokemon pokemon){
         if (pokemon.getHP()<=0){
+            pokemon.resetEnergies();
             this.ActivePoke=PokeDeck.get(0);
             this.PokeDeck.remove(0);
+
         }
     }
 }
