@@ -8,5 +8,10 @@ package cc3002.pokemon;
  */
 
 public interface ICard {
+    /**
+     * Get the card type
+     * If is an energy or a pokemon
+     *
+     */
     String getCardType();
 }

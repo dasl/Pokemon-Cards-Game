@@ -11,8 +11,13 @@ import java.util.List;
 
 public class Trainer extends AbstractTrainer{
 
-    private IPokemon ActivePoke;
 
+    /**
+     * Creates a new Trainer.
+     *
+     * @param ActivePoke  Pokémon's name.
+     * @param PokeDeckList  Pokémon's hit points.
+     */
     public Trainer(IPokemon ActivePoke, List<IPokemon> PokeDeckList) {
         super(ActivePoke, PokeDeckList);
     }

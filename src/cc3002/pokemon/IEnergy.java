@@ -10,9 +10,28 @@ package cc3002.pokemon;
  */
 
 public interface IEnergy extends ICard{
+
+    /**
+     * Get the name of Energy type.
+     *
+     */
     String getEnergyNameType();
 
+
+    /**
+     * Add an energy to an abstracAttack
+     * This is the handshake of the double dispatch
+     *
+     * @param abstractAttack the abstracAttack
+     */
     void addInto(AbstractAttack abstractAttack);
 
+
+    /**
+     * Add an energy to an abstractPokemon
+     * This is the handshake of the double dispatch
+     *
+     * @param abstractPokemon the abstractPokemon
+     */
     void addToPoke(AbstractPokemon abstractPokemon);
 }

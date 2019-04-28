@@ -81,6 +81,14 @@ public interface IPokemon extends ICard{
    * @return The current selected attack.
    */
   IAttack getSelectedAttack();
+
+  /**
+   * Selects an attack.
+   *
+   * @param index Index of the attack to be selected.
+   */
+  void selectAttack(int index);
+
   //endregion
 
   /**
@@ -90,12 +98,6 @@ public interface IPokemon extends ICard{
    */
   void attack(IPokemon other);
 
-  /**
-   * Selects an attack.
-   *
-   * @param index Index of the attack to be selected.
-   */
-  void selectAttack(int index);
 
   /**
    * Receives damage from a water attack.
