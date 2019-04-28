@@ -63,21 +63,9 @@ public abstract class AbstractTrainer{
         return this.ActivePoke;
     }
 
-    /**
-     * Compare if a trainer has the same activepokemon with another one.
-     *
-     * @param trainer as Trainer
-     */
-    public boolean getSameActivePokemon(Trainer trainer)  {
-        boolean IsSame=false;
-        if(trainer.getName().equals(this.getName())&& trainer.getActivePokemonName().equals(this.getActivePokemonName()))
-         return IsSame;
-        return IsSame;
-    }
-
 
     /**
-     * Getter of  Active Pokemon name's.
+     * Getter of  Active Trainer name's.
      *
      */
     public String getName(){
@@ -91,12 +79,6 @@ public abstract class AbstractTrainer{
      * @param obj Object to compare this attack.
      * @return <code>true</code> if the objects are equal, <code>false</code> otherwise.
      */
-
-    @Override
-    public boolean equals(Object obj) {
-        return obj instanceof IPokemon && ((Trainer) obj).getName() == name;
-    }
-
 
 
 

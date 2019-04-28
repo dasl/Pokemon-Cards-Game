@@ -87,6 +87,7 @@ public class TrainerTest {
 
     @Test
     public void constructorTest() {
+        assertEquals("Juanoide",juanito.getName());
         assertEquals("Charmander", Ash.getActivePokemonName());
 
     }
@@ -118,8 +119,6 @@ public class TrainerTest {
         assertFalse(Ash.getPokeDeck().equals(juanito.getPokeDeck()));
         // Active pokemon name is equal to the adversary active pokemon
         assertFalse(Ash.getActivePokemonName().equals(juanito.getActivePokemonName()));
-        // Active pokemon is not equal to the adversary active pokemon
-        assertFalse(Ash.getSameActivePokemon(juanito));
         // Active pokemon is not equal to the adversary active pokemon
         assertNotEquals(Ash.getActivePokemon(),juanito.getActivePokemonName());
 
