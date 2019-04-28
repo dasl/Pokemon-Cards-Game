@@ -49,8 +49,8 @@ public class PsychicPokemonTest {
         normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
         waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
         electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
-        charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
-        abra = new PsychicPokemon("Abra", 100,
+        charmander = new FirePokemon("Charmander",1, 100, new ArrayList<>());
+        abra = new PsychicPokemon("Abra",1 ,100,
                 new ArrayList<>(Arrays.asList(psychicAttack, normalAttack)));
 
         waterEnergy = new WaterEnergy();
@@ -71,6 +71,7 @@ public class PsychicPokemonTest {
     public void constructorTest() {
         assertEquals("Abra", abra.getName());
         assertEquals(100, abra.getHP());
+        assertEquals(1, abra.getId());
         assertEquals(2, abra.getAttacks().size());
         assertEquals(psychicAttack, abra.getAttacks().get(0));
         assertEquals(normalAttack, abra.getAttacks().get(1));

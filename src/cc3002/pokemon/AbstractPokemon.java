@@ -27,6 +27,7 @@ public abstract class AbstractPokemon implements IPokemon {
   private String typeCard;
   private String name;
   private int hp;
+  private int id;
   private List<IAttack> attackList;
   private IAttack selectedAttack;
   private List<WaterEnergy> waterEnergies;
@@ -43,8 +44,9 @@ public abstract class AbstractPokemon implements IPokemon {
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  protected AbstractPokemon(String name, int hp, List<IAttack> attackList) {
+  protected AbstractPokemon(String name,int id, int hp, List<IAttack> attackList) {
     this.typeCard = "Pokemon";
+    this.id = id;
     this.name = name;
     this.hp = hp;
     this.attackList = attackList;
@@ -56,63 +58,138 @@ public abstract class AbstractPokemon implements IPokemon {
     this.normalEnergies = new ArrayList<>();
   }
 
-    @Override
-    public void receiveWaterEnergy(WaterEnergy energy) { this.waterEnergies.add(energy);}
+  /**
+   * Receives an energy from a water energy.
+   *
+   * @param energy Received energy.
+   */
+  @Override
+  public void receiveWaterEnergy(WaterEnergy energy) { this.waterEnergies.add(energy);}
 
-    @Override
-    public void receiveGrassEnergy(GrassEnergy energy) {this.grassEnergies.add(energy);}
 
-    @Override
-    public void receiveFireEnergy(FireEnergy energy) { this.fireEnergies.add(energy);}
+  /**
+   * Receives an energy from a grass energy.
+   *
+   * @param energy Received energy.
+   */
+  @Override
+  public void receiveGrassEnergy(GrassEnergy energy) {this.grassEnergies.add(energy);}
 
-    @Override
-    public void receiveNormalEnergy(NormalEnergy energy) {this.normalEnergies.add(energy);}
+  /**
+   * Receives an energy from a fire energy.
+   *
+   * @param energy Received energy.
+   */
+  @Override
+  public void receiveFireEnergy(FireEnergy energy) { this.fireEnergies.add(energy);}
 
-    @Override
-    public void receivePsychicEnergy(PsychicEnergy energy) {this.psychicEnergies.add(energy);}
 
-    @Override
-    public void receiveElectricEnergy(ElectricEnergy energy) {this.electricEnergies.add(energy);}
+  /**
+   * Receives an energy from a normal energy.
+   *
+   * @param energy Received energy.
+   */
+  @Override
+  public void receiveNormalEnergy(NormalEnergy energy) {this.normalEnergies.add(energy);}
 
-    public void receiveEnergy(IEnergy energy){
-      energy.addToPoke(this);
-    }
+  /**
+   * Receives an energy from a psychic energy.
+   *
+   * @param energy Received energy.
+   */
+  @Override
+  public void receivePsychicEnergy(PsychicEnergy energy) {this.psychicEnergies.add(energy);}
 
-    @Override
-    public void selectAttack(int index) {
-    selectedAttack = attackList.get(index);
+
+  /**
+   * Receives an energy from a electric energy.
+   *
+   * @param energy Received energy.
+   */
+  public void receiveElectricEnergy(ElectricEnergy energy) {this.electricEnergies.add(energy);}
+
+
+  /**
+   * Receives an energy.
+   *
+   * @param energy Receive energy.
+   */
+  public void receiveEnergy(IEnergy energy){
+    energy.addToPoke(this);
   }
 
+
+
+  /**
+   * Attacks another Pokémon.
+   *
+   * @param other Target of the attack.
+   */
   @Override
   public void attack(IPokemon other) {
     selectedAttack.attack(other);
   }
 
+
+  /**
+   * Receives damage from a water attack.
+   *
+   * @param attack Received attack.
+   */
+
   @Override
   public void receiveWaterAttack(WaterAttack attack) {
     receiveAttack(attack);
   }
-
+  /**
+   * Receives damage from a fire attack.
+   *
+   * @param attack Received attack.
+   */
   @Override
   public void receiveGrassAttack(GrassAttack attack) {
     receiveAttack(attack);
   }
 
+
+  /**
+   * Receives damage from a fire attack.
+   *
+   * @param attack Received attack.
+   */
   @Override
   public void receiveFireAttack(FireAttack attack) {
     receiveAttack(attack);
   }
 
+
+  /**
+   * Receives damage from a normal attack.
+   *
+   * @param attack Received attack.
+   */
   @Override
   public void receiveNormalAttack(NormalAttack attack) {
     receiveAttack(attack);
   }
 
+
+  /**
+   * Receives damage from a psychic attack.
+   *
+   * @param attack Received attack.
+   */
   @Override
   public void receivePsychicAttack(PsychicAttack attack) {
     receiveAttack(attack);
   }
 
+
+  /**
+   * Receives damage from a electric attack.
+   *
+   * @param attack Received attack.
+   */
   @Override
   public void receiveElectricAttack(ElectricAttack attack) {
     receiveAttack(attack);
@@ -189,15 +266,24 @@ public abstract class AbstractPokemon implements IPokemon {
     return this.attackList;
   }
 
-
   @Override
   public int getHP() {
     return hp;
   }
 
   @Override
+  public int getId() {
+    return id;
+  }
+
+  @Override
   public List<IAttack> getAttacks() {
     return attackList;
+  }
+
+  @Override
+  public void selectAttack(int index) {
+    selectedAttack = attackList.get(index);
   }
 
   @Override

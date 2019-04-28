@@ -52,8 +52,8 @@ public class WaterPokemonTest {
     waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
 
-    charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
-    totodile = new WaterPokemon("Totodile", 100,
+    charmander = new FirePokemon("Charmander",1, 100, new ArrayList<>());
+    totodile = new WaterPokemon("Totodile",1,100,
         new ArrayList<>(Arrays.asList(waterAttack, normalAttack)));
 
     waterEnergy = new WaterEnergy();
@@ -67,6 +67,7 @@ public class WaterPokemonTest {
   @Test
   public void constructorTest() {
     assertEquals("Totodile", totodile.getName());
+    assertEquals(1, totodile.getId());
     assertEquals(100, totodile.getHP());
     assertEquals(2, totodile.getAttacks().size());
     assertEquals(waterAttack, totodile.getAttacks().get(0));

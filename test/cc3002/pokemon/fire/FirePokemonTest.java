@@ -56,14 +56,15 @@ public class FirePokemonTest {
     psychicEnergy = new PsychicEnergy();
     normalEnergy = new NormalEnergy();
 
-    audino = new NormalPokemon("Audino", 100, new ArrayList<>());
-    charmander = new FirePokemon("Charmander", 100,
+    audino = new NormalPokemon("Audino",1, 100, new ArrayList<>());
+    charmander = new FirePokemon("Charmander",1, 100,
         new ArrayList<>(Arrays.asList(fireAttack, normalAttack)));
   }
 
   @Test
   public void constructorTest() {
     assertEquals("Charmander", charmander.getName());
+    assertEquals(1, charmander.getId());
     assertEquals(100, charmander.getHP());
     assertEquals(2, charmander.getAttacks().size());
     assertEquals(fireAttack, charmander.getAttacks().get(0));

@@ -68,7 +68,10 @@ public interface IPokemon extends ICard{
    * @return Pokémon's hit points
    */
   int getHP();
-  /**
+
+    int getId();
+
+    /**
 
    * @return List with all the Pokémon attacks.
    */
@@ -139,47 +142,55 @@ public interface IPokemon extends ICard{
   /**
    * Receives an energy from a water energy.
    *
-   * @param energy Received attack.
+   * @param energy Received energy.
    */
   void receiveWaterEnergy(WaterEnergy energy);
 
   /**
    * Receives an energy from a grass energy.
    *
-   * @param energy Received attack.
+   * @param energy Received energy.
    */
   void receiveGrassEnergy(GrassEnergy energy);
 
   /**
    * Receives an energy from a fire energy.
    *
-   * @param energy Received attack.
+   * @param energy Received energy.
    */
   void receiveFireEnergy(FireEnergy energy);
 
   /**
    * Receives an energy from a normal energy.
    *
-   * @param energy Received attack.
+   * @param energy Received energy.
    */
   void receiveNormalEnergy(NormalEnergy energy);
 
   /**
    * Receives an energy from a psychic energy.
    *
-   * @param energy Received attack.
+   * @param energy Received energy.
    */
   void receivePsychicEnergy(PsychicEnergy energy);
 
   /**
    * Receives an energy from a electric energy.
    *
-   * @param energy Received attack.
+   * @param energy Received energy.
    */
   void receiveElectricEnergy(ElectricEnergy energy);
 
-
+  /**
+   * Set an attack to a list.
+   *
+   * @param attack Received energy.
+   */
   void setAttacks(IAttack attack);
-
-  void receiveEnergy(IEnergy fireEnergy);
+  /**
+   * Receives an energy.
+   *
+   * @param energy Receive energy.
+   */
+  void receiveEnergy(IEnergy energy);
 }

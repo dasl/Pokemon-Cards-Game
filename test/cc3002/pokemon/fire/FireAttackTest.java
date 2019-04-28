@@ -6,6 +6,7 @@ import cc3002.pokemon.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
+import cc3002.pokemon.electric.ElectricPokemon;
 import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.grass.GrassPokemon;
 import cc3002.pokemon.normal.NormalAttack;
@@ -38,10 +39,10 @@ public class FireAttackTest {
   public void setUp() {
     fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
     normalAttack = new NormalAttack("Combito", 50,"The best attack of game, is lethal");
-    charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
-    treecko = new GrassPokemon("Treecko", 100, new ArrayList<>());
-    totodile = new WaterPokemon("Totodile", 100, new ArrayList<>());
-    audino = new NormalPokemon("Audino", 100, new ArrayList<>());
+    charmander = new FirePokemon("Charmander",1, 100, new ArrayList<>());
+    treecko = new GrassPokemon("Treecko",1, 100, new ArrayList<>());
+    totodile = new WaterPokemon("Totodile",1, 100, new ArrayList<>());
+    audino = new NormalPokemon("Audino",1, 100, new ArrayList<>());
     waterEnergy = new WaterEnergy();
     fireEnergy = new FireEnergy();
     electricEnergy = new ElectricEnergy();

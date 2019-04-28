@@ -44,11 +44,11 @@ public class TrainerTest {
 
     @Before
     public void setUp() {
-        charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
-        treecko = new GrassPokemon("Treecko", 100, new ArrayList<>());
-        pikachu = new ElectricPokemon("Pikachu", 100, new ArrayList<>());
-        totodile = new WaterPokemon("Totodile", 100, new ArrayList<>());
-        audino = new NormalPokemon("Audino", 100, new ArrayList<>());
+        charmander = new FirePokemon("Charmander",1, 100, new ArrayList<>());
+        treecko = new GrassPokemon("Treecko",1, 100, new ArrayList<>());
+        totodile = new WaterPokemon("Totodile",1, 100, new ArrayList<>());
+        audino = new NormalPokemon("Audino",1, 100, new ArrayList<>());
+        pikachu = new ElectricPokemon("Pikachu",1,100, new ArrayList<>());
         juanito = new Trainer(charmander,new ArrayList<>());
         Ash = new Trainer(audino,new ArrayList<>());
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");

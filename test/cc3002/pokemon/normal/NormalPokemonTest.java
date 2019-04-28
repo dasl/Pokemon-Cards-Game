@@ -50,8 +50,8 @@ public class NormalPokemonTest {
     waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
 
-    charmander = new FirePokemon("Charmander", 100, new ArrayList<>());
-    audino = new NormalPokemon("Audino", 100,
+    charmander = new FirePokemon("Charmander",1, 100, new ArrayList<>());
+    audino = new NormalPokemon("Audino",1, 100,
         new ArrayList<>(Arrays.asList(normalAttack, fireAttack)));
 
     waterEnergy = new WaterEnergy();
@@ -66,6 +66,7 @@ public class NormalPokemonTest {
   public void constructorTest() {
     assertEquals("Audino", audino.getName());
     assertEquals(100, audino.getHP());
+    assertEquals(1, audino.getId());
     assertEquals(2, audino.getAttacks().size());
     assertEquals(normalAttack, audino.getAttacks().get(0));
     assertEquals(fireAttack, audino.getAttacks().get(1));
