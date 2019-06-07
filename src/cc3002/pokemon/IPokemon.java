@@ -103,7 +103,9 @@ public interface IPokemon extends ICard{
   void attack(IPokemon other);
 
 
-  /**
+    void useAttack(Trainer adversary);
+
+    /**
    * Receives damage from a water attack.
    *
    * @param attack Received attack.

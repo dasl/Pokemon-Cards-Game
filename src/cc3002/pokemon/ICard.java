@@ -14,4 +14,6 @@ public interface ICard {
      *
      */
     String getCardType();
+    void play();
+    void setTrainer(AbstractTrainer abstractTrainer);
 }

@@ -131,6 +131,16 @@ public abstract class AbstractPokemon implements IPokemon {
     selectedAttack.attack(other);
   }
 
+  /**
+   * Attacks another Pokémon.
+   *
+   * @param adversary Adversary of the attack.
+   */
+  @Override
+  public void useAttack(Trainer adversary) {
+    attack(adversary.getActivePokemon());
+  }
+
 
   /**
    * Receives damage from a water attack.

@@ -10,7 +10,7 @@ import java.util.List;
  * @author Diego Sandoval Leiva
  */
 
-public abstract class AbstractTrainer implements ITrainer{
+public abstract class AbstractTrainer {
 
 
     private List<IPokemon> PokeDeck;
@@ -45,6 +45,33 @@ public abstract class AbstractTrainer implements ITrainer{
         }
     }
 
+    /**
+     * Select the ability of the Active Pokemon by index.
+     *
+     * @param index ability Pokemon.
+     */
+    public void selectAbility(int index) {
+        ActivePoke.selectAttack(index);
+    }
+
+    /**
+     * Use an ability to attack the adversary trainer.
+     *
+     * @param adversary adversary.
+     */
+    public void useAbility(Trainer adversary) {
+        ActivePoke.useAttack(adversary);
+    }
+
+    /**
+     * Play a card to the game.
+     *
+     * @param card Card
+     */
+    public void play(ICard card) {
+        card.setTrainer(this);
+        card.play();
+    }
 
 
 
