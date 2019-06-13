@@ -2,6 +2,7 @@ package cc3002.pokemon.psychic;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
@@ -30,6 +31,7 @@ import static org.junit.Assert.*;
  */
 
 public class PsychicPokemonTest {
+    private Trainer Ash;
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
     private IPokemon
             charmander,
@@ -53,12 +55,21 @@ public class PsychicPokemonTest {
         abra = new PsychicPokemon("Abra",1,100,
                 new ArrayList<>(Arrays.asList(psychicAttack, normalAttack)));
 
+        //Creating Trainer
+        Ash = new Trainer("Ash",abra,new ArrayList<>());
+
+        // Creating energies Cards
+        // Las cartas deben poder ser jugadas por el entrenador que la tenga
         waterEnergy = new WaterEnergy();
+        waterEnergy.setTrainer(Ash);
         fireEnergy = new FireEnergy();
+        fireEnergy.setTrainer(Ash);
         electricEnergy = new ElectricEnergy();
+        electricEnergy.setTrainer(Ash);
         grassEnergy = new GrassEnergy();
-        psychicEnergy = new PsychicEnergy();
+        grassEnergy.setTrainer(Ash);
         normalEnergy = new NormalEnergy();
+        normalEnergy.setTrainer(Ash);
     }
 
 
