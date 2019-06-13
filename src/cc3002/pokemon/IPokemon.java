@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @author Diego Sandoval Leiva
  */
-public interface IPokemon extends ICard{
+public interface IPokemon{
 
   //region Properties
 
