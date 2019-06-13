@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNull;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.grass.GrassAttack;
@@ -28,6 +29,7 @@ import org.junit.Test;
  * @author Diego Sandoval Leiva
  */
 public class FirePokemonTest {
+  private Trainer Ash;
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
   private IPokemon
       audino,
@@ -49,16 +51,27 @@ public class FirePokemonTest {
     normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
     waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
-    waterEnergy = new WaterEnergy();
-    fireEnergy = new FireEnergy();
-    electricEnergy = new ElectricEnergy();
-    grassEnergy = new GrassEnergy();
-    psychicEnergy = new PsychicEnergy();
-    normalEnergy = new NormalEnergy();
 
     audino = new NormalPokemon("Audino", 1,100, new ArrayList<>());
     charmander = new FirePokemon("Charmander",1, 100,
         new ArrayList<>(Arrays.asList(fireAttack, normalAttack)));
+
+    //Creating Trainer
+    Ash = new Trainer("Ash",charmander,new ArrayList<>());
+
+    // Creating energies Cards
+    // Las cartas deben poder ser jugadas por el entrenador que la tenga
+    waterEnergy = new WaterEnergy();
+    waterEnergy.setTrainer(Ash);
+    fireEnergy = new FireEnergy();
+    fireEnergy.setTrainer(Ash);
+    electricEnergy = new ElectricEnergy();
+    electricEnergy.setTrainer(Ash);
+    grassEnergy = new GrassEnergy();
+    grassEnergy.setTrainer(Ash);
+    normalEnergy = new NormalEnergy();
+    normalEnergy.setTrainer(Ash);
+
   }
 
   @Test

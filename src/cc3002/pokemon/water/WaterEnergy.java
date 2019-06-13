@@ -15,7 +15,9 @@ public class WaterEnergy extends AbstractEnergy{
      * Creates a new Water Energy.
      *
      */
-    public WaterEnergy() { }
+    public WaterEnergy() {
+
+    }
 
     @Override
     public String getEnergyNameType() {
@@ -28,7 +30,7 @@ public class WaterEnergy extends AbstractEnergy{
     }
 
     @Override
-    public void addToPoke(AbstractPokemon abstractPokemon) {
-        abstractPokemon.receiveWaterEnergy(this);
+    public void addToPoke() {
+        getTrainer().getActivePokemon().receiveWaterEnergy(this);
     }
 }

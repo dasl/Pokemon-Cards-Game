@@ -61,7 +61,7 @@ public abstract class AbstractAttack implements IAttack {
   public void setNormalRequiredEnergies(NormalEnergy energy) {this.normalRequiredEnergies.add(energy); }
 
 
-  public void receiveEnergy(IEnergy energy){
+  public void receiveRequiredEnergy(IEnergy energy){
     energy.addInto(this);
   }
 

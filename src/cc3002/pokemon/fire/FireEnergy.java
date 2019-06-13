@@ -26,8 +26,8 @@ public class FireEnergy extends AbstractEnergy {
         abstractAttack.setFireRequiredEnergies(this);
     }
     @Override
-    public void addToPoke(AbstractPokemon abstractPokemon) {
-        abstractPokemon.receiveFireEnergy(this);
+    public void addToPoke() {
+        getTrainer().getActivePokemon().receiveFireEnergy(this);
     }
 
 }

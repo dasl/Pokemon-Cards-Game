@@ -57,19 +57,26 @@ public class TrainerTest {
         fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
         combolozicoAttack = new NormalAttack("Combolozico", 200,"The best attack of game, is lethal");
 
-        // Creating energies
-        waterEnergy = new WaterEnergy();
-        fireEnergy = new FireEnergy();
-        electricEnergy = new ElectricEnergy();
-        grassEnergy = new GrassEnergy();
-        pyshicEnergy = new PsychicEnergy();
-        normalEnergy = new NormalEnergy();
-
         // Creating trainers
         charmander = new FirePokemon("Charmander", 1,100, new ArrayList<>());
         juanito = new Trainer("Juanoide",charmander,new ArrayList<>());
         charmander = new FirePokemon("Charmander de Ash", 1,100, new ArrayList<>());
         Ash = new Trainer("Ash",charmander,new ArrayList<>());
+
+        // Creating energies Cards
+        // Las cartas deben poder ser jugadas por el entrenador que la tenga
+        waterEnergy = new WaterEnergy();
+        waterEnergy.setTrainer(Ash);
+        fireEnergy = new FireEnergy();
+        fireEnergy.setTrainer(Ash);
+        electricEnergy = new ElectricEnergy();
+        electricEnergy.setTrainer(Ash);
+        grassEnergy = new GrassEnergy();
+        grassEnergy.setTrainer(Ash);
+        pyshicEnergy = new PsychicEnergy();
+        pyshicEnergy.setTrainer(Ash);
+        normalEnergy = new NormalEnergy();
+        normalEnergy.setTrainer(Ash);
 
         // Adding attacks to the pokemon.
         charmander.setAttacks(fireAttack);
@@ -98,6 +105,7 @@ public class TrainerTest {
         assertEquals("Charmander de Ash", Ash.getActivePokemonName());
         assertEquals("Charmander", juanito.getActivePokemonName());
     }
+
 
     @Test
     public void addingToDeck(){
@@ -131,9 +139,9 @@ public class TrainerTest {
     public void ableToAtack(){
         assertEquals("Charmander de Ash", Ash.getActivePokemonName());
         // Charging the energies requires into the attack.
-        combolozicoAttack.receiveEnergy(normalEnergy);
-        combolozicoAttack.receiveEnergy(normalEnergy);
-        combolozicoAttack.receiveEnergy(normalEnergy);
+        combolozicoAttack.receiveRequiredEnergy(normalEnergy);
+        combolozicoAttack.receiveRequiredEnergy(normalEnergy);
+        combolozicoAttack.receiveRequiredEnergy(normalEnergy);
         assertEquals(3,combolozicoAttack.getNormalRequiredEnergies());
         assertFalse(Ash.pokeIsBeAbleToAtackWith(Ash.getActivePokemon(),combolozicoAttack));
         // Charging the energies requires into the pokemon

@@ -138,5 +138,5 @@ public interface IAttack {
    * Receive an energy.
    *
    */
-  void receiveEnergy(IEnergy energy);
+  void receiveRequiredEnergy(IEnergy energy);
 }

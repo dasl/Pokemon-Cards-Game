@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNull;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
@@ -30,6 +31,7 @@ import org.junit.Test;
 
 
 public class NormalPokemonTest {
+  private Trainer Ash;
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
   private IPokemon
       charmander,
@@ -54,12 +56,21 @@ public class NormalPokemonTest {
     audino = new NormalPokemon("Audino",1, 100,
         new ArrayList<>(Arrays.asList(normalAttack, fireAttack)));
 
+    //Creating Trainer
+    Ash = new Trainer("Ash",audino,new ArrayList<>());
+
+    // Creating energies Cards
+    // Las cartas deben poder ser jugadas por el entrenador que la tenga
     waterEnergy = new WaterEnergy();
+    waterEnergy.setTrainer(Ash);
     fireEnergy = new FireEnergy();
+    fireEnergy.setTrainer(Ash);
     electricEnergy = new ElectricEnergy();
+    electricEnergy.setTrainer(Ash);
     grassEnergy = new GrassEnergy();
-    psychicEnergy = new PsychicEnergy();
+    grassEnergy.setTrainer(Ash);
     normalEnergy = new NormalEnergy();
+    normalEnergy.setTrainer(Ash);
   }
 
   @Test

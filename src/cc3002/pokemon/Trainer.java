@@ -22,5 +22,15 @@ public class Trainer extends AbstractTrainer{
         super(name,ActivePoke, PokeDeckList);
     }
 
+    /**
+     * Play a card to the game.
+     *
+     * @param card Card
+     */
+    public void play(ICard card) {
+        card.setTrainer(this);
+        card.play();
+    }
+
 
 }

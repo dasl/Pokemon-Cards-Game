@@ -32,7 +32,7 @@ public class ElectricEnergy extends AbstractEnergy {
     }
 
     @Override
-    public void addToPoke(AbstractPokemon abstractPokemon) {
-        abstractPokemon.receiveElectricEnergy(this);
+    public void addToPoke() {
+        getTrainer().getActivePokemon().receiveElectricEnergy(this);
     }
 }

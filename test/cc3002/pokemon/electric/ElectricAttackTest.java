@@ -10,7 +10,6 @@ import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.grass.GrassPokemon;
 import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.normal.NormalPokemon;
-import cc3002.pokemon.psychic.PsychicAttack;
 import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
@@ -19,7 +18,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -89,18 +87,18 @@ public class ElectricAttackTest {
 
     @Test
     public void RequiredEnergies(){
-        electricAttack.receiveEnergy(electricEnergy);
-        electricAttack.receiveEnergy(electricEnergy);
-        electricAttack.receiveEnergy(electricEnergy);
+        electricAttack.receiveRequiredEnergy(electricEnergy);
+        electricAttack.receiveRequiredEnergy(electricEnergy);
+        electricAttack.receiveRequiredEnergy(electricEnergy);
         assertEquals(3,electricAttack.getElectricRequiredEnergies());
-        electricAttack.receiveEnergy(waterEnergy);
-        electricAttack.receiveEnergy(fireEnergy);
+        electricAttack.receiveRequiredEnergy(waterEnergy);
+        electricAttack.receiveRequiredEnergy(fireEnergy);
         assertEquals(1,electricAttack.getFireRequiredEnergies());
-        electricAttack.receiveEnergy(fireEnergy);
-        electricAttack.receiveEnergy(fireEnergy);
+        electricAttack.receiveRequiredEnergy(fireEnergy);
+        electricAttack.receiveRequiredEnergy(fireEnergy);
         assertEquals(3,electricAttack.getFireRequiredEnergies());
         assertEquals(0,electricAttack.getPsychicRequiredEnergies());
-        electricAttack.receiveEnergy(pyshicEnergy);
+        electricAttack.receiveRequiredEnergy(pyshicEnergy);
         assertEquals(1,electricAttack.getPsychicRequiredEnergies());
         assertEquals(1,electricAttack.getWaterRequiredEnergies());
     }

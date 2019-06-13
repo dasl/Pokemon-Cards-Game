@@ -6,7 +6,6 @@ import cc3002.pokemon.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
-import cc3002.pokemon.electric.ElectricPokemon;
 import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.grass.GrassPokemon;
 import cc3002.pokemon.normal.NormalAttack;
@@ -71,14 +70,14 @@ public class FireAttackTest {
 
 @Test
   public void RequiredEnergies(){
-  fireAttack.receiveEnergy(waterEnergy);
-  fireAttack.receiveEnergy(fireEnergy);
+  fireAttack.receiveRequiredEnergy(waterEnergy);
+  fireAttack.receiveRequiredEnergy(fireEnergy);
   assertEquals(1,fireAttack.getFireRequiredEnergies());
-  fireAttack.receiveEnergy(fireEnergy);
-  fireAttack.receiveEnergy(fireEnergy);
+  fireAttack.receiveRequiredEnergy(fireEnergy);
+  fireAttack.receiveRequiredEnergy(fireEnergy);
   assertEquals(3,fireAttack.getFireRequiredEnergies());
   assertEquals(0,fireAttack.getPsychicRequiredEnergies());
-  fireAttack.receiveEnergy(pyshicEnergy);
+  fireAttack.receiveRequiredEnergy(pyshicEnergy);
   assertEquals(1,fireAttack.getPsychicRequiredEnergies());
   assertEquals(1,fireAttack.getWaterRequiredEnergies());
   assertEquals(0,normalAttack.getWaterRequiredEnergies());

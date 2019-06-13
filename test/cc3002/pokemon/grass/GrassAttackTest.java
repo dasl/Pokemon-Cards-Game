@@ -7,7 +7,6 @@ import cc3002.pokemon.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
-import cc3002.pokemon.electric.ElectricPokemon;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.fire.FirePokemon;
@@ -15,7 +14,6 @@ import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.normal.NormalPokemon;
 import cc3002.pokemon.psychic.PsychicEnergy;
-import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
 import cc3002.pokemon.water.WaterPokemon;
 import java.util.ArrayList;
@@ -75,14 +73,14 @@ public class GrassAttackTest {
 
   @Test
   public void RequiredEnergies(){
-    grassAttack.receiveEnergy(grassEnergy);
-    grassAttack.receiveEnergy(fireEnergy);
+    grassAttack.receiveRequiredEnergy(grassEnergy);
+    grassAttack.receiveRequiredEnergy(fireEnergy);
     assertEquals(1,grassAttack.getGrassRequiredEnergies());
-    grassAttack.receiveEnergy(fireEnergy);
-    grassAttack.receiveEnergy(fireEnergy);
+    grassAttack.receiveRequiredEnergy(fireEnergy);
+    grassAttack.receiveRequiredEnergy(fireEnergy);
     assertEquals(3,grassAttack.getFireRequiredEnergies());
     assertEquals(0,grassAttack.getPsychicRequiredEnergies());
-    grassAttack.receiveEnergy(pyshicEnergy);
+    grassAttack.receiveRequiredEnergy(pyshicEnergy);
     assertEquals(1,grassAttack.getPsychicRequiredEnergies());
     assertEquals(0,grassAttack.getWaterRequiredEnergies());
     assertEquals(0,normalAttack.getWaterRequiredEnergies());

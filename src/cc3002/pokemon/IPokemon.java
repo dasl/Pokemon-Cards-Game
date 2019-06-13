@@ -24,7 +24,8 @@ public interface IPokemon extends ICard{
 
   //region Properties
 
-  /**
+
+    /**
    * @return Pokémon's name.
    */
   String getName();

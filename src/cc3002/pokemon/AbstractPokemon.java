@@ -23,7 +23,7 @@ import java.util.List;
  *
  * @author Diego Sandoval Leiva
  */
-public abstract class AbstractPokemon implements IPokemon {
+public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   private String typeCard;
   private String name;
   private int id;
@@ -56,7 +56,6 @@ public abstract class AbstractPokemon implements IPokemon {
     this.grassEnergies = new ArrayList<>();
     this.psychicEnergies = new ArrayList<>();
     this.normalEnergies = new ArrayList<>();
-
   }
 
   /**
@@ -116,7 +115,7 @@ public abstract class AbstractPokemon implements IPokemon {
    * @param energy Receive energy.
    */
   public void receiveEnergy(IEnergy energy){
-    energy.addToPoke(this);
+    energy.addToPoke();
   }
 
 
@@ -236,6 +235,7 @@ public abstract class AbstractPokemon implements IPokemon {
   public String getCardType(){
     return typeCard;
   }
+
 
   @Override
   public String getName() {

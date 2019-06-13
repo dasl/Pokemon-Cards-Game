@@ -8,9 +8,9 @@ package cc3002.pokemon;
  * @author Diego Sandoval Leiva
  */
 
-public abstract class AbstractEnergy implements IEnergy {
-    private IEnergy typeEnegy;
+public abstract class AbstractEnergy extends AbstractCard implements IEnergy {
     private String typeCard;
+
 
     /**
      * Creates a new energy.

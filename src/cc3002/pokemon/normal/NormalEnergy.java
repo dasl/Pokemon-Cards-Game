@@ -28,7 +28,7 @@ public class NormalEnergy extends AbstractEnergy {
     }
 
     @Override
-    public void addToPoke(AbstractPokemon abstractPokemon) {
-        abstractPokemon.receiveNormalEnergy(this);
+    public void addToPoke() {
+        getTrainer().getActivePokemon().receiveNormalEnergy(this);
     }
 }

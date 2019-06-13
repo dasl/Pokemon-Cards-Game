@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNull;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
@@ -27,10 +28,12 @@ import org.junit.Test;
  * @author Diego Sandoval Leiva
  */
 public class GrassPokemonTest {
+  private Trainer Ash;
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
   private IPokemon
       charmander,
       treecko;
+
   private FireAttack fireAttack;
   private GrassAttack grassAttack;
   private NormalAttack normalAttack;
@@ -51,12 +54,22 @@ public class GrassPokemonTest {
     treecko = new GrassPokemon("Treecko", 1,100,
         new ArrayList<>(Arrays.asList(grassAttack, normalAttack)));
 
+    //Creating Trainer
+    Ash = new Trainer("Ash",treecko,new ArrayList<>());
+
+    // Creating energies Cards
+    // Las cartas deben poder ser jugadas por el entrenador que la tenga
     waterEnergy = new WaterEnergy();
+    waterEnergy.setTrainer(Ash);
     fireEnergy = new FireEnergy();
+    fireEnergy.setTrainer(Ash);
     electricEnergy = new ElectricEnergy();
+    electricEnergy.setTrainer(Ash);
     grassEnergy = new GrassEnergy();
-    psychicEnergy = new PsychicEnergy();
+    grassEnergy.setTrainer(Ash);
     normalEnergy = new NormalEnergy();
+    normalEnergy.setTrainer(Ash);
+
   }
 
   @Test
@@ -81,11 +94,9 @@ public class GrassPokemonTest {
     assertEquals(1, treecko.getFireEnergies());
     treecko.receiveEnergy(electricEnergy);
     treecko.receiveEnergy(waterEnergy);
-    treecko.receiveEnergy(psychicEnergy);
     assertEquals(1, treecko.getFireEnergies());
     assertEquals(1, treecko.getWaterEnergies());
     assertEquals(1, treecko.getElectricEnergies());
-    assertEquals(1, treecko.getPsychicEnergies());
   }
 
   @Test

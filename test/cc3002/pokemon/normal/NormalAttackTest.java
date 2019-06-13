@@ -7,7 +7,6 @@ import cc3002.pokemon.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
-import cc3002.pokemon.electric.ElectricPokemon;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.fire.FirePokemon;
@@ -69,18 +68,18 @@ public class NormalAttackTest {
 
   @Test
   public void RequiredEnergies(){
-    normalAttack.receiveEnergy(waterEnergy);
-    normalAttack.receiveEnergy(normalEnergy);
-    normalAttack.receiveEnergy(normalEnergy);
-    normalAttack.receiveEnergy(normalEnergy);
-    normalAttack.receiveEnergy(fireEnergy);
+    normalAttack.receiveRequiredEnergy(waterEnergy);
+    normalAttack.receiveRequiredEnergy(normalEnergy);
+    normalAttack.receiveRequiredEnergy(normalEnergy);
+    normalAttack.receiveRequiredEnergy(normalEnergy);
+    normalAttack.receiveRequiredEnergy(fireEnergy);
     assertEquals(3,normalAttack.getNormalRequiredEnergies());
     assertEquals(1,normalAttack.getFireRequiredEnergies());
-    normalAttack.receiveEnergy(fireEnergy);
-    normalAttack.receiveEnergy(fireEnergy);
+    normalAttack.receiveRequiredEnergy(fireEnergy);
+    normalAttack.receiveRequiredEnergy(fireEnergy);
     assertEquals(3,normalAttack.getFireRequiredEnergies());
     assertEquals(0,normalAttack.getPsychicRequiredEnergies());
-    normalAttack.receiveEnergy(pyshicEnergy);
+    normalAttack.receiveRequiredEnergy(pyshicEnergy);
     assertEquals(1,normalAttack.getPsychicRequiredEnergies());
     assertEquals(1,normalAttack.getWaterRequiredEnergies());
   }

@@ -31,7 +31,6 @@ public interface IEnergy extends ICard{
      * Add an energy to an abstractPokemon
      * This is the handshake of the double dispatch
      *
-     * @param abstractPokemon the abstractPokemon
      */
-    void addToPoke(AbstractPokemon abstractPokemon);
+    void addToPoke();
 }

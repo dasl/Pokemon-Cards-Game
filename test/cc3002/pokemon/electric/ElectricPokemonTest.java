@@ -2,6 +2,7 @@ package cc3002.pokemon.electric;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.Trainer;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.fire.FirePokemon;
@@ -27,6 +28,7 @@ import static org.junit.Assert.*;
  * @author Diego Sandoval Leiva
  */
 public class ElectricPokemonTest {
+    private Trainer Ash;
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
     private IPokemon
             audino,
@@ -51,13 +53,22 @@ public class ElectricPokemonTest {
         pikachu = new ElectricPokemon("Pikachu", 1,100,
                 new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
 
-        waterEnergy = new WaterEnergy();
-        fireEnergy = new FireEnergy();
-        electricEnergy = new ElectricEnergy();
-        grassEnergy = new GrassEnergy();
-        psychicEnergy = new PsychicEnergy();
-        normalEnergy = new NormalEnergy();
+        //Creating Trainer
+        Ash = new Trainer("Ash",pikachu,new ArrayList<>());
 
+
+        // Creating energies Cards
+        // Las cartas deben poder ser jugadas por el entrenador que la tenga
+        waterEnergy = new WaterEnergy();
+        waterEnergy.setTrainer(Ash);
+        fireEnergy = new FireEnergy();
+        fireEnergy.setTrainer(Ash);
+        electricEnergy = new ElectricEnergy();
+        electricEnergy.setTrainer(Ash);
+        grassEnergy = new GrassEnergy();
+        grassEnergy.setTrainer(Ash);
+        normalEnergy = new NormalEnergy();
+        normalEnergy.setTrainer(Ash);
     }
 
     @Test
