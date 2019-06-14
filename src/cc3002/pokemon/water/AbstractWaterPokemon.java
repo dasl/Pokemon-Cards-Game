@@ -14,7 +14,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  *
  * @author Diego Sandoval Leiva
  */
-public class WaterPokemon extends AbstractPokemon {
+public abstract class AbstractWaterPokemon extends AbstractPokemon {
 
   /**
    * Creates a new water Pokémon.
@@ -24,7 +24,7 @@ public class WaterPokemon extends AbstractPokemon {
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  public WaterPokemon(String name,int id,int hp, List<IAttack> attackList) {
+  protected AbstractWaterPokemon(String name, int id, int hp, List<IAttack> attackList) {
     super(name, id,hp, attackList);
   }
 

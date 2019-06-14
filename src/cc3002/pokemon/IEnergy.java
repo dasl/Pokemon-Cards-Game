@@ -9,7 +9,7 @@ package cc3002.pokemon;
  * @author Diego Sandoval Leiva
  */
 
-public interface IEnergy{
+public interface IEnergy extends ICard{
 
     /**
      * Get the name of Energy type.
@@ -33,4 +33,5 @@ public interface IEnergy{
      *
      */
     void addToPoke();
+
 }

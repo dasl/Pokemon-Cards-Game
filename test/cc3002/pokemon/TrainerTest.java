@@ -160,19 +160,19 @@ public class TrainerTest {
         assertEquals(Ash.getActivePokemon().getHP(),100);
         waterAttack.attack(Ash.getActivePokemon());
         assertEquals(Ash.getActivePokemon().getHP(),0);
-        Ash.DeadPokemon(Ash.getActivePokemon());
+        Ash.pokeToCementery(Ash.getActivePokemon());
         assertEquals("Pikachu", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.DeadPokemon(Ash.getActivePokemon());
+        Ash.pokeToCementery(Ash.getActivePokemon());
         assertEquals("Audino", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.DeadPokemon(Ash.getActivePokemon());
+        Ash.pokeToCementery(Ash.getActivePokemon());
         assertEquals("Totodile", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.DeadPokemon(Ash.getActivePokemon());
+        Ash.pokeToCementery(Ash.getActivePokemon());
         assertEquals("Treecko", Ash.getActivePokemonName());
         combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.DeadPokemon(Ash.getActivePokemon());
+        Ash.pokeToCementery(Ash.getActivePokemon());
         assertEquals("Audino", Ash.getActivePokemonName());
         // GG WP
 

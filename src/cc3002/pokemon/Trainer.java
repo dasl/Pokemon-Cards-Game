@@ -10,8 +10,6 @@ import java.util.List;
  */
 
 public class Trainer extends AbstractTrainer{
-
-
     /**
      * Creates a new Trainer.
      *

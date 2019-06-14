@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Diego Sandoval Leiva
  */
-public class GrassPokemon extends AbstractPokemon {
+public abstract class AbstractGrassPokemon extends AbstractPokemon {
 
   /**
    * Creates a new grass Pokémon.
@@ -23,7 +23,7 @@ public class GrassPokemon extends AbstractPokemon {
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  public GrassPokemon(String name ,int id,int hp, List<IAttack> attackList) {
+  protected AbstractGrassPokemon(String name ,int id,int hp, List<IAttack> attackList) {
     super(name,id, hp, attackList);
   }
 

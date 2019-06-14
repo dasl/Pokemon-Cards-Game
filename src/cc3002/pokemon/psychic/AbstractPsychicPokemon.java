@@ -14,7 +14,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  *
  * @author Diego Sandoval Leiva
  */
-public class PsychicPokemon extends AbstractPokemon {
+public abstract class AbstractPsychicPokemon extends AbstractPokemon {
 
     /**
      * Creates a new psychic Pokémon.
@@ -24,7 +24,7 @@ public class PsychicPokemon extends AbstractPokemon {
      * @param hp  Pokémon's hit points.
      * @param attackList  Pokémon's attacks.
      */
-    public PsychicPokemon(String name,int id,int hp, List<IAttack> attackList) {
+    protected AbstractPsychicPokemon(String name,int id,int hp, List<IAttack> attackList) {
         super(name,id,hp, attackList);
     }
 

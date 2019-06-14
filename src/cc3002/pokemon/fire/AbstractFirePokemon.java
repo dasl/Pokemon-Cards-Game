@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Diego Sandoval Leiva
  */
-public class FirePokemon extends AbstractPokemon{
+public abstract class AbstractFirePokemon extends AbstractPokemon{
 
 
   /**
@@ -24,7 +24,7 @@ public class FirePokemon extends AbstractPokemon{
    * @param attackList  Pokémon's attacks.
    */
 
-  public FirePokemon(String name,int id, int hp, List<IAttack> attackList) {
+  protected AbstractFirePokemon(String name,int id, int hp, List<IAttack> attackList) {
     super(name,id, hp, attackList);
   }
 

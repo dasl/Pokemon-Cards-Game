@@ -15,7 +15,7 @@ package cc3002.pokemon.electric;
  *
  * @author Diego Sandoval Leiva
  */
-public class ElectricPokemon extends AbstractPokemon {
+public abstract class AbstractElectricPokemon extends AbstractPokemon {
 
     /**
      * Creates a new electric Pokémon.
@@ -25,7 +25,7 @@ public class ElectricPokemon extends AbstractPokemon {
      * @param hp  Pokémon's hit points.
      * @param attackList  Pokémon's attacks.
      */
-    public ElectricPokemon(String name,int id, int hp, List<IAttack> attackList) {
+    protected AbstractElectricPokemon(String name,int id, int hp, List<IAttack> attackList) {
         super(name,id, hp, attackList);
     }
 

@@ -15,7 +15,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  *
  * @author Diego Sandovcal Leiva
  */
-public class NormalPokemon extends AbstractPokemon {
+public abstract class AbstractNormalPokemon extends AbstractPokemon {
 
   /**
    * Creates a new normal Pokémon.
@@ -25,7 +25,7 @@ public class NormalPokemon extends AbstractPokemon {
    * @param hp  Pokémon's hit points.
    * @param attackList  Pokémon's attacks.
    */
-  public NormalPokemon(String name,int id, int hp, List<IAttack> attackList) {
+  protected AbstractNormalPokemon(String name,int id, int hp, List<IAttack> attackList) {
     super(name,id ,hp, attackList);
   }
   @Override

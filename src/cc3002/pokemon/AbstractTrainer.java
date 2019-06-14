@@ -1,6 +1,7 @@
 package cc3002.pokemon;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,12 +12,12 @@ import java.util.List;
  */
 
 public abstract class AbstractTrainer {
-
-
     private List<IPokemon> PokeDeck;
+    private List<ICard> CardsDeck = new ArrayList<ICard>(60);
+    private List<ICard> Cementery;
+    private List<ICard> cardPrizes = new ArrayList<ICard>(6);
     private IPokemon ActivePoke;
     private String name;
-
 
     /**
      * Creates a new Trainer.
@@ -31,6 +32,7 @@ public abstract class AbstractTrainer {
         this.PokeDeck = pokeDeck;
         this.name = name;
     }
+
 
 
     /**
@@ -172,12 +174,12 @@ public abstract class AbstractTrainer {
      *
      * @param pokemon Active Pokemon.
      */
-    public void DeadPokemon(IPokemon pokemon){
+    public void pokeToCementery(IPokemon pokemon){
         if (pokemon.getHP()<=0){
             pokemon.resetEnergies();
+            this.Cementery.add(pokemon);
             this.ActivePoke=PokeDeck.get(0);
             this.PokeDeck.remove(0);
-
         }
     }
 

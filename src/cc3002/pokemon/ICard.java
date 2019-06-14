@@ -16,6 +16,5 @@ public interface ICard {
     String getCardType();
     void play();
     void setTrainer(Trainer trainer);
-
     Trainer getTrainer();
 }
