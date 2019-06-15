@@ -2,17 +2,15 @@ package cc3002.pokemon.electric;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
-import cc3002.pokemon.Trainer;
+import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.FirePokemon;
 import cc3002.pokemon.grass.GrassAttack;
 import cc3002.pokemon.grass.GrassEnergy;
+import cc3002.pokemon.normal.BasicNP;
 import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.normal.NormalPokemon;
 import cc3002.pokemon.psychic.PsychicAttack;
-import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
 import org.junit.Before;
@@ -49,8 +47,8 @@ public class ElectricPokemonTest {
         normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
         waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
         electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
-        audino = new NormalPokemon("Audino",1, 100, new ArrayList<>());
-        pikachu = new ElectricPokemon("Pikachu", 1,100,
+        audino = new BasicNP("Audino",1, 100, new ArrayList<>());
+        pikachu = new BasicEP("Pikachu", 1,100,
                 new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
 
         //Creating Trainer

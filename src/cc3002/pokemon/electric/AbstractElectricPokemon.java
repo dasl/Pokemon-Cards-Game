@@ -15,7 +15,7 @@ package cc3002.pokemon.electric;
  *
  * @author Diego Sandoval Leiva
  */
-public abstract class AbstractElectricPokemon extends AbstractPokemon {
+public abstract class AbstractElectricPokemon extends AbstractPokemon implements IElectricPokemon {
 
     /**
      * Creates a new electric Pokémon.
@@ -33,6 +33,5 @@ public abstract class AbstractElectricPokemon extends AbstractPokemon {
     public void receiveNormalAttack(NormalAttack attack) {
         receiveWeaknessAttack(attack);
     }
-
 
 }

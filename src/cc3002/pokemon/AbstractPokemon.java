@@ -1,5 +1,6 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
@@ -198,7 +199,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   /**
    * Receives damage from a electric attack.
    *
-   * @param attack Received attack.
+   * @param attack Received attack
    */
   @Override
   public void receiveElectricAttack(ElectricAttack attack) {
@@ -283,6 +284,11 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
   @Override
+  public int getID() {
+    return id;
+  }
+
+  @Override
   public void resetEnergies(){
     this.electricEnergies.clear();
     this.waterEnergies.clear();
@@ -315,5 +321,8 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
       this.attackList.add(attack);
     }
   }
+
+
+
   //endregion
 }

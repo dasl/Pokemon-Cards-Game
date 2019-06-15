@@ -1,5 +1,6 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
@@ -71,7 +72,9 @@ public interface IPokemon extends ICard{
   int getHP();
 
 
-  /**
+    int getID();
+
+    /**
    * Reset Pokémon's energies.
    */
   void resetEnergies();

@@ -94,7 +94,6 @@ public abstract class AbstractAttack implements IAttack {
   public int getGrassRequiredEnergies() {
     return this.grassRequiredEnergies.size();
   }
-
   @Override
   public int getElectricRequiredEnergies() {
     return this.electricRequiredEnergies.size();

@@ -1,5 +1,7 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.Trainer.Trainer;
+
 public abstract class AbstractCard implements ICard{
     private Trainer pokeMaster;
 

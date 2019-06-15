@@ -2,17 +2,15 @@ package cc3002.pokemon.psychic;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
-import cc3002.pokemon.Trainer;
+import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
+import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.FirePokemon;
 import cc3002.pokemon.grass.GrassAttack;
 import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.grass.GrassPokemon;
 import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.psychic.PsychicPokemon;
 import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
@@ -51,8 +49,8 @@ public class PsychicPokemonTest {
         normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
         waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
         electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
-        charmander = new FirePokemon("Charmander", 1,100, new ArrayList<>());
-        abra = new PsychicPokemon("Abra",1,100,
+        charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
+        abra = new BasicPP("Abra",1,100,
                 new ArrayList<>(Arrays.asList(psychicAttack, normalAttack)));
 
         //Creating Trainer

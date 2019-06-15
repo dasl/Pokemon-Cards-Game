@@ -5,16 +5,15 @@ import static org.junit.Assert.assertNull;
 
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
-import cc3002.pokemon.Trainer;
+import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.FirePokemon;
+import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.grass.GrassAttack;
 import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.psychic.PsychicAttack;
-import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterAttack;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,8 +51,8 @@ public class NormalPokemonTest {
     waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
 
-    charmander = new FirePokemon("Charmander", 1,100, new ArrayList<>());
-    audino = new NormalPokemon("Audino",1, 100,
+    charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
+    audino = new BasicNP("Audino",1, 100,
         new ArrayList<>(Arrays.asList(normalAttack, fireAttack)));
 
     //Creating Trainer

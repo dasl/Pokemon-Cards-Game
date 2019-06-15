@@ -1,0 +1,201 @@
+package cc3002.pokemon.Trainer;
+
+
+import cc3002.pokemon.IAttack;
+import cc3002.pokemon.ICard;
+import cc3002.pokemon.IPokemon;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Abstract class that represents a generic Trainer. This class contains the necessary methods to
+ * create a Pockedeck, an active pokemon, identify if a pokemon is dead or if a pokemon is able to attack.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
+public abstract class AbstractTrainer {
+    private List<IPokemon> PokeDeck;
+    private List<ICard> CardsDeck;
+    private List<ICard> Cementery;
+    private List<ICard> cardPrizes;
+    private IPokemon ActivePoke;
+    private String name;
+
+    /**
+     * Creates a new Trainer.
+     *
+     * @param ActivePoke  Active Pokemon.
+     * @param pokeDeck PokeDeck.
+
+     */
+
+    protected AbstractTrainer(String name, IPokemon ActivePoke, List<IPokemon> pokeDeck) {
+        this.ActivePoke = ActivePoke;
+        this.PokeDeck = pokeDeck;
+        this.name = name;
+        this.CardsDeck =  new ArrayList<ICard>(60);
+        this.Cementery =  new ArrayList<ICard>();
+        this.cardPrizes = new ArrayList<ICard>(6);
+    }
+
+
+
+    /**
+     * Add a new pokemon to the pokedeck.
+     *
+     * @param pokemon Active Pokemon.
+     */
+
+    public void addPokemonToDeck(IPokemon pokemon){
+        if (PokeDeck.size()<5){
+            this.PokeDeck.add(pokemon);
+        }
+    }
+
+    /**
+     * Select the ability of the Active Pokemon by index.
+     *
+     * @param index ability Pokemon.
+     */
+    public void selectAbility(int index) {
+        ActivePoke.selectAttack(index);
+    }
+
+    /**
+     * Use an ability to attack the adversary trainer.
+     *
+     * @param adversary adversary.
+     */
+    public void useAbility(Trainer adversary) {
+        ActivePoke.useAttack(adversary);
+    }
+
+
+    /**
+     * Setter of a pokemon to the Active Pokemon.
+     *
+     * @param pokemon Active Pokemon.
+     */
+    public void setActivePokemon(IPokemon pokemon){
+            this.ActivePoke = pokemon;
+    }
+
+    /**
+     * Getter of a Active Pokemon.
+     *
+     */
+
+    public IPokemon getActivePokemon(){
+        return this.ActivePoke;
+    }
+
+
+
+
+
+    /**
+     * Getter of  Active Trainer name's.
+     *
+     */
+    public String getName(){
+        return this.name;
+    }
+
+
+    /**
+     * Checks if this attack is equal to another.
+     *
+     * @param obj Object to compare this attack.
+     * @return <code>true</code> if the objects are equal, <code>false</code> otherwise.
+     */
+
+
+
+    /**
+     * Getter of  Active Pokemon name's.
+     *
+     */
+    public String getActivePokemonName(){
+        return this.ActivePoke.getName();
+    }
+
+
+    /**
+     * Getter of pockedeck sizes.
+     *
+     */
+    public int sizePokeDeck(){
+        return this.PokeDeck.size();
+    }
+
+
+    /**
+     * Getter of pockedeck.
+     *
+     */
+    public List<IPokemon> getPokeDeck(){
+        return PokeDeck;
+    }
+    /**
+     * Checker of a pokemon and Attack.
+     * Check if a pokemon is able to us an specific attack
+     *
+     * @param pokemon Active Pokemon.
+     * @param ActiveAttack Active Attack.
+     */
+
+    public boolean pokeIsBeAbleToAtackWith (IPokemon pokemon, IAttack ActiveAttack){
+        boolean couldBeActived = false;
+        int currentlyFireEnergies = pokemon.getFireEnergies();
+        int currentlyWaterEnergies = pokemon.getWaterEnergies();
+        int currentlyElectricEnergies = pokemon.getElectricEnergies();
+        int currentlyPsychicEnergies = pokemon.getPsychicEnergies();
+        int currentlyNormalEnergies = pokemon.getNormalEnergies();
+        int currentlyGrassEnergies = pokemon.getGrassEnergies();
+
+        for(IAttack attacke : pokemon.getAttackList())
+        {
+            if(ActiveAttack.getName().equals(attacke.getName())){
+                if (attacke.getFireRequiredEnergies()<= currentlyFireEnergies
+                        && attacke.getElectricRequiredEnergies()<= currentlyElectricEnergies
+                        && attacke.getGrassRequiredEnergies() <= currentlyGrassEnergies
+                        && attacke.getNormalRequiredEnergies() <= currentlyNormalEnergies
+                        && attacke.getPsychicRequiredEnergies() <= currentlyPsychicEnergies
+                        && attacke.getWaterRequiredEnergies() <= currentlyWaterEnergies) {
+                    couldBeActived = true;
+                }
+                else {
+                    couldBeActived = false;
+                }
+
+            }
+        }
+        return  couldBeActived;
+    }
+
+
+    /**
+     * Changer of a dead pokemon to an alive one.
+     *
+     * @param pokemon Active Pokemon.
+     */
+    public void pokeToCementery(IPokemon pokemon){
+        if (pokemon.getHP()<=0){
+            pokemon.resetEnergies();
+            this.Cementery.add(pokemon);
+            this.ActivePoke=PokeDeck.get(0);
+            this.PokeDeck.remove(0);
+        }
+    }
+
+    /**
+     * Getter of dead pokemons in the cementery.
+     *
+     * @return dead pokemon
+     */
+    public boolean getDeadPokemon(IPokemon pokemon){
+        return Cementery.contains(pokemon);
+    }
+}

@@ -7,13 +7,16 @@ import cc3002.pokemon.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
+import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.FirePokemon;
+import cc3002.pokemon.fire.BasicFP;
+import cc3002.pokemon.grass.BasicGP;
 import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.grass.GrassPokemon;
+import cc3002.pokemon.grass.BasicGP;
+import cc3002.pokemon.normal.BasicNP;
 import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.normal.NormalPokemon;
+import cc3002.pokemon.normal.BasicNP;
 import java.util.ArrayList;
 
 import cc3002.pokemon.psychic.PsychicEnergy;
@@ -37,10 +40,10 @@ public class WaterAttackTest {
   @Before
   public void setUp() {
     waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
-    charmander = new FirePokemon("Charmander",1, 100, new ArrayList<>());
-    treecko = new GrassPokemon("Treecko",1,100, new ArrayList<>());
-    totodile = new WaterPokemon("Totodile", 1,100, new ArrayList<>());
-    audino = new NormalPokemon("Audino", 1,100, new ArrayList<>());
+    charmander = new BasicFP("Charmander",1, 100, new ArrayList<>());
+    treecko = new BasicGP("Treecko",1,100, new ArrayList<>());
+    totodile = new BasicWP("Totodile", 1,100, new ArrayList<>());
+    audino = new BasicNP("Audino", 1,100, new ArrayList<>());
     waterEnergy = new WaterEnergy();
     fireEnergy = new FireEnergy();
     electricEnergy = new ElectricEnergy();

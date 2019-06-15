@@ -4,16 +4,16 @@ import cc3002.pokemon.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
+import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.FirePokemon;
+import cc3002.pokemon.grass.BasicGP;
 import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.grass.GrassPokemon;
+import cc3002.pokemon.normal.BasicNP;
 import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.normal.NormalPokemon;
+import cc3002.pokemon.water.BasicWP;
 import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
-import cc3002.pokemon.water.WaterPokemon;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,10 +43,10 @@ public class PsychicAttackTest {
     @Before
     public void setUp(){
         psyshicAttack = new PsychicAttack("Confusion", 50,"A Psychic-type attack. Has a one-in-ten chance of leaving the target confused.");
-        charmander = new FirePokemon("Charmander",1,100, new ArrayList<>());
-        treecko = new GrassPokemon("Treecko", 1,100, new ArrayList<>());
-        totodile = new WaterPokemon("Totodile",1, 100, new ArrayList<>());
-        audino = new NormalPokemon("Audino", 1,100, new ArrayList<>());
+        charmander = new BasicFP("Charmander",1,100, new ArrayList<>());
+        treecko = new BasicGP("Treecko", 1,100, new ArrayList<>());
+        totodile = new BasicWP("Totodile",1, 100, new ArrayList<>());
+        audino = new BasicNP("Audino", 1,100, new ArrayList<>());
         waterEnergy = new WaterEnergy();
         fireEnergy = new FireEnergy();
         electricEnergy = new ElectricEnergy();

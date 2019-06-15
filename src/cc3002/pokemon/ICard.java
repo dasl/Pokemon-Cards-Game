@@ -1,5 +1,7 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.Trainer.Trainer;
+
 /**
  * Common interface implemented by the two types of cards in the game, energies
  * and pokemons.

@@ -3,20 +3,22 @@ package cc3002.pokemon;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
+import cc3002.pokemon.Trainer.Trainer;
+import cc3002.pokemon.electric.BasicEP;
 import cc3002.pokemon.electric.ElectricEnergy;
-import cc3002.pokemon.electric.ElectricPokemon;
+import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.FirePokemon;
+import cc3002.pokemon.fire.Phase1FP;
+import cc3002.pokemon.grass.BasicGP;
 import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.grass.GrassPokemon;
+import cc3002.pokemon.normal.BasicNP;
 import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.normal.NormalPokemon;
 import cc3002.pokemon.psychic.PsychicEnergy;
+import cc3002.pokemon.water.BasicWP;
 import cc3002.pokemon.water.WaterAttack;
 import cc3002.pokemon.water.WaterEnergy;
-import cc3002.pokemon.water.WaterPokemon;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,7 +36,8 @@ public class TrainerTest {
              treecko,
             totodile,
             audino,
-            pikachu;
+            pikachu,
+            charmeleon;
     private Trainer
             juanito,
             Ash;
@@ -46,11 +49,11 @@ public class TrainerTest {
     @Before
     public void setUp() {
         // Creating pokemons
-        ;
-        treecko = new GrassPokemon("Treecko", 1,100, new ArrayList<>());
-        totodile = new WaterPokemon("Totodile", 1,100, new ArrayList<>());
-        audino = new NormalPokemon("Audino",1,100, new ArrayList<>());
-        pikachu = new ElectricPokemon("Pikachu",1,100, new ArrayList<>());
+        treecko = new BasicGP("Treecko", 1,100, new ArrayList<>());
+        totodile = new BasicWP("Totodile", 1,100, new ArrayList<>());
+        audino = new BasicNP("Audino",1,100, new ArrayList<>());
+        pikachu = new BasicEP("Pikachu",1,100, new ArrayList<>());
+        charmeleon = new Phase1FP("Charmeleon",1,100, new ArrayList<>());
 
         // Creating attacks
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");
@@ -58,9 +61,9 @@ public class TrainerTest {
         combolozicoAttack = new NormalAttack("Combolozico", 200,"The best attack of game, is lethal");
 
         // Creating trainers
-        charmander = new FirePokemon("Charmander", 1,100, new ArrayList<>());
+        charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
         juanito = new Trainer("Juanoide",charmander,new ArrayList<>());
-        charmander = new FirePokemon("Charmander de Ash", 1,100, new ArrayList<>());
+        charmander = new BasicFP("Charmander de Ash", 1,100, new ArrayList<>());
         Ash = new Trainer("Ash",charmander,new ArrayList<>());
 
         // Creating energies Cards
@@ -80,6 +83,7 @@ public class TrainerTest {
 
         // Adding attacks to the pokemon.
         charmander.setAttacks(fireAttack);
+        charmeleon.setAttacks(fireAttack);
         charmander.setAttacks(combolozicoAttack);
 
         // Setting the pokedeck.
@@ -161,20 +165,10 @@ public class TrainerTest {
         waterAttack.attack(Ash.getActivePokemon());
         assertEquals(Ash.getActivePokemon().getHP(),0);
         Ash.pokeToCementery(Ash.getActivePokemon());
-        assertEquals("Pikachu", Ash.getActivePokemonName());
-        combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.pokeToCementery(Ash.getActivePokemon());
-        assertEquals("Audino", Ash.getActivePokemonName());
-        combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.pokeToCementery(Ash.getActivePokemon());
-        assertEquals("Totodile", Ash.getActivePokemonName());
-        combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.pokeToCementery(Ash.getActivePokemon());
-        assertEquals("Treecko", Ash.getActivePokemonName());
-        combolozicoAttack.attack(Ash.getActivePokemon());
-        Ash.pokeToCementery(Ash.getActivePokemon());
-        assertEquals("Audino", Ash.getActivePokemonName());
+        assertTrue(Ash.getDeadPokemon(charmander));
         // GG WP
-
     }
+
+
+
 }
