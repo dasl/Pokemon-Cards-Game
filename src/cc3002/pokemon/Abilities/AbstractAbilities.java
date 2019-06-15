@@ -1,6 +1,9 @@
 package cc3002.pokemon.Abilities;
 
-public abstract class AbstractAbilities implements IAbilities {
+import cc3002.pokemon.AbstractCard;
+import cc3002.pokemon.IPokemon;
+
+public abstract class AbstractAbilities extends AbstractCard implements IAbilities {
     private String text;
     private String name;
 
@@ -10,12 +13,24 @@ public abstract class AbstractAbilities implements IAbilities {
     }
 
     @Override
-    public void accept(IAbilityVisitor IAbilityVisitor){
-        IAbilityVisitor.visitConcreteAbility(this);
+    public void accept(IAbilityVisitor visitor){
+        visitor.visitConcreteAbility(this);
     }
+
 
     @Override
     public String getName(){
         return this.name;
     }
+
+    @Override
+    public String getCardType() {
+        return null;
+    }
+
+    @Override
+    public int getBaseDamage(){
+        return -1;
+    }
+
 }

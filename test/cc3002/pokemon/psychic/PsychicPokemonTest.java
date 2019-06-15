@@ -80,21 +80,22 @@ public class PsychicPokemonTest {
     public void constructorTest() {
         assertEquals("Abra", abra.getName());
         assertEquals(100, abra.getHP());
-        assertEquals(2, abra.getAttacks().size());
-        assertEquals(psychicAttack, abra.getAttacks().get(0));
-        assertEquals(normalAttack, abra.getAttacks().get(1));
-        assertNull(abra.getSelectedAttack());
+        assertEquals(2, abra.getAbilityList().size());
+        assertEquals(psychicAttack, abra.getAbilityList().get(0));
+        assertEquals(normalAttack, abra.getAbilityList().get(1));
+        assertNull(abra.getSelectedAbility());
     }
 
     @Test
     public void receiveEnergies(){
+        Ash.setSelectedPokemon(abra);
         assertEquals(0, abra.getFireEnergies());
-        abra.receiveEnergy(fireEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(fireEnergy);
         assertEquals(1, abra.getFireEnergies());
-        abra.receiveEnergy(electricEnergy);
-        abra.receiveEnergy(waterEnergy);
-        abra.receiveEnergy(grassEnergy);
-        abra.receiveEnergy(normalEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(waterEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(grassEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(normalEnergy);
         assertEquals(1, abra.getFireEnergies());
         assertEquals(1, abra.getNormalEnergies());
         assertEquals(1, abra.getElectricEnergies());
@@ -103,18 +104,12 @@ public class PsychicPokemonTest {
 
     @Test
     public void selectAttackTest() {
-        abra.selectAttack(0);
-        assertEquals(psychicAttack, abra.getSelectedAttack());
-        abra.selectAttack(1);
-        assertEquals(normalAttack, abra.getSelectedAttack());
+        abra.selectAbility(0);
+        assertEquals(psychicAttack, abra.getSelectedAbility());
+        abra.selectAbility(1);
+        assertEquals(normalAttack, abra.getSelectedAbility());
     }
 
-    @Test
-    public void attackTest() {
-        abra.selectAttack(0);
-        abra.attack(charmander);
-        assertEquals(50, charmander.getHP());
-    }
 
     @Test
     public void receiveWaterAttack() {

@@ -1,5 +1,8 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.Abilities.AbstractAbilities;
+import cc3002.pokemon.Abilities.IAbilities;
+import cc3002.pokemon.Abilities.Shift;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -61,12 +64,6 @@ public interface IPokemon extends ICard{
   int getPsychicEnergies();
 
   /**
-   * @return Pokémon's attack list
-   */
-  List<IAttack> getAttackList();
-
-
-  /**
    * @return Pokémon's hit points
    */
   int getHP();
@@ -79,25 +76,13 @@ public interface IPokemon extends ICard{
    */
   void resetEnergies();
 
-    /**
+  void receiveShiftEffect(Trainer trainer);
 
-   * @return List with all the Pokémon attacks.
-   */
-  List<IAttack> getAttacks();
+  IAbilities getAbility(int index);
 
-  /**
-   * @return The current selected attack.
-   */
-  IAttack getSelectedAttack();
-
-  /**
-   * Selects an attack.
-   *
-   * @param index Index of the attack to be selected.
-   */
-  void selectAttack(int index);
 
   //endregion
+
 
   /**
    * Attacks another Pokémon.
@@ -107,9 +92,14 @@ public interface IPokemon extends ICard{
   void attack(IPokemon other);
 
 
-    void useAttack(Trainer adversary);
+    void selectAbility(int index);
 
-    /**
+    IAbilities getSelectedAbility();
+
+    void useAbility(Trainer adversary);
+
+
+  /**
    * Receives damage from a water attack.
    *
    * @param attack Received attack.
@@ -194,15 +184,15 @@ public interface IPokemon extends ICard{
   void receiveElectricEnergy(ElectricEnergy energy);
 
   /**
-   * Set an attack to a list.
-   *
-   * @param attack Received energy.
-   */
-  void setAttacks(IAttack attack);
-  /**
    * Receives an energy.
    *
    * @param energy Receive energy.
    */
   void receiveEnergy(IEnergy energy);
+
+
+  List<IAbilities> getAbilityList();
+
+  void setAbilities(IAbilities abilities);
+
 }

@@ -1,12 +1,8 @@
 package cc3002.pokemon.electric;
 
 
-import cc3002.pokemon.AbstractAttack;
-import cc3002.pokemon.IEnergy;
+import cc3002.pokemon.Abilities.AbstractAttack;
 import cc3002.pokemon.IPokemon;
-import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.psychic.PsychicEnergy;
 
 /**
  * This class defines the logic of a electric type attack.

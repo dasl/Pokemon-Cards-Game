@@ -19,4 +19,5 @@ public interface ICard {
     void play();
     void setTrainer(Trainer trainer);
     Trainer getTrainer();
+
 }

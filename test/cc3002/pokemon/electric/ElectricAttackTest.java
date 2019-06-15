@@ -1,6 +1,6 @@
 package cc3002.pokemon.electric;
 
-import cc3002.pokemon.IAttack;
+import cc3002.pokemon.Abilities.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.fire.BasicFP;
@@ -87,6 +87,7 @@ public class ElectricAttackTest {
 
     @Test
     public void RequiredEnergies(){
+
         electricAttack.receiveRequiredEnergy(electricEnergy);
         electricAttack.receiveRequiredEnergy(electricEnergy);
         electricAttack.receiveRequiredEnergy(electricEnergy);

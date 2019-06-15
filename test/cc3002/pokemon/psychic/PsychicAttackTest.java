@@ -1,6 +1,6 @@
 package cc3002.pokemon.psychic;
 
-import cc3002.pokemon.IAttack;
+import cc3002.pokemon.Abilities.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;

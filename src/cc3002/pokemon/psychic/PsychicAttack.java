@@ -1,6 +1,6 @@
 package cc3002.pokemon.psychic;
 
-import cc3002.pokemon.AbstractAttack;
+import cc3002.pokemon.Abilities.AbstractAttack;
         import cc3002.pokemon.IPokemon;
 
 /**

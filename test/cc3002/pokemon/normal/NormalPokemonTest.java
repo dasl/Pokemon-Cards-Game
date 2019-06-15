@@ -76,10 +76,10 @@ public class NormalPokemonTest {
   public void constructorTest() {
     assertEquals("Audino", audino.getName());
     assertEquals(100, audino.getHP());
-    assertEquals(2, audino.getAttacks().size());
-    assertEquals(normalAttack, audino.getAttacks().get(0));
-    assertEquals(fireAttack, audino.getAttacks().get(1));
-    assertNull(audino.getSelectedAttack());
+    assertEquals(2, audino.getAbilityList().size());
+    assertEquals(normalAttack, audino.getAbilityList().get(0));
+    assertEquals(fireAttack, audino.getAbilityList().get(1));
+    assertNull(audino.getSelectedAbility());
   }
   @Test
   public void cardType(){
@@ -89,13 +89,14 @@ public class NormalPokemonTest {
 
   @Test
   public void receiveEnergies(){
+    Ash.setSelectedPokemon(audino);
     assertEquals(0, audino.getFireEnergies());
-    audino.receiveEnergy(fireEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(fireEnergy);
     assertEquals(1, audino.getFireEnergies());
-    audino.receiveEnergy(electricEnergy);
-    audino.receiveEnergy(waterEnergy);
-    audino.receiveEnergy(grassEnergy);
-    audino.receiveEnergy(normalEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(waterEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(grassEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(normalEnergy);
     assertEquals(1, audino.getFireEnergies());
     assertEquals(1, audino.getNormalEnergies());
     assertEquals(1, audino.getElectricEnergies());
@@ -103,18 +104,12 @@ public class NormalPokemonTest {
   }
   @Test
   public void selectAttackTest() {
-    audino.selectAttack(0);
-    assertEquals(normalAttack, audino.getSelectedAttack());
-    audino.selectAttack(1);
-    assertEquals(fireAttack, audino.getSelectedAttack());
+    audino.selectAbility(0);
+    assertEquals(normalAttack, audino.getSelectedAbility());
+    audino.selectAbility(1);
+    assertEquals(fireAttack, audino.getSelectedAbility());
   }
 
-  @Test
-  public void attackTest() {
-    audino.selectAttack(0);
-    audino.attack(charmander);
-    assertEquals(60, charmander.getHP());
-  }
 
   @Test
   public void receiveWaterAttack() {

@@ -1,5 +1,6 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.Abilities.*;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
@@ -27,9 +28,10 @@ import java.util.List;
 public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   private String typeCard;
   private String name;
+  private IAbilities selectedAbility;
   private int id;
   private int hp;
-  private List<IAttack> attackList;
+  private List<IAbilities> abilities;
   private IAttack selectedAttack;
   private List<WaterEnergy> waterEnergies;
   private List<FireEnergy> fireEnergies;
@@ -43,14 +45,14 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    *
    * @param name  Pokémon's name.
    * @param hp  Pokémon's hit points.
-   * @param attackList  Pokémon's attacks.
+   * @param abilitiesList  Pokémon's abilities.
    */
-  protected AbstractPokemon(String name,int id, int hp, List<IAttack> attackList) {
+  protected AbstractPokemon(String name, int id, int hp, List<IAbilities> abilitiesList) {
     this.typeCard = "Pokemon";
     this.name = name;
     this.id = id;
     this.hp = hp;
-    this.attackList = attackList;
+    this.abilities = abilitiesList;
     this.waterEnergies = new ArrayList<>();
     this.fireEnergies = new ArrayList<>();
     this.electricEnergies = new ArrayList<>();
@@ -115,6 +117,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    *
    * @param energy Receive energy.
    */
+  @Override
   public void receiveEnergy(IEnergy energy){
     energy.addToPoke();
   }
@@ -129,16 +132,6 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   @Override
   public void attack(IPokemon other) {
     selectedAttack.attack(other);
-  }
-
-  /**
-   * Attacks another Pokémon.
-   *
-   * @param adversary Adversary of the attack.
-   */
-  @Override
-  public void useAttack(Trainer adversary) {
-    attack(adversary.getActivePokemon());
   }
 
 
@@ -274,11 +267,6 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
   @Override
-  public List<IAttack> getAttackList(){
-    return this.attackList;
-  }
-
-  @Override
   public int getHP() {
     return hp;
   }
@@ -300,25 +288,61 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
 
 
   @Override
-  public List<IAttack> getAttacks() {
-    return attackList;
-  }
-
-  @Override
-  public void selectAttack(int index) {
-    selectedAttack = attackList.get(index);
-  }
-
-  @Override
-  public IAttack getSelectedAttack() {
-    return selectedAttack;
+  public void selectAbility(int index) {
+    this.selectedAbility = abilities.get(index);
   }
 
 
+    @Override
+    public IAbilities getSelectedAbility() {
+        return this.selectedAbility;
+    }
+
+
+  /**
+   * Use an ability .
+   *
+   * @param adversary Adversary of the attack.
+   */
   @Override
-  public void setAttacks(IAttack attack) {
-    if (attackList.size() < 4) {
-      this.attackList.add(attack);
+  public void useAbility(Trainer adversary) {
+    ConcreteIAbilityVisitor concreteIAbilityVisitor = new ConcreteIAbilityVisitor();
+    AttackVisitor attackVisitor = new AttackVisitor();
+    if (this.selectedAbility.getBaseDamage()==-1){
+      this.selectedAbility.accept(concreteIAbilityVisitor);
+      concreteIAbilityVisitor.getAbility().applyEffect(adversary);
+    }
+    else{
+      this.selectedAbility.accept(attackVisitor);
+      attackVisitor.getAttack().attack(adversary.getActivePokemon());}
+  }
+
+
+  /**
+   * Receives effect from a shift ability.
+   *
+   */
+
+  @Override
+  public void receiveShiftEffect(Trainer trainer) {
+    trainer.ShiftType();
+  }
+
+  @Override
+  public IAbilities getAbility(int index){
+    return abilities.get(index);
+  }
+
+  @Override
+  public  List<IAbilities> getAbilityList(){
+    return abilities;
+  }
+
+
+  @Override
+  public void setAbilities(IAbilities abilities) {
+    if (this.abilities.size() < 4) {
+      this.abilities.add(abilities);
     }
   }
 

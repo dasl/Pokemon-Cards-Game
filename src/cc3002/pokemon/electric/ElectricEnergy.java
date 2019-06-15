@@ -1,9 +1,7 @@
 package cc3002.pokemon.electric;
 
-import cc3002.pokemon.AbstractAttack;
+import cc3002.pokemon.Abilities.AbstractAttack;
 import cc3002.pokemon.AbstractEnergy;
-import cc3002.pokemon.AbstractPokemon;
-import cc3002.pokemon.IEnergy;
 
 
 /**
@@ -33,6 +31,6 @@ public class ElectricEnergy extends AbstractEnergy {
 
     @Override
     public void addToPoke() {
-        getTrainer().getActivePokemon().receiveElectricEnergy(this);
+        getTrainer().getSelectedPokemon().receiveElectricEnergy(this);
     }
 }

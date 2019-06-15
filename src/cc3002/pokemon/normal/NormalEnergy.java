@@ -1,6 +1,7 @@
 package cc3002.pokemon.normal;
 
 import cc3002.pokemon.*;
+import cc3002.pokemon.Abilities.AbstractAttack;
 
 /**
  * Class that represents a Normal type Energy.
@@ -29,6 +30,6 @@ public class NormalEnergy extends AbstractEnergy {
 
     @Override
     public void addToPoke() {
-        getTrainer().getActivePokemon().receiveNormalEnergy(this);
+        getTrainer().getSelectedPokemon().receiveNormalEnergy(this);
     }
 }

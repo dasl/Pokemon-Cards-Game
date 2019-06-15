@@ -3,7 +3,7 @@ package cc3002.pokemon.grass;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import cc3002.pokemon.IAttack;
+import cc3002.pokemon.Abilities.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;

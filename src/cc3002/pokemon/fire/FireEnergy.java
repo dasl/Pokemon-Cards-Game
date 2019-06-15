@@ -1,6 +1,7 @@
 package cc3002.pokemon.fire;
 
 import cc3002.pokemon.*;
+import cc3002.pokemon.Abilities.AbstractAttack;
 
 /**
  * Class that represents a Fire type Energy.
@@ -27,7 +28,7 @@ public class FireEnergy extends AbstractEnergy {
     }
     @Override
     public void addToPoke() {
-        getTrainer().getActivePokemon().receiveFireEnergy(this);
+        getTrainer().getSelectedPokemon().receiveFireEnergy(this);
     }
 
 }

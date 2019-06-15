@@ -73,10 +73,10 @@ public class ElectricPokemonTest {
     public void constructorTest() {
         assertEquals("Pikachu", pikachu.getName());
         assertEquals(100, pikachu.getHP());
-        assertEquals(2, pikachu.getAttacks().size());
-        assertEquals(electricAttack, pikachu.getAttacks().get(0));
-        assertEquals(normalAttack, pikachu.getAttacks().get(1));
-        assertNull(pikachu.getSelectedAttack());
+        assertEquals(2, pikachu.getAbilityList().size());
+        assertEquals(electricAttack, pikachu.getAbilityList().get(0));
+        assertEquals(normalAttack, pikachu.getAbilityList().get(1));
+        assertNull(pikachu.getSelectedAbility());
     }
 
     @Test
@@ -86,12 +86,13 @@ public class ElectricPokemonTest {
 
     @Test
     public void receiveEnergies(){
+        Ash.setSelectedPokemon(pikachu);
         assertEquals(0, pikachu.getFireEnergies());
-        pikachu.receiveEnergy(fireEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(fireEnergy);
         assertEquals(1, pikachu.getFireEnergies());
-        pikachu.receiveEnergy(electricEnergy);
-        pikachu.receiveEnergy(waterEnergy);
-        pikachu.receiveEnergy(grassEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(waterEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(grassEnergy);
         assertEquals(1, pikachu.getFireEnergies());
         assertEquals(1, pikachu.getWaterEnergies());
         assertEquals(1, pikachu.getElectricEnergies());
@@ -100,17 +101,10 @@ public class ElectricPokemonTest {
 
     @Test
     public void selectAttackTest() {
-        pikachu.selectAttack(0);
-        assertEquals(electricAttack, pikachu.getSelectedAttack());
-        pikachu.selectAttack(1);
-        assertEquals(normalAttack, pikachu.getSelectedAttack());
-    }
-
-    @Test
-    public void attackTest() {
-        pikachu.selectAttack(0);
-        pikachu.attack(audino);
-        assertEquals(70, audino.getHP());
+        pikachu.selectAbility(0);
+        assertEquals(electricAttack, pikachu.getSelectedAbility());
+        pikachu.selectAbility(1);
+        assertEquals(normalAttack, pikachu.getSelectedAbility());
     }
 
 

@@ -1,9 +1,8 @@
 package cc3002.pokemon.grass;
 
+import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.AbstractPokemon;
-import cc3002.pokemon.IAttack;
 import cc3002.pokemon.fire.FireAttack;
-import cc3002.pokemon.normal.NormalAttack;
 import cc3002.pokemon.water.WaterAttack;
 import java.util.List;
 
@@ -17,14 +16,13 @@ public abstract class AbstractGrassPokemon extends AbstractPokemon {
 
   /**
    * Creates a new grass Pokémon.
-   *
-   * @param name  Pokémon's name.
+   *  @param name  Pokémon's name.
    * @param id Pokémon's id.
    * @param hp  Pokémon's hit points.
-   * @param attackList  Pokémon's attacks.
+   * @param abilitiesList  Pokémon's attacks.
    */
-  protected AbstractGrassPokemon(String name ,int id,int hp, List<IAttack> attackList) {
-    super(name,id, hp, attackList);
+  protected AbstractGrassPokemon(String name , int id, int hp, List<IAbilities> abilitiesList) {
+    super(name,id, hp, abilitiesList);
   }
 
   @Override

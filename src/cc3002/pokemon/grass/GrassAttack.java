@@ -1,8 +1,7 @@
 package cc3002.pokemon.grass;
 
-import cc3002.pokemon.AbstractAttack;
+import cc3002.pokemon.Abilities.AbstractAttack;
 import cc3002.pokemon.IPokemon;
-import cc3002.pokemon.water.WaterAttack;
 
 /**
  * This class defines the logic of a grass type attack.

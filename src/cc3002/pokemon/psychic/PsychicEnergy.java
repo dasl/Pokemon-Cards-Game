@@ -1,6 +1,7 @@
 package cc3002.pokemon.psychic;
 
 import cc3002.pokemon.*;
+import cc3002.pokemon.Abilities.AbstractAttack;
 
 /**
  * Class that represents a Psychic type Energy.
@@ -29,6 +30,6 @@ public class PsychicEnergy extends AbstractEnergy{
 
     @Override
     public void addToPoke() {
-        getTrainer().getActivePokemon().receivePsychicEnergy(this);
+        getTrainer().getSelectedPokemon().receivePsychicEnergy(this);
     }
 }

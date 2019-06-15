@@ -75,10 +75,10 @@ public class GrassPokemonTest {
   public void constructorTest() {
     assertEquals("Treecko", treecko.getName());
     assertEquals(100, treecko.getHP());
-    assertEquals(2, treecko.getAttacks().size());
-    assertEquals(grassAttack, treecko.getAttacks().get(0));
-    assertEquals(normalAttack, treecko.getAttacks().get(1));
-    assertNull(treecko.getSelectedAttack());
+    assertEquals(2, treecko.getAbilityList().size());
+    assertEquals(grassAttack, treecko.getAbilityList().get(0));
+    assertEquals(normalAttack, treecko.getAbilityList().get(1));
+    assertNull(treecko.getSelectedAbility());
   }
 
   @Test
@@ -88,11 +88,12 @@ public class GrassPokemonTest {
 
   @Test
   public void receiveEnergies(){
+    Ash.setSelectedPokemon(treecko);
     assertEquals(0, treecko.getFireEnergies());
-    treecko.receiveEnergy(fireEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(fireEnergy);
     assertEquals(1, treecko.getFireEnergies());
-    treecko.receiveEnergy(electricEnergy);
-    treecko.receiveEnergy(waterEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(waterEnergy);
     assertEquals(1, treecko.getFireEnergies());
     assertEquals(1, treecko.getWaterEnergies());
     assertEquals(1, treecko.getElectricEnergies());
@@ -100,18 +101,12 @@ public class GrassPokemonTest {
 
   @Test
   public void selectAttackTest() {
-    treecko.selectAttack(0);
-    assertEquals(grassAttack, treecko.getSelectedAttack());
-    treecko.selectAttack(1);
-    assertEquals(normalAttack, treecko.getSelectedAttack());
+    treecko.selectAbility(0);
+    assertEquals(grassAttack, treecko.getSelectedAbility());
+    treecko.selectAbility(1);
+    assertEquals(normalAttack, treecko.getSelectedAbility());
   }
 
-  @Test
-  public void attackTest() {
-    treecko.selectAttack(0);
-    treecko.attack(charmander);
-    assertEquals(55, charmander.getHP());
-  }
 
   @Test
   public void receiveWaterAttack() {

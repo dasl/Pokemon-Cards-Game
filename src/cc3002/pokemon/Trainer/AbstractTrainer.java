@@ -1,9 +1,14 @@
 package cc3002.pokemon.Trainer;
 
 
-import cc3002.pokemon.IAttack;
+import cc3002.pokemon.AbstractPokemon;
 import cc3002.pokemon.ICard;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.fire.BasicFP;
+import cc3002.pokemon.fire.IFirePokemon;
+import cc3002.pokemon.normal.BasicNP;
+import cc3002.pokemon.normal.INormalPokemon;
+import cc3002.pokemon.water.IWaterPokemon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,31 +21,31 @@ import java.util.List;
  */
 
 public abstract class AbstractTrainer {
-    private List<IPokemon> PokeDeck;
-    private List<ICard> CardsDeck;
+    private List<IPokemon> bench;
+    private List<ICard> Deck;
     private List<ICard> Cementery;
     private List<ICard> cardPrizes;
+    private IPokemon selectedPokemon;
     private IPokemon ActivePoke;
+    private IPokemon aux;
     private String name;
 
     /**
      * Creates a new Trainer.
      *
      * @param ActivePoke  Active Pokemon.
-     * @param pokeDeck PokeDeck.
+     * @param bench bench.
 
      */
 
-    protected AbstractTrainer(String name, IPokemon ActivePoke, List<IPokemon> pokeDeck) {
+    protected AbstractTrainer(String name, IPokemon ActivePoke, List<IPokemon> bench) {
         this.ActivePoke = ActivePoke;
-        this.PokeDeck = pokeDeck;
+        this.bench = bench;
         this.name = name;
-        this.CardsDeck =  new ArrayList<ICard>(60);
+        this.Deck =  new ArrayList<ICard>(60);
         this.Cementery =  new ArrayList<ICard>();
         this.cardPrizes = new ArrayList<ICard>(6);
     }
-
-
 
     /**
      * Add a new pokemon to the pokedeck.
@@ -49,10 +54,24 @@ public abstract class AbstractTrainer {
      */
 
     public void addPokemonToDeck(IPokemon pokemon){
-        if (PokeDeck.size()<5){
-            this.PokeDeck.add(pokemon);
+        if (bench.size()<5){
+            this.bench.add(pokemon);
         }
     }
+
+
+    /**
+     * Add a new card to the cardsdeck.
+     *
+     * @param card Active Pokemon.
+     */
+
+    public void addToCardsDeck(ICard card){
+        if (Deck.size()<60){
+            this.Deck.add(card);
+        }
+    }
+
 
     /**
      * Select the ability of the Active Pokemon by index.
@@ -60,7 +79,7 @@ public abstract class AbstractTrainer {
      * @param index ability Pokemon.
      */
     public void selectAbility(int index) {
-        ActivePoke.selectAttack(index);
+        ActivePoke.selectAbility(index);
     }
 
     /**
@@ -69,7 +88,7 @@ public abstract class AbstractTrainer {
      * @param adversary adversary.
      */
     public void useAbility(Trainer adversary) {
-        ActivePoke.useAttack(adversary);
+        ActivePoke.useAbility(adversary);
     }
 
 
@@ -91,6 +110,59 @@ public abstract class AbstractTrainer {
         return this.ActivePoke;
     }
 
+
+
+    /**
+     * Getter type of any Pokemon.
+     *
+     * @return pokemon type
+     */
+
+    public void setPokemonType(IPokemon pokemon){
+        if(bench.contains(pokemon)){
+            this.aux = pokemon;
+        }
+        else
+            this.aux = getActivePokemon();
+    }
+
+
+    /**
+     * Setter type of any Pokemon.
+     *
+     * @return pokemon type
+     */
+    public void ShiftType(){
+        setActivePokemon(new BasicNP(getActivePokemon().getName(), getActivePokemon().getID(), getActivePokemon().getHP(), getActivePokemon().getAbilityList()));
+    }
+
+    /**
+     * Setter any Pokemon to selected.
+     *
+     * @return pokemon type
+     */
+    public void setSelectedPokemon(IPokemon pokemon){
+        this.selectedPokemon=pokemon;
+    }
+
+    /**
+     * Getter any Pokemon to selected.
+     *
+     * @return pokemon type
+     */
+    public IPokemon getSelectedPokemon(){
+        return this.selectedPokemon;
+    }
+
+
+    /**
+     * Getter of dead pokemons in the cementery.
+     *
+     * @return dead pokemon
+     */
+    public boolean getDeadPokemon(IPokemon pokemon){
+        return Cementery.contains(pokemon);
+    }
 
 
 
@@ -127,7 +199,7 @@ public abstract class AbstractTrainer {
      *
      */
     public int sizePokeDeck(){
-        return this.PokeDeck.size();
+        return this.bench.size();
     }
 
 
@@ -135,8 +207,8 @@ public abstract class AbstractTrainer {
      * Getter of pockedeck.
      *
      */
-    public List<IPokemon> getPokeDeck(){
-        return PokeDeck;
+    public List<IPokemon> getBench(){
+        return bench;
     }
     /**
      * Checker of a pokemon and Attack.
@@ -146,34 +218,34 @@ public abstract class AbstractTrainer {
      * @param ActiveAttack Active Attack.
      */
 
-    public boolean pokeIsBeAbleToAtackWith (IPokemon pokemon, IAttack ActiveAttack){
-        boolean couldBeActived = false;
-        int currentlyFireEnergies = pokemon.getFireEnergies();
-        int currentlyWaterEnergies = pokemon.getWaterEnergies();
-        int currentlyElectricEnergies = pokemon.getElectricEnergies();
-        int currentlyPsychicEnergies = pokemon.getPsychicEnergies();
-        int currentlyNormalEnergies = pokemon.getNormalEnergies();
-        int currentlyGrassEnergies = pokemon.getGrassEnergies();
-
-        for(IAttack attacke : pokemon.getAttackList())
-        {
-            if(ActiveAttack.getName().equals(attacke.getName())){
-                if (attacke.getFireRequiredEnergies()<= currentlyFireEnergies
-                        && attacke.getElectricRequiredEnergies()<= currentlyElectricEnergies
-                        && attacke.getGrassRequiredEnergies() <= currentlyGrassEnergies
-                        && attacke.getNormalRequiredEnergies() <= currentlyNormalEnergies
-                        && attacke.getPsychicRequiredEnergies() <= currentlyPsychicEnergies
-                        && attacke.getWaterRequiredEnergies() <= currentlyWaterEnergies) {
-                    couldBeActived = true;
-                }
-                else {
-                    couldBeActived = false;
-                }
-
-            }
-        }
-        return  couldBeActived;
-    }
+//    public boolean pokeIsBeAbleToAtackWith (IPokemon pokemon, IAttack ActiveAttack){
+//        boolean couldBeActived = false;
+//        int currentlyFireEnergies = pokemon.getFireEnergies();
+//        int currentlyWaterEnergies = pokemon.getWaterEnergies();
+//        int currentlyElectricEnergies = pokemon.getElectricEnergies();
+//        int currentlyPsychicEnergies = pokemon.getPsychicEnergies();
+//        int currentlyNormalEnergies = pokemon.getNormalEnergies();
+//        int currentlyGrassEnergies = pokemon.getGrassEnergies();
+//
+//        for(IAbilities ability : pokemon.getAbilityList())
+//        {
+//            if(ActiveAttack.getName().equals(attacke.getName())){
+//                if (attacke.getFireRequiredEnergies()<= currentlyFireEnergies
+//                        && attacke.getElectricRequiredEnergies()<= currentlyElectricEnergies
+//                        && attacke.getGrassRequiredEnergies() <= currentlyGrassEnergies
+//                        && attacke.getNormalRequiredEnergies() <= currentlyNormalEnergies
+//                        && attacke.getPsychicRequiredEnergies() <= currentlyPsychicEnergies
+//                        && attacke.getWaterRequiredEnergies() <= currentlyWaterEnergies) {
+//                    couldBeActived = true;
+//                }
+//                else {
+//                    couldBeActived = false;
+//                }
+//
+//            }
+//        }
+//        return  couldBeActived;
+//    }
 
 
     /**
@@ -185,17 +257,10 @@ public abstract class AbstractTrainer {
         if (pokemon.getHP()<=0){
             pokemon.resetEnergies();
             this.Cementery.add(pokemon);
-            this.ActivePoke=PokeDeck.get(0);
-            this.PokeDeck.remove(0);
+            this.ActivePoke= bench.get(0);
+            this.bench.remove(0);
         }
     }
 
-    /**
-     * Getter of dead pokemons in the cementery.
-     *
-     * @return dead pokemon
-     */
-    public boolean getDeadPokemon(IPokemon pokemon){
-        return Cementery.contains(pokemon);
-    }
+
 }

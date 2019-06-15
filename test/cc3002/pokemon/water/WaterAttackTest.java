@@ -3,20 +3,18 @@ package cc3002.pokemon.water;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import cc3002.pokemon.IAttack;
+import cc3002.pokemon.Abilities.IAttack;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.grass.BasicGP;
 import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.grass.BasicGP;
 import cc3002.pokemon.normal.BasicNP;
 import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.normal.BasicNP;
+
 import java.util.ArrayList;
 
 import cc3002.pokemon.psychic.PsychicEnergy;

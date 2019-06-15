@@ -1,6 +1,7 @@
 package cc3002.pokemon.water;
 
 import cc3002.pokemon.*;
+import cc3002.pokemon.Abilities.AbstractAttack;
 
 /**
  * Class that represents a Water type Energy.
@@ -31,6 +32,6 @@ public class WaterEnergy extends AbstractEnergy{
 
     @Override
     public void addToPoke() {
-        getTrainer().getActivePokemon().receiveWaterEnergy(this);
+        getTrainer().getSelectedPokemon().receiveWaterEnergy(this);
     }
 }

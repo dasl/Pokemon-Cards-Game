@@ -1,5 +1,7 @@
-package cc3002.pokemon;
+package cc3002.pokemon.Abilities;
 
+import cc3002.pokemon.IEnergy;
+import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.grass.GrassEnergy;
@@ -46,6 +48,16 @@ public abstract class AbstractAttack implements IAttack {
     this.psychicRequiredEnergies = new ArrayList<>();
     this.electricRequiredEnergies = new ArrayList<>();
   }
+
+  @Override
+  public void accept(IAbilityVisitor IAbilityVisitor){
+      IAbilityVisitor.visitAttack(this);
+  }
+
+
+  @Override
+  public void applyEffect(Trainer abstractPokemon){}
+
   //region Properties
   @Override
   public void setFireRequiredEnergies(FireEnergy energy) {this.fireRequiredEnergies.add(energy); }
@@ -106,8 +118,6 @@ public abstract class AbstractAttack implements IAttack {
   public int getPsychicRequiredEnergies() {
     return this.psychicRequiredEnergies.size();
   }
-
-
 
 
   /**

@@ -1,6 +1,6 @@
 package cc3002.pokemon.Abilities;
 
-import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.Trainer.Trainer;
 
 /**
  * Wing Buzz: Una vez por turno, si éste Pokémon es el activo, puedes descartar una carta de
@@ -17,10 +17,11 @@ public class WingBuzz extends AbstractAbilities{
 
     /**
      * Active the ability on the active pokemon
-     *
-     * @param name Attack name
-     */
-    public void activeWingBuzz(IPokemon activepokemon){
+     *  @param name Attack name
+     * @param abstractPokemon*/
 
+
+    @Override
+    public void applyEffect(Trainer abstractPokemon) {
     }
 }

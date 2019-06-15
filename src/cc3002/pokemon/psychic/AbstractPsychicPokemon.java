@@ -1,13 +1,11 @@
 package cc3002.pokemon.psychic;
 
+import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.AbstractPokemon;
-import cc3002.pokemon.IAttack;
+
 import java.util.List;
 
-import cc3002.pokemon.electric.ElectricAttack;
-import cc3002.pokemon.grass.GrassAttack;
 import cc3002.pokemon.normal.NormalAttack;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * Class that represents a psychic type Pokémon.
@@ -18,14 +16,13 @@ public abstract class AbstractPsychicPokemon extends AbstractPokemon {
 
     /**
      * Creates a new psychic Pokémon.
-     *
-     * @param name  Pokémon's name.
+     *  @param name  Pokémon's name.
      * @param id Pokémon's id.
      * @param hp  Pokémon's hit points.
-     * @param attackList  Pokémon's attacks.
+     * @param abilitiesList  Pokémon's attacks.
      */
-    protected AbstractPsychicPokemon(String name,int id,int hp, List<IAttack> attackList) {
-        super(name,id,hp, attackList);
+    protected AbstractPsychicPokemon(String name, int id, int hp, List<IAbilities> abilitiesList) {
+        super(name,id,hp, abilitiesList);
     }
 
     @Override

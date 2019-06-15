@@ -77,10 +77,10 @@ public class WaterPokemonTest {
   public void constructorTest() {
     assertEquals("Totodile", totodile.getName());
     assertEquals(100, totodile.getHP());
-    assertEquals(2, totodile.getAttacks().size());
-    assertEquals(waterAttack, totodile.getAttacks().get(0));
-    assertEquals(normalAttack, totodile.getAttacks().get(1));
-    assertNull(totodile.getSelectedAttack());
+    assertEquals(2, totodile.getAbilityList().size());
+    assertEquals(waterAttack, totodile.getAbilityList().get(0));
+    assertEquals(normalAttack, totodile.getAbilityList().get(1));
+    assertNull(totodile.getSelectedAbility());
   }
 
   @Test
@@ -91,13 +91,14 @@ public class WaterPokemonTest {
 
   @Test
   public void receiveEnergies(){
+    Ash.setSelectedPokemon(totodile);
     assertEquals(0, totodile.getFireEnergies());
-    totodile.receiveEnergy(fireEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(fireEnergy);
     assertEquals(1, totodile.getFireEnergies());
-    totodile.receiveEnergy(electricEnergy);
-    totodile.receiveEnergy(waterEnergy);
-    totodile.receiveEnergy(grassEnergy);
-    totodile.receiveEnergy(normalEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(waterEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(grassEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(normalEnergy);
     assertEquals(1, totodile.getFireEnergies());
     assertEquals(1, totodile.getNormalEnergies());
     assertEquals(1, totodile.getElectricEnergies());
@@ -106,18 +107,12 @@ public class WaterPokemonTest {
 
   @Test
   public void selectAttackTest() {
-    totodile.selectAttack(0);
-    assertEquals(waterAttack, totodile.getSelectedAttack());
-    totodile.selectAttack(1);
-    assertEquals(normalAttack, totodile.getSelectedAttack());
+    totodile.selectAbility(0);
+    assertEquals(waterAttack, totodile.getSelectedAbility());
+    totodile.selectAbility(1);
+    assertEquals(normalAttack, totodile.getSelectedAbility());
   }
 
-  @Test
-  public void attackTest() {
-    totodile.selectAttack(0);
-    totodile.attack(charmander);
-    assertEquals(20, charmander.getHP());
-  }
 
   @Test
   public void receiveWaterAttack() {

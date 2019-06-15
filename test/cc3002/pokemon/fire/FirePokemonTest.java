@@ -77,10 +77,10 @@ public class FirePokemonTest {
   public void constructorTest() {
     assertEquals("Charmander", charmander.getName());
     assertEquals(100, charmander.getHP());
-    assertEquals(2, charmander.getAttacks().size());
-    assertEquals(fireAttack, charmander.getAttacks().get(0));
-    assertEquals(normalAttack, charmander.getAttacks().get(1));
-    assertNull(charmander.getSelectedAttack());
+    assertEquals(2, charmander.getAbilityList().size());
+    assertEquals(fireAttack, charmander.getAbilityList().get(0));
+    assertEquals(normalAttack, charmander.getAbilityList().get(1));
+    assertNull(charmander.getSelectedAbility());
   }
 
   @Test
@@ -91,12 +91,13 @@ public class FirePokemonTest {
 
   @Test
   public void receiveEnergies(){
+    Ash.setSelectedPokemon(charmander);
     assertEquals(0, charmander.getFireEnergies());
     charmander.receiveEnergy(fireEnergy);
     assertEquals(1, charmander.getFireEnergies());
-    charmander.receiveEnergy(electricEnergy);
-    charmander.receiveEnergy(waterEnergy);
-    charmander.receiveEnergy(grassEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(waterEnergy);
+    Ash.getSelectedPokemon().receiveEnergy(grassEnergy);
     assertEquals(1, charmander.getFireEnergies());
     assertEquals(1, charmander.getWaterEnergies());
     assertEquals(1, charmander.getElectricEnergies());
@@ -105,19 +106,13 @@ public class FirePokemonTest {
 
   @Test
   public void selectAttackTest() {
-    charmander.selectAttack(0);
-    assertEquals(fireAttack, charmander.getSelectedAttack());
-    charmander.selectAttack(1);
-    assertEquals(normalAttack, charmander.getSelectedAttack());
+    charmander.selectAbility(0);
+    assertEquals(fireAttack, charmander.getSelectedAbility());
+    charmander.selectAbility(1);
+    assertEquals(normalAttack, charmander.getSelectedAbility());
   }
 
 
-  @Test
-  public void attackTest() {
-    charmander.selectAttack(0);
-    charmander.attack(audino);
-    assertEquals(60, audino.getHP());
-  }
 
 
   @Test

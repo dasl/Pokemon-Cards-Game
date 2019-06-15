@@ -1,6 +1,9 @@
-package cc3002.pokemon;
+package cc3002.pokemon.Abilities;
 
 
+import cc3002.pokemon.Abilities.IAbilities;
+import cc3002.pokemon.IEnergy;
+import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.grass.GrassEnergy;
@@ -14,7 +17,7 @@ import cc3002.pokemon.water.WaterEnergy;
  *
  * @author Diego Sandoval Leiva
  */
-public interface IAttack {
+public interface IAttack extends IAbilities {
 
   /**
    * An attack damages a Pokémon based on the attack's base damage, it's type and the type of the

@@ -1,6 +1,7 @@
 package cc3002.pokemon.grass;
 
 import cc3002.pokemon.*;
+import cc3002.pokemon.Abilities.AbstractAttack;
 
 /**
  * Class that represents a Grass type Energy.
@@ -29,6 +30,6 @@ public class GrassEnergy extends AbstractEnergy{
 
     @Override
     public void addToPoke() {
-        getTrainer().getActivePokemon().receiveGrassEnergy(this);
+        getTrainer().getSelectedPokemon().receiveGrassEnergy(this);
     }
 }
