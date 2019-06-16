@@ -9,9 +9,7 @@ public abstract class AbstractCard implements ICard{
      * Play this pokemon card.
      */
     @Override
-    public void play(){
-        // DEBO RELLENAR
-    }
+    public void play(){ }
 
     /**
      * Set the pokemon master owner of the energy.

@@ -4,6 +4,7 @@ import cc3002.pokemon.Abilities.*;
 import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Abilities.visitor.AttackVisitor;
 import cc3002.pokemon.Abilities.visitor.ConcreteIAbilityVisitor;
+import cc3002.pokemon.CardVisitor.ICardVisitor;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.*;
 import cc3002.pokemon.fire.*;
@@ -48,6 +49,17 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
     this.abilities = abilitiesList;
     this.energies = new EnergyCounter();
   }
+
+  @Override
+  public void accept(ICardVisitor visitor){
+    visitor.visitPokemonCard(this);
+  }
+
+  /**
+   * Play this pokemon card.
+   */
+  @Override
+  public void play(){ }
 
   /**
    * Receives an energy from a water energy.

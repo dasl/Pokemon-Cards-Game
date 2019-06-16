@@ -1,5 +1,6 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.CardVisitor.ICardVisitor;
 import cc3002.pokemon.Trainer.Trainer;
 
 /**
@@ -19,5 +20,6 @@ public interface ICard {
     void play();
     void setTrainer(Trainer trainer);
     Trainer getTrainer();
+    void accept(ICardVisitor visitor);
 
 }

@@ -3,7 +3,6 @@ package cc3002.pokemon;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
-import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.BasicEP;
@@ -93,11 +92,11 @@ public class TrainerTest {
 
         // Setting the pokedeck.
         Ash.setActivePokemon(charmander);
-        Ash.addPokemonToDeck(pikachu);
-        Ash.addPokemonToDeck(audino);
-        Ash.addPokemonToDeck(totodile);
-        Ash.addPokemonToDeck(treecko);
-        Ash.addPokemonToDeck(audino);
+        Ash.addPokemonToBench(pikachu);
+        Ash.addPokemonToBench(audino);
+        Ash.addPokemonToBench(totodile);
+        Ash.addPokemonToBench(treecko);
+        Ash.addPokemonToBench(audino);
 
     }
 
@@ -131,17 +130,17 @@ public class TrainerTest {
     }
 
     @Test
-    public void addingToDeck(){
-        juanito.addPokemonToDeck(totodile);
+    public void addingToBench(){
+        juanito.addPokemonToBench(totodile);
         assertEquals(1,juanito.sizePokeDeck());
-        juanito.addPokemonToDeck(audino);
-        juanito.addPokemonToDeck(treecko);
+        juanito.addPokemonToBench(audino);
+        juanito.addPokemonToBench(treecko);
         assertEquals(3,juanito.sizePokeDeck());
-        juanito.addPokemonToDeck(treecko);
-        juanito.addPokemonToDeck(treecko);
+        juanito.addPokemonToBench(treecko);
+        juanito.addPokemonToBench(treecko);
         assertEquals(5,juanito.sizePokeDeck());
         // LIMIT CASE, MORE THAN FIVE POKEMONS IN THE DECK
-        juanito.addPokemonToDeck(treecko);
+        juanito.addPokemonToBench(treecko);
         assertEquals(5,juanito.sizePokeDeck());
     }
 

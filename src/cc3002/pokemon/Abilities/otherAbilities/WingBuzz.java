@@ -19,9 +19,8 @@ public class WingBuzz extends AbstractAbilities {
 
     /**
      * Active the ability on the active pokemon
-     *  @param name Attack name
+     *
      * @param abstractPokemon*/
-
 
     @Override
     public void applyEffect(Trainer abstractPokemon) {

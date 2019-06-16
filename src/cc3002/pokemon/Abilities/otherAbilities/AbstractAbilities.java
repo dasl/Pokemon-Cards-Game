@@ -12,7 +12,7 @@ import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterEnergy;
 
-public abstract class AbstractAbilities extends AbstractCard implements IAbilities {
+public abstract class AbstractAbilities implements IAbilities {
     private String text;
     private String name;
     private EnergyCounter costs;
@@ -75,10 +75,6 @@ public abstract class AbstractAbilities extends AbstractCard implements IAbiliti
         return this.name;
     }
 
-    @Override
-    public String getCardType() {
-        return null;
-    }
 
     @Override
     public int getBaseDamage(){

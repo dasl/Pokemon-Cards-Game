@@ -66,8 +66,8 @@ public class TestAbilitiesVisitor {
 
     @Test
     public void AfterimageAssaultTest(){
-        Ash.addPokemonToDeck(charmander);
-        Ash.addPokemonToDeck(charmander);
+        Ash.addPokemonToBench(charmander);
+        Ash.addPokemonToBench(charmander);
         Ash.selectAbility(2);
         Ash.useAbility(Brook);
         assertEquals(Ash.getBench().size(),3);

@@ -23,6 +23,7 @@ import java.util.List;
 
 public abstract class AbstractTrainer {
     private List<IPokemon> bench;
+    private List<ICard> hand;
     private List<ICard> Deck;
     private List<ICard> Cementery;
     private List<ICard> cardPrizes;
@@ -46,6 +47,7 @@ public abstract class AbstractTrainer {
         this.Deck =  new ArrayList<ICard>(60);
         this.Cementery =  new ArrayList<ICard>();
         this.cardPrizes = new ArrayList<ICard>(6);
+        this.hand = new ArrayList<>(60);
     }
 
     /**
@@ -54,7 +56,7 @@ public abstract class AbstractTrainer {
      * @param pokemon Active Pokemon.
      */
 
-    public void addPokemonToDeck(IPokemon pokemon){
+    public void addPokemonToBench(IPokemon pokemon){
         if (bench.size()<5){
             this.bench.add(pokemon);
         }
@@ -70,6 +72,18 @@ public abstract class AbstractTrainer {
     public void addToCardsDeck(ICard card){
         if (Deck.size()<60){
             this.Deck.add(card);
+        }
+    }
+
+    /**
+     * Add a new card to the cardsdeck.
+     *
+     * @param card Active Pokemon.
+     */
+
+    public void addToCardsHand(ICard card){
+        if (hand.size()<60){
+            this.hand.add(card);
         }
     }
 
@@ -140,6 +154,17 @@ public abstract class AbstractTrainer {
      */
     public AbstractTrainer getOponent(){
         return this.oponent;
+    }
+
+    /**
+     * Getter of deck.
+     *
+     * @return card
+     */
+    public ICard getCard(){
+        ICard aux = Deck.get(0);
+        Deck.remove(0);
+        return aux;
     }
 
 
@@ -293,34 +318,6 @@ public abstract class AbstractTrainer {
      * @param ActiveAttack Active Attack.
      */
 
-//    public boolean pokeIsBeAbleToAtackWith (IPokemon pokemon, IAttack ActiveAttack){
-//        boolean couldBeActived = false;
-//        int currentlyFireEnergies = pokemon.getFireEnergies();
-//        int currentlyWaterEnergies = pokemon.getWaterEnergies();
-//        int currentlyElectricEnergies = pokemon.getElectricEnergies();
-//        int currentlyPsychicEnergies = pokemon.getPsychicEnergies();
-//        int currentlyNormalEnergies = pokemon.getNormalEnergies();
-//        int currentlyGrassEnergies = pokemon.getGrassEnergies();
-//
-//        for(IAbilities ability : pokemon.getAbilityList())
-//        {
-//            if(ActiveAttack.getName().equals(attacke.getName())){
-//                if (attacke.getFireRequiredEnergies()<= currentlyFireEnergies
-//                        && attacke.getElectricRequiredEnergies()<= currentlyElectricEnergies
-//                        && attacke.getGrassRequiredEnergies() <= currentlyGrassEnergies
-//                        && attacke.getNormalRequiredEnergies() <= currentlyNormalEnergies
-//                        && attacke.getPsychicRequiredEnergies() <= currentlyPsychicEnergies
-//                        && attacke.getWaterRequiredEnergies() <= currentlyWaterEnergies) {
-//                    couldBeActived = true;
-//                }
-//                else {
-//                    couldBeActived = false;
-//                }
-//
-//            }
-//        }
-//        return  couldBeActived;
-//    }
 
     /**
      * Changer of a dead pokemon to an alive one.
@@ -348,5 +345,14 @@ public abstract class AbstractTrainer {
         }
         Collections.shuffle(Deck);
 
+    }
+
+
+    /**
+     * Getter of hand
+     *
+     */
+    public List<ICard> getHand() {
+        return this.hand;
     }
 }
