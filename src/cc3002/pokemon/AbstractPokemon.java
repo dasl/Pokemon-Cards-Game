@@ -317,28 +317,52 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   /**
    * Receives effect from a shift ability.
    *
+   * @param trainer
    */
   @Override
   public void receiveShiftEffect(Trainer trainer) {
     trainer.getOponent().ShiftType();
   }
 
+  /**
+   * Receives effect from a AfterimageAssaultEffect ability.
+   *
+   * @param trainer
+   */
   @Override
   public void receiveAfterimageAssaultEffect(Trainer trainer){
     this.getTrainer().AIAEffect();
   }
 
+
+  /**
+   * Getter of ability by id.
+   *
+   * @param index
+   * @return ability
+   */
   @Override
   public IAbilities getAbility(int index){
     return abilities.get(index);
   }
 
+
+  /**
+   * Getter of abilities.
+   *
+   * @return abilities
+   */
   @Override
   public  List<IAbilities> getAbilityList(){
     return abilities;
   }
 
 
+  /**
+   * Setter of ability by ability.
+   *
+   * @param abilities
+   */
   @Override
   public void setAbilities(IAbilities abilities) {
     if (this.abilities.size() < 4) {
@@ -347,11 +371,25 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
 
+  /**
+   * Handler of double dispatch for Shift
+   *
+   * @param pokemon
+   * @param trainer
+   */
   @Override
   public void copyType(IPokemon pokemon,Trainer trainer){
     pokemon.getObjectType(trainer);
 
   }
+
+
+  /**
+   * Creators of a new instance of determinate pokemon type.
+   * There are the result of the double dispatch of Shift ability.
+   *
+   * @param trainer
+   */
   public void sendTypeBFP(Trainer trainer) { trainer.setActivePokemon( new BasicFP(this.name,this.id,this.hp,this.abilities));}
   public void sendTypeBNP(Trainer trainer) { trainer.setActivePokemon( new BasicNP(this.name,this.id,this.hp,this.abilities));}
   public void sendTypeBWP(Trainer trainer) { trainer.setActivePokemon( new BasicWP(this.name,this.id,this.hp,this.abilities));}
