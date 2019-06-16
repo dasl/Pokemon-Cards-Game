@@ -30,20 +30,15 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   private int hp;
   private List<IAbilities> abilities;
   private IAttack selectedAttack;
-  private List<WaterEnergy> waterEnergies;
-  private List<FireEnergy> fireEnergies;
-  private List<ElectricEnergy> electricEnergies;
-  private List<GrassEnergy > grassEnergies;
-  private List<PsychicEnergy> psychicEnergies;
-  private List<NormalEnergy> normalEnergies;
   private IPokemon clonetype;
+  private EnergyCounter energies;
 
   /**
    * Creates a new Pokémon.
    *
    * @param name  Pokémon's name.
    * @param hp  Pokémon's hit points.
-   * @param abilitiesList  Pokémon's abilities.
+   * @param abilitiesList  Pokémon's abilities. // grass, fire, water, electric, normal, psychic
    */
   protected AbstractPokemon(String name, int id, int hp, List<IAbilities> abilitiesList) {
     this.typeCard = "Pokemon";
@@ -51,12 +46,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
     this.id = id;
     this.hp = hp;
     this.abilities = abilitiesList;
-    this.waterEnergies = new ArrayList<>();
-    this.fireEnergies = new ArrayList<>();
-    this.electricEnergies = new ArrayList<>();
-    this.grassEnergies = new ArrayList<>();
-    this.psychicEnergies = new ArrayList<>();
-    this.normalEnergies = new ArrayList<>();
+    this.energies = new EnergyCounter();
   }
 
   /**
@@ -65,7 +55,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveWaterEnergy(WaterEnergy energy) { this.waterEnergies.add(energy);}
+  public void receiveWaterEnergy(WaterEnergy energy) { this.energies.setWaterEnergy(1);}
 
 
   /**
@@ -74,7 +64,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveGrassEnergy(GrassEnergy energy) {this.grassEnergies.add(energy);}
+  public void receiveGrassEnergy(GrassEnergy energy) {this.energies.setGrassEnergy(1);}
 
   /**
    * Receives an energy from a fire energy.
@@ -82,7 +72,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveFireEnergy(FireEnergy energy) { this.fireEnergies.add(energy);}
+  public void receiveFireEnergy(FireEnergy energy) { this.energies.setFireEnergy(1);}
 
 
   /**
@@ -91,7 +81,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveNormalEnergy(NormalEnergy energy) {this.normalEnergies.add(energy);}
+  public void receiveNormalEnergy(NormalEnergy energy) {this.energies.setNormalEnergy(1);}
 
   /**
    * Receives an energy from a psychic energy.
@@ -99,7 +89,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receivePsychicEnergy(PsychicEnergy energy) {this.psychicEnergies.add(energy);}
+  public void receivePsychicEnergy(PsychicEnergy energy) {this.energies.setPsychicEnergy(1);}
 
 
   /**
@@ -107,7 +97,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    *
    * @param energy Received energy.
    */
-  public void receiveElectricEnergy(ElectricEnergy energy) {this.electricEnergies.add(energy);}
+  public void receiveElectricEnergy(ElectricEnergy energy) {this.energies.setElectricEnergy(1);}
 
 
   /**
@@ -236,32 +226,32 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
 
   @Override
   public int getFireEnergies() {
-    return this.fireEnergies.size();
+    return this.energies.getFireEnergy();
   }
 
   @Override
   public int getWaterEnergies() {
-    return this.waterEnergies.size();
+    return this.energies.getWaterEnergy();
   }
 
   @Override
   public int getElectricEnergies() {
-    return this.electricEnergies.size();
+    return this.energies.getElectricEnergy();
   }
 
   @Override
   public int getGrassEnergies() {
-    return this.grassEnergies.size();
+    return this.energies.getGrassEnergy();
   }
 
   @Override
   public int getNormalEnergies() {
-    return this.normalEnergies.size();
+    return this.energies.getNormalEnergy();
   }
 
   @Override
   public int getPsychicEnergies() {
-    return this.psychicEnergies.size();
+    return this.energies.getPyshicEnergy();
   }
 
   @Override
@@ -276,12 +266,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
 
   @Override
   public void resetEnergies(){
-    this.electricEnergies.clear();
-    this.waterEnergies.clear();
-    this.fireEnergies.clear();
-    this.psychicEnergies.clear();
-    this.normalEnergies.clear();
-    this.grassEnergies.clear();
+    this.energies.clear();
   }
 
 
@@ -356,39 +341,22 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
 
   }
   public void sendTypeBFP(Trainer trainer) { trainer.setActivePokemon( new BasicFP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendTypeBNP(Trainer trainer) { trainer.setActivePokemon( new BasicNP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendTypeBWP(Trainer trainer) { trainer.setActivePokemon( new BasicWP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType1FP(Trainer trainer) { trainer.setActivePokemon( new Phase1FP(this.name,this.id,this.hp,this.abilities)); }
-
   public void sendType2FP(Trainer trainer) { trainer.setActivePokemon( new Phase2FP(this.name,this.id,this.hp,this.abilities)); }
-
   public void sendTypeBGP(Trainer trainer) { trainer.setActivePokemon( new BasicGP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType1GP(Trainer trainer) { trainer.setActivePokemon( new Phase1GP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType2GP(Trainer trainer) { trainer.setActivePokemon( new Phase2GP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType1NP(Trainer trainer) { trainer.setActivePokemon( new Phase1NP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType2NP(Trainer trainer) { trainer.setActivePokemon( new Phase2NP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendTypeBPP(Trainer trainer) { trainer.setActivePokemon( new BasicPP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType1PP(Trainer trainer) { trainer.setActivePokemon( new Phase1PP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType2PP(Trainer trainer) { trainer.setActivePokemon( new Phase2PP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType1WP(Trainer trainer) { trainer.setActivePokemon( new Phase1WP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType2WP(Trainer trainer) { trainer.setActivePokemon( new Phase2WP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendTypeBEP(Trainer trainer) { trainer.setActivePokemon( new BasicEP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType1EP(Trainer trainer) { trainer.setActivePokemon( new Phase1EP(this.name,this.id,this.hp,this.abilities));}
-
   public void sendType2EP(Trainer trainer) { trainer.setActivePokemon( new Phase2EP(this.name,this.id,this.hp,this.abilities));}
 
   //endregion

@@ -11,6 +11,7 @@ import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterEnergy;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -341,8 +342,11 @@ public abstract class AbstractTrainer {
         for (ICard poke : this.Deck){
             if(poke.getClass().equals(getActivePokemon().getClass()) && max>0){
                 bench.add((IPokemon)poke);
+                Deck.remove(poke);
                 max--;
             }
         }
+        Collections.shuffle(Deck);
+
     }
 }

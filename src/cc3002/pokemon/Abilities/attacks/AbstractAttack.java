@@ -1,6 +1,7 @@
 package cc3002.pokemon.Abilities.attacks;
 
 import cc3002.pokemon.Abilities.visitor.IAbilityVisitor;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -25,12 +26,7 @@ public abstract class AbstractAttack implements IAttack {
   private int baseDamage;
   private String text;
   private String name;
-  private List<IEnergy> fireRequiredEnergies,
-          waterRequiredEnergies,
-          electricRequiredEnergies,
-          grassRequiredEnergies,
-          psychicRequiredEnergies,
-          normalRequiredEnergies;
+  private EnergyCounter costs;
 
   /**
    * Creates a new attack.
@@ -38,16 +34,12 @@ public abstract class AbstractAttack implements IAttack {
    * @param name Attack name
    * @param baseDamage Base damage of the attack
    */
-  protected AbstractAttack(String name, int baseDamage,String text) {
+  protected AbstractAttack(String name, int baseDamage, String text, EnergyCounter costs) {
     this.baseDamage = baseDamage;
     this.name = name;
     this.text = text;
-    this.fireRequiredEnergies = new ArrayList<>();
-    this.waterRequiredEnergies = new ArrayList<>();
-    this.grassRequiredEnergies = new ArrayList<>();
-    this.normalRequiredEnergies = new ArrayList<>();
-    this.psychicRequiredEnergies = new ArrayList<>();
-    this.electricRequiredEnergies = new ArrayList<>();
+    this.costs = costs;
+
   }
 
   @Override
@@ -61,17 +53,17 @@ public abstract class AbstractAttack implements IAttack {
 
   //region Properties
   @Override
-  public void setFireRequiredEnergies(FireEnergy energy) {this.fireRequiredEnergies.add(energy); }
+  public void setFireRequiredEnergies(FireEnergy energy) {this.costs.setFireEnergy(1); }
   @Override
-  public void setWaterRequiredEnergies(WaterEnergy energy) {this.waterRequiredEnergies.add(energy); }
+  public void setWaterRequiredEnergies(WaterEnergy energy) {this.costs.setWaterEnergy(1); }
   @Override
-  public void setElectricRequiredEnergies(ElectricEnergy energy) {this.electricRequiredEnergies.add(energy); }
+  public void setElectricRequiredEnergies(ElectricEnergy energy) {this.costs.setElectricEnergy(1); }
   @Override
-  public void setPsychicRequiredEnergies(PsychicEnergy energy) {this.psychicRequiredEnergies.add(energy); }
+  public void setPsychicRequiredEnergies(PsychicEnergy energy) {this.costs.setNormalEnergy(1); }
   @Override
-  public void setGrassRequiredEnergies(GrassEnergy energy) {this.grassRequiredEnergies.add(energy); }
+  public void setGrassRequiredEnergies(GrassEnergy energy) {this.costs.setGrassEnergy(1); }
   @Override
-  public void setNormalRequiredEnergies(NormalEnergy energy) {this.normalRequiredEnergies.add(energy); }
+  public void setNormalRequiredEnergies(NormalEnergy energy) {this.costs.setNormalEnergy(1); }
 
 
   public void receiveRequiredEnergy(IEnergy energy){
@@ -95,29 +87,27 @@ public abstract class AbstractAttack implements IAttack {
 
   @Override
   public int getFireRequiredEnergies() {
-    return this.fireRequiredEnergies.size();
+    return this.costs.getFireEnergy();
   }
-
   @Override
   public int getWaterRequiredEnergies() {
-    return this.waterRequiredEnergies.size();
+    return this.costs.getWaterEnergy();
   }
-
   @Override
   public int getGrassRequiredEnergies() {
-    return this.grassRequiredEnergies.size();
+    return this.costs.getGrassEnergy();
   }
   @Override
   public int getElectricRequiredEnergies() {
-    return this.electricRequiredEnergies.size();
+    return this.costs.getElectricEnergy();
   }
   @Override
   public int getNormalRequiredEnergies() {
-    return this.normalRequiredEnergies.size();
+    return this.costs.getNormalEnergy();
   }
   @Override
   public int getPsychicRequiredEnergies() {
-    return this.psychicRequiredEnergies.size();
+    return this.costs.getPyshicEnergy();
   }
 
 

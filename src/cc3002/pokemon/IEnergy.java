@@ -1,6 +1,7 @@
 package cc3002.pokemon;
 
 
+import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Abilities.attacks.AbstractAttack;
 
 /**
@@ -21,12 +22,12 @@ public interface IEnergy extends ICard{
 
 
     /**
-     * Add an energy to an abstracAttack
+     * Add an energy to an abilities
      * This is the handshake of the double dispatch
      *
-     * @param abstractAttack the abstracAttack
+     * @param abilities the abilities
      */
-    void addInto(AbstractAttack abstractAttack);
+    void addInto(IAbilities abilities);
 
 
     /**
