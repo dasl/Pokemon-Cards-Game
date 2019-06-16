@@ -2,6 +2,7 @@ package cc3002.pokemon.grass;
 
 import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.AbstractPokemon;
+import cc3002.pokemon.fire.AbstractFirePokemon;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.water.WaterAttack;
 import java.util.List;
@@ -33,5 +34,18 @@ public abstract class AbstractGrassPokemon extends AbstractPokemon {
   @Override
   public void receiveFireAttack(FireAttack attack) {
     receiveWeaknessAttack(attack);
+  }
+
+  /**
+   * Cheacks equals type (ONLY TYPE)
+   *
+   * @param o The target Pokemon object
+   * @return True if are equals, false otherwise
+   */
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    else if (!(o instanceof AbstractGrassPokemon)) return false;
+    else return false;
   }
 }

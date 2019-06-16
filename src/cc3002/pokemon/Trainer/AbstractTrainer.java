@@ -316,28 +316,47 @@ public abstract class AbstractTrainer {
 
 
     /**
+     * Getter of pockebench sizes.
+     *
+     */
+    public int sizePokeBench(){
+        return this.bench.size();
+    }
+
+    /**
      * Getter of pockedeck sizes.
      *
      */
     public int sizePokeDeck(){
-        return this.bench.size();
+        return this.Deck.size();
+    }
+
+    /**
+     * Getter of pockehand sizes.
+     *
+     */
+    public int sizePokeHand(){
+        return this.hand.size();
     }
 
 
     /**
-     * Getter of pockedeck.
+     * Getter of bench.
      *
      */
     public List<IPokemon> getBench(){
         return bench;
     }
+
     /**
-     * Checker of a pokemon and Attack.
-     * Check if a pokemon is able to us an specific attack
+     * Getter of pockedeck.
      *
-     * @param pokemon Active Pokemon.
-     * @param ActiveAttack Active Attack.
      */
+    public List<ICard> getDeck(){
+        return Deck;
+    }
+
+
 
 
     /**
@@ -354,11 +373,16 @@ public abstract class AbstractTrainer {
         }
     }
 
-
+    /**
+     *
+     * Search your deck for up to 2 Pokemon of the same species as the one
+     * use this ability and place them on the bench, then roll the deck..
+     *
+     */
     public void AIAEffect(){
         int max = 2;
         for (ICard poke : this.Deck){
-            if(poke.getClass().equals(getActivePokemon().getClass()) && max>0){
+            if(getActivePokemon().equals(poke) && max>0){
                 bench.add((IPokemon)poke);
                 Deck.remove(poke);
                 max--;

@@ -36,5 +36,16 @@ public abstract class AbstractFirePokemon extends AbstractPokemon {
     return super.getID();
   }
 
-
+  /**
+   * Cheacks equals type (ONLY TYPE)
+   *
+   * @param o The target Pokemon object
+   * @return True if are equals, false otherwise
+   */
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    else if (!(o instanceof AbstractFirePokemon)) return false;
+    else return false;
+  }
 }

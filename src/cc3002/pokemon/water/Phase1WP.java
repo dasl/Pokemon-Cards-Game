@@ -21,4 +21,17 @@ public class Phase1WP extends AbstractWaterPokemon implements IWaterPokemon{
     public void getObjectType(Trainer trainer) {
         trainer.getActivePokemon().sendType1WP(trainer);
     }
+
+    /**
+     * Cheacks equals type (ONLY TYPE)
+     *
+     * @param o The target Pokemon object
+     * @return True if are equals, false otherwise
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        else if (!(o instanceof Phase1WP)) return false;
+        else return false;
+    }
 }

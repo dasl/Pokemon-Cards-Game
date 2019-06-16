@@ -132,16 +132,16 @@ public class TrainerTest {
     @Test
     public void addingToBench(){
         juanito.addPokemonToBench(totodile);
-        assertEquals(1,juanito.sizePokeDeck());
+        assertEquals(1,juanito.sizePokeBench());
         juanito.addPokemonToBench(audino);
         juanito.addPokemonToBench(treecko);
-        assertEquals(3,juanito.sizePokeDeck());
+        assertEquals(3,juanito.sizePokeBench());
         juanito.addPokemonToBench(treecko);
         juanito.addPokemonToBench(treecko);
-        assertEquals(5,juanito.sizePokeDeck());
+        assertEquals(5,juanito.sizePokeBench());
         // LIMIT CASE, MORE THAN FIVE POKEMONS IN THE DECK
         juanito.addPokemonToBench(treecko);
-        assertEquals(5,juanito.sizePokeDeck());
+        assertEquals(5,juanito.sizePokeBench());
     }
 
     @Test

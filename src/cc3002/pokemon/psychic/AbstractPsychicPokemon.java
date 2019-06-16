@@ -36,5 +36,17 @@ public abstract class AbstractPsychicPokemon extends AbstractPokemon {
         receiveResistantAttack(attack);
     }
 
+    /**
+     * Cheacks equals type (ONLY TYPE)
+     *
+     * @param o The target Pokemon object
+     * @return True if are equals, false otherwise
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        else if (!(o instanceof AbstractPsychicPokemon)) return false;
+        else return false;
+    }
 
 }

@@ -2,6 +2,7 @@ package cc3002.pokemon.grass;
 
 import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Trainer.Trainer;
+import cc3002.pokemon.fire.Phase2FP;
 
 import java.util.List;
 
@@ -20,5 +21,18 @@ public class Phase2GP extends AbstractGrassPokemon implements IGrassPokemon{
     @Override
     public void getObjectType(Trainer trainer) {
         trainer.getActivePokemon().sendType2GP(trainer);
+    }
+
+    /**
+     * Cheacks equals type (ONLY TYPE)
+     *
+     * @param o The target Pokemon object
+     * @return True if are equals, false otherwise
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        else if (!(o instanceof Phase2FP)) return false;
+        else return false;
     }
 }
