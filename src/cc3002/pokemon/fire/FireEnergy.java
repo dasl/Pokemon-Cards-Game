@@ -1,6 +1,7 @@
 package cc3002.pokemon.fire;
 
 import cc3002.pokemon.*;
+import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Abilities.attacks.AbstractAttack;
 
 /**
@@ -22,10 +23,18 @@ public class FireEnergy extends AbstractEnergy {
         return this.NameType;
     }
 
+    /**
+     * Add an energy to an abilities
+     * This is the handshake of the double dispatch
+     *
+     * @param abilities the abilities
+     */
     @Override
-    public void addInto(AbstractAttack abstractAttack) {
-        abstractAttack.setFireRequiredEnergies(this);
+    public void addInto(IAbilities abilities) {
+        abilities.setFireRequiredEnergies(this);
     }
+
+
     @Override
     public void addToPoke() {
         getTrainer().getSelectedPokemon().receiveFireEnergy(this);

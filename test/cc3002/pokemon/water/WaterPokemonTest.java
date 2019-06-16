@@ -8,6 +8,7 @@ import cc3002.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.Trainer.Trainer;
@@ -45,12 +46,12 @@ public class WaterPokemonTest {
 
   @Before
   public void setUp() {
-    psychicAttack = new PsychicAttack("Confusion", 50,"A Psychic-type attack. Has a one-in-ten chance of leaving the target confused.");
-    fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
-    grassAttack = new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.");
-    normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
-    waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
-    electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
+    psychicAttack = new PsychicAttack("Confusion", 50,"A Psychic-type attack. Has a one-in-ten chance of leaving the target confused.",new EnergyCounter());
+    fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter());
+    grassAttack = new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.",new EnergyCounter());
+    normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.",new EnergyCounter());
+    waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
+    electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
 
     charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
     totodile = new BasicWP("Totodile",1,100,

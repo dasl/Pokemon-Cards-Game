@@ -1,6 +1,7 @@
 package cc3002.pokemon.water;
 
 import cc3002.pokemon.*;
+import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Abilities.attacks.AbstractAttack;
 
 /**
@@ -25,10 +26,17 @@ public class WaterEnergy extends AbstractEnergy{
         return this.NameType;
     }
 
+    /**
+     * Add an energy to an abilities
+     * This is the handshake of the double dispatch
+     *
+     * @param abilities the abilities
+     */
     @Override
-    public void addInto(AbstractAttack abstractAttack) {
-        abstractAttack.setWaterRequiredEnergies(this);
+    public void addInto(IAbilities abilities) {
+        abilities.setWaterRequiredEnergies(this);
     }
+
 
     @Override
     public void addToPoke() {

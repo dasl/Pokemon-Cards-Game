@@ -53,17 +53,17 @@ public abstract class AbstractAttack implements IAttack {
 
   //region Properties
   @Override
-  public void setFireRequiredEnergies(FireEnergy energy) {this.costs.setFireEnergy(1); }
+  public void setFireRequiredEnergies(FireEnergy energy) {this.costs.setFireEnergy(); }
   @Override
-  public void setWaterRequiredEnergies(WaterEnergy energy) {this.costs.setWaterEnergy(1); }
+  public void setWaterRequiredEnergies(WaterEnergy energy) {this.costs.setWaterEnergy(); }
   @Override
-  public void setElectricRequiredEnergies(ElectricEnergy energy) {this.costs.setElectricEnergy(1); }
+  public void setElectricRequiredEnergies(ElectricEnergy energy) {this.costs.setElectricEnergy(); }
   @Override
-  public void setPsychicRequiredEnergies(PsychicEnergy energy) {this.costs.setNormalEnergy(1); }
+  public void setPsychicRequiredEnergies(PsychicEnergy energy) {this.costs.setPsychicEnergy(); }
   @Override
-  public void setGrassRequiredEnergies(GrassEnergy energy) {this.costs.setGrassEnergy(1); }
+  public void setGrassRequiredEnergies(GrassEnergy energy) {this.costs.setGrassEnergy(); }
   @Override
-  public void setNormalRequiredEnergies(NormalEnergy energy) {this.costs.setNormalEnergy(1); }
+  public void setNormalRequiredEnergies(NormalEnergy energy) {this.costs.setNormalEnergy(); }
 
 
   public void receiveRequiredEnergy(IEnergy energy){

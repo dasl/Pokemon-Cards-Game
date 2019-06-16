@@ -1,7 +1,8 @@
 package cc3002.pokemon.psychic;
 
 import cc3002.pokemon.Abilities.attacks.AbstractAttack;
-        import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.EnergyCounter;
+import cc3002.pokemon.IPokemon;
 
 /**
  * This class defines the logic of a Pyschic type attack.
@@ -10,14 +11,17 @@ import cc3002.pokemon.Abilities.attacks.AbstractAttack;
  */
 public class PsychicAttack extends AbstractAttack {
 
+
     /**
      * Creates a new attack.
      *
-     * @param name Attack name
+     * @param name       Attack name
      * @param baseDamage Base damage of the attack
+     * @param text
+     * @param costs
      */
-    public PsychicAttack(String name, int baseDamage,String text) {
-        super(name, baseDamage,text);
+    public PsychicAttack(String name, int baseDamage, String text, EnergyCounter costs) {
+        super(name, baseDamage, text, costs);
     }
 
     /**

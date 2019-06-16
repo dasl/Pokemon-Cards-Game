@@ -1,21 +1,24 @@
 package cc3002.pokemon.Abilities.attacks;
 
 
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.Trainer.Trainer;
 
 public class AfterimageAssault extends AbstractAttack {
+
+
     /**
      * Creates a new attack.
      *
      * @param name       Attack name
      * @param baseDamage Base damage of the attack
      * @param text
+     * @param costs
      */
-    public AfterimageAssault(String name, int baseDamage, String text) {
-        super(name, baseDamage, text);
+    public AfterimageAssault(String name, int baseDamage, String text, EnergyCounter costs) {
+        super(name, baseDamage, text, costs);
     }
-
 
     @Override
     public void applyEffect(Trainer trainer){

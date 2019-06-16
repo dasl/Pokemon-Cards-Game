@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import cc3002.pokemon.Abilities.attacks.IAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -34,7 +35,7 @@ public class NormalAttackTest {
 
   @Before
   public void setUp() {
-    normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.");
+    normalAttack = new NormalAttack("Pound", 40,"Pounds with forelegs or tail.",new EnergyCounter());
     charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
     treecko = new BasicGP("Treecko",1,100, new ArrayList<>());
     totodile = new BasicWP("Totodile",1, 100, new ArrayList<>());
@@ -85,9 +86,9 @@ public class NormalAttackTest {
   }
   @Test
   public void equalsTest() {
-    assertEquals(normalAttack, new NormalAttack("Pound", 40,"Pounds with forelegs or tail."));
-    assertNotEquals(normalAttack, new NormalAttack("Pound", 30,"Pounds with forelegs or tail."));
-    assertNotEquals(normalAttack, new NormalAttack("Not Pound", 40,"Pounds with forelegs or tail."));
-    assertNotEquals(normalAttack, new FireAttack("Pound", 40,"Pounds with forelegs or tail."));
+    assertEquals(normalAttack, new NormalAttack("Pound", 40,"Pounds with forelegs or tail.",new EnergyCounter()));
+    assertNotEquals(normalAttack, new NormalAttack("Pound", 30,"Pounds with forelegs or tail.",new EnergyCounter()));
+    assertNotEquals(normalAttack, new NormalAttack("Not Pound", 40,"Pounds with forelegs or tail.",new EnergyCounter()));
+    assertNotEquals(normalAttack, new FireAttack("Pound", 40,"Pounds with forelegs or tail.",new EnergyCounter()));
   }
 }

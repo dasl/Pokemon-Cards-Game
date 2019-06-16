@@ -55,7 +55,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveWaterEnergy(WaterEnergy energy) { this.energies.setWaterEnergy(1);}
+  public void receiveWaterEnergy(WaterEnergy energy) { this.energies.setWaterEnergy();}
 
 
   /**
@@ -64,7 +64,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveGrassEnergy(GrassEnergy energy) {this.energies.setGrassEnergy(1);}
+  public void receiveGrassEnergy(GrassEnergy energy) {this.energies.setGrassEnergy();}
 
   /**
    * Receives an energy from a fire energy.
@@ -72,7 +72,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveFireEnergy(FireEnergy energy) { this.energies.setFireEnergy(1);}
+  public void receiveFireEnergy(FireEnergy energy) { this.energies.setFireEnergy();}
 
 
   /**
@@ -81,7 +81,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receiveNormalEnergy(NormalEnergy energy) {this.energies.setNormalEnergy(1);}
+  public void receiveNormalEnergy(NormalEnergy energy) {this.energies.setNormalEnergy();}
 
   /**
    * Receives an energy from a psychic energy.
@@ -89,7 +89,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * @param energy Received energy.
    */
   @Override
-  public void receivePsychicEnergy(PsychicEnergy energy) {this.energies.setPsychicEnergy(1);}
+  public void receivePsychicEnergy(PsychicEnergy energy) {this.energies.setPsychicEnergy();}
 
 
   /**
@@ -97,7 +97,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    *
    * @param energy Received energy.
    */
-  public void receiveElectricEnergy(ElectricEnergy energy) {this.energies.setElectricEnergy(1);}
+  public void receiveElectricEnergy(ElectricEnergy energy) {this.energies.setElectricEnergy();}
 
 
   /**

@@ -1,6 +1,7 @@
 package cc3002.pokemon.grass;
 
 import cc3002.pokemon.Abilities.attacks.AbstractAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IPokemon;
 
 /**
@@ -10,13 +11,17 @@ import cc3002.pokemon.IPokemon;
  */
 public class GrassAttack extends AbstractAttack {
 
+
   /**
-   * Creates a new grass type attack.
-   *  @param name Attack name
+   * Creates a new attack.
+   *
+   * @param name       Attack name
    * @param baseDamage Base damage of the attack
+   * @param text
+   * @param costs
    */
-  public GrassAttack(String name, int baseDamage,String text) {
-    super(name, baseDamage,text);
+  public GrassAttack(String name, int baseDamage, String text, EnergyCounter costs) {
+    super(name, baseDamage, text, costs);
   }
 
   /**

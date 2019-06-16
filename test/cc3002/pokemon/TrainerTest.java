@@ -3,6 +3,7 @@ package cc3002.pokemon;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
+import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.BasicEP;
@@ -60,9 +61,9 @@ public class TrainerTest {
         raichu = new Phase1FP("Raichu",56,100, new ArrayList<>());
 
         // Creating attacks
-        waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");
-        fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
-        combolozicoAttack = new NormalAttack("Combolozico", 200,"The best attack of game, is lethal");
+        waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
+        fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter());
+        combolozicoAttack = new NormalAttack("Combolozico", 200,"The best attack of game, is lethal",new EnergyCounter());
 
         // Creating trainers
         charmander = new BasicFP("Charmander", 48,100, new ArrayList<>());

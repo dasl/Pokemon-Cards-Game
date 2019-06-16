@@ -235,4 +235,5 @@ public interface IPokemon extends ICard{
 
   void sendType1WP(Trainer trainer);
 
+
 }

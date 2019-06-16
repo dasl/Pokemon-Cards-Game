@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import cc3002.pokemon.Abilities.attacks.IAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -27,7 +28,7 @@ import org.junit.Test;
  */
 public class GrassAttackTest {
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
-
+  private EnergyCounter energies;
   private IAttack grassAttack, normalAttack;
   private IPokemon
       charmander,
@@ -37,8 +38,8 @@ public class GrassAttackTest {
 
   @Before
   public void setUp() {
-    grassAttack = new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.");
-    normalAttack = new NormalAttack("Combito", 50,"The best attack of game, is lethal");
+    grassAttack = new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.",new EnergyCounter());
+    normalAttack = new NormalAttack("Combito", 50,"The best attack of game, is lethal",new EnergyCounter());
     charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
     treecko = new BasicGP("Treecko", 1,100, new ArrayList<>());
     totodile = new BasicWP("Totodile", 1,100, new ArrayList<>());
@@ -88,9 +89,9 @@ public class GrassAttackTest {
 
   @Test
   public void equalsTest() {
-    assertEquals(grassAttack, new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines."));
-    assertNotEquals(grassAttack, new GrassAttack("Vine Whip", 30,"Whips the foe with slender vines."));
-    assertNotEquals(grassAttack, new GrassAttack("Not Vine Whip", 45,"Whips the foe with slender vines."));
-    assertNotEquals(grassAttack, new FireAttack("Vine Whip", 45,"Whips the foe with slender vines."));
+    assertEquals(grassAttack, new GrassAttack("Vine Whip", 45,"Whips the foe with slender vines.",new EnergyCounter()));
+    assertNotEquals(grassAttack, new GrassAttack("Vine Whip", 30,"Whips the foe with slender vines.",new EnergyCounter()));
+    assertNotEquals(grassAttack, new GrassAttack("Not Vine Whip", 45,"Whips the foe with slender vines.",new EnergyCounter()));
+    assertNotEquals(grassAttack, new FireAttack("Vine Whip", 45,"Whips the foe with slender vines.",new EnergyCounter()));
   }
 }

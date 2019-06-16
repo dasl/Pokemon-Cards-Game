@@ -2,6 +2,7 @@ package cc3002.pokemon.electric;
 
 
 import cc3002.pokemon.Abilities.attacks.AbstractAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IPokemon;
 
 /**
@@ -11,14 +12,17 @@ import cc3002.pokemon.IPokemon;
  */
 public class ElectricAttack extends AbstractAttack {
 
+
     /**
      * Creates a new attack.
      *
-     * @param name Attack name
+     * @param name       Attack name
      * @param baseDamage Base damage of the attack
+     * @param text
+     * @param costs
      */
-    public ElectricAttack(String name, int baseDamage,String text ) {
-        super(name, baseDamage, text);
+    public ElectricAttack(String name, int baseDamage, String text, EnergyCounter costs) {
+        super(name, baseDamage, text, costs);
     }
 
     /**

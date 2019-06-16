@@ -1,5 +1,6 @@
 package cc3002.pokemon.Abilities.otherAbilities;
 
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.Trainer.Trainer;
 
 /**
@@ -11,8 +12,9 @@ import cc3002.pokemon.Trainer.Trainer;
 
 public class WingBuzz extends AbstractAbilities {
 
-    public WingBuzz(String name, String text) {
-        super(name, text);
+
+    public WingBuzz(String name, String text, EnergyCounter costs) {
+        super(name, text, costs);
     }
 
     /**

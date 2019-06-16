@@ -48,4 +48,5 @@ public interface IAbilities{
     void applyEffect(Trainer abstractPokemon);
 
     int getBaseDamage();
+
 }

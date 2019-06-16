@@ -3,6 +3,7 @@ package cc3002.pokemon.fire;
 import static org.junit.Assert.*;
 
 import cc3002.pokemon.Abilities.attacks.IAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -37,8 +38,8 @@ public class FireAttackTest {
 
   @Before
   public void setUp() {
-    fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
-    normalAttack = new NormalAttack("Combito", 50,"The best attack of game, is lethal");
+    fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter());
+    normalAttack = new NormalAttack("Combito", 50,"The best attack of game, is lethal",new EnergyCounter());
     charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
     treecko = new BasicGP("Treecko",1, 100, new ArrayList<>());
     totodile = new BasicWP("Totodile",1, 100, new ArrayList<>());
@@ -92,9 +93,9 @@ public class FireAttackTest {
 
   @Test
   public void equalsTest() {
-    assertEquals(fireAttack, new FireAttack("Ember", 40,"An attack that may inflict a burn."));
-    assertNotEquals(fireAttack, new FireAttack("Ember", 30,"An attack that may inflict a burn."));
-    assertNotEquals(fireAttack, new FireAttack("Not Ember", 40,"An attack that may inflict a burn."));
-    assertNotEquals(fireAttack, new WaterAttack("Ember", 40,"An attack that may inflict a burn."));
+    assertEquals(fireAttack, new FireAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter()));
+    assertNotEquals(fireAttack, new FireAttack("Ember", 30,"An attack that may inflict a burn.",new EnergyCounter()));
+    assertNotEquals(fireAttack, new FireAttack("Not Ember", 40,"An attack that may inflict a burn.",new EnergyCounter()));
+    assertNotEquals(fireAttack, new WaterAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter()));
   }
 }

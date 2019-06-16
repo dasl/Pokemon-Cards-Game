@@ -23,10 +23,10 @@ public class TestAbilitiesVisitor {
 
     @Before
     public void setUp() {
-        waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");
-        fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.");
-        afterimageassault = new AfterimageAssault("AfterimageAssault", 40,"An attack that may inflict a burn.");
-        shift = new Shift("Shift","Soy entero pulento");
+        waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
+        fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter());
+        afterimageassault = new AfterimageAssault("AfterimageAssault", 40,"An attack that may inflict a burn.",new EnergyCounter());
+        shift = new Shift("Shift","Soy entero pulento",new EnergyCounter());
 
         // Pokemons
         audino = new BasicNP("Audino",1, 100, new ArrayList<>());

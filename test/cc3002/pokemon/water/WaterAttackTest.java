@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import cc3002.pokemon.Abilities.attacks.IAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -37,7 +38,7 @@ public class WaterAttackTest {
 
   @Before
   public void setUp() {
-    waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.");
+    waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
     charmander = new BasicFP("Charmander",1, 100, new ArrayList<>());
     treecko = new BasicGP("Treecko",1,100, new ArrayList<>());
     totodile = new BasicWP("Totodile", 1,100, new ArrayList<>());
@@ -85,9 +86,9 @@ public class WaterAttackTest {
 
   @Test
   public void equalsTest() {
-    assertEquals(waterAttack, new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed."));
-    assertNotEquals(waterAttack, new WaterAttack("Bubble", 30,"An attack using bubbles. May lower the foe's Speed."));
-    assertNotEquals(waterAttack, new WaterAttack("Not Bubble", 40,"An attack using bubbles. May lower the foe's Speed."));
-    assertNotEquals(waterAttack, new FireAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed."));
+    assertEquals(waterAttack, new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter()));
+    assertNotEquals(waterAttack, new WaterAttack("Bubble", 30,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter()));
+    assertNotEquals(waterAttack, new WaterAttack("Not Bubble", 40,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter()));
+    assertNotEquals(waterAttack, new FireAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter()));
   }
 }

@@ -1,6 +1,7 @@
 package cc3002.pokemon.water;
 
 import cc3002.pokemon.Abilities.attacks.AbstractAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IPokemon;
 
 /**
@@ -9,17 +10,19 @@ import cc3002.pokemon.IPokemon;
  * @author Diego Sandoval Leiva
  */
 public class WaterAttack extends AbstractAttack {
-
   /**
-   * Creates a new water type attack.
-   * {@inheritDoc}
+   * Creates a new attack.
    *
-   * @param name Attack's name.
-   * @param baseDamage Attack's base damage.
+   * @param name       Attack name
+   * @param baseDamage Base damage of the attack
+   * @param text
+   * @param costs
    */
-  public WaterAttack(String name, int baseDamage,String text) {
-    super(name, baseDamage,text);
+  public WaterAttack(String name, int baseDamage, String text, EnergyCounter costs) {
+    super(name, baseDamage, text, costs);
   }
+
+
   /**
    * Performs a water type attack.
    *

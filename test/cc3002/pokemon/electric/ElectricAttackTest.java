@@ -1,6 +1,8 @@
 package cc3002.pokemon.electric;
 
+import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Abilities.attacks.IAttack;
+import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.fire.BasicFP;
@@ -43,7 +45,7 @@ public class ElectricAttackTest {
 
     @Before
     public void setUp(){
-        electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.");
+        electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
         charmander = new BasicFP("Charmander",1, 100, new ArrayList<>());
         treecko = new BasicGP("Treecko",1, 100, new ArrayList<>());
         totodile = new BasicWP("Totodile",1, 100, new ArrayList<>());
@@ -106,10 +108,10 @@ public class ElectricAttackTest {
 
     @Test
     public void equalsTest() {
-        assertEquals(electricAttack, new ElectricAttack("Thunder Shock", 30,"An attack that may cause paralysis."));
-        assertNotEquals(electricAttack, new WaterAttack("Bubble", 30,"An attack that may cause headache."));
-        assertNotEquals(electricAttack, new WaterAttack("Not Bubble", 40,"An attack that may cause paralysis."));
-        assertNotEquals(electricAttack, new FireAttack("Bubble", 40,"An attack that may cause fireheadache."));
+        assertEquals(electricAttack, new ElectricAttack("Thunder Shock", 30,"An attack that may cause paralysis.",new EnergyCounter()));
+        assertNotEquals(electricAttack, new WaterAttack("Bubble", 30,"An attack that may cause headache.",new EnergyCounter()));
+        assertNotEquals(electricAttack, new WaterAttack("Not Bubble", 40,"An attack that may cause paralysis.",new EnergyCounter()));
+        assertNotEquals(electricAttack, new FireAttack("Bubble", 40,"An attack that may cause fireheadache.",new EnergyCounter()));
     }
 
 }
