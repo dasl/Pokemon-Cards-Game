@@ -1,4 +1,6 @@
-package cc3002.pokemon.TrainerCards;
+package cc3002.pokemon.TrainerCards.SupportCards;
+
+import cc3002.pokemon.TrainerCards.AbstractTrainerCard;
 
 public class SupportCard extends AbstractTrainerCard {
     private String type = "SupportCard";

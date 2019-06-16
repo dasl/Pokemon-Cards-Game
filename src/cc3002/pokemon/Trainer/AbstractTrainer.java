@@ -167,6 +167,27 @@ public abstract class AbstractTrainer {
         return aux;
     }
 
+    /**
+     * Add card to the cementery
+     *
+     * @param card Any card
+     */
+    public void addToCementery(ICard card){
+        ICard aux = card;
+        this.Cementery.add(card);
+        getHand().remove(getHand().indexOf(card));
+
+    }
+
+    /**
+     * Delete all the cards because of picado.
+     *
+     */
+    public void dropHand(){
+        this.hand.clear();
+    }
+
+
 
     /**
      * Setter type of any Pokemon.

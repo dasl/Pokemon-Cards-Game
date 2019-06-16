@@ -1,4 +1,4 @@
-package cc3002.pokemon.TrainerCards;
+package cc3002.pokemon.TrainerCards.SupportCards;
 
 import java.util.Random;
 
@@ -22,5 +22,6 @@ public class ProfessorCozmosDiscovery extends SupportCard {
             getTrainer().addToCardsHand(getTrainer().getCard());
             getTrainer().addToCardsHand(getTrainer().getCard());
         }
+        getTrainer().addToCementery(this);
     }
 }
