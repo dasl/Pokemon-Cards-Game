@@ -29,9 +29,7 @@ import static org.junit.Assert.*;
 public class ElectricPokemonTest {
     private Trainer Ash;
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
-    private IPokemon
-            audino,
-            pikachu;
+    private IPokemon audino,pikachu,raichu,pichu;
     private FireAttack fireAttack;
     private GrassAttack grassAttack;
     private NormalAttack normalAttack;
@@ -49,8 +47,15 @@ public class ElectricPokemonTest {
         waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
         electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
         audino = new BasicNP("Audino",1, 100, new ArrayList<>());
-        pikachu = new BasicEP("Pikachu", 1,100,
+
+
+        pichu = new BasicEP("Pichu", 25,100,
                 new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
+        pikachu = new Phase1EP("Pikachu", 25,100,
+                new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
+        raichu = new Phase2EP("Raichu", 25,100,
+                new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
+
 
         //Creating Trainer
         Ash = new Trainer("Ash",pikachu,new ArrayList<>());
@@ -70,6 +75,9 @@ public class ElectricPokemonTest {
         normalEnergy.setTrainer(Ash);
     }
 
+
+
+
     @Test
     public void constructorTest() {
         assertEquals("Pikachu", pikachu.getName());
@@ -78,6 +86,19 @@ public class ElectricPokemonTest {
         assertEquals(electricAttack, pikachu.getAbilityList().get(0));
         assertEquals(normalAttack, pikachu.getAbilityList().get(1));
         assertNull(pikachu.getSelectedAbility());
+        assertFalse(pichu.equals(raichu));
+        assertFalse(raichu.equals(pikachu));
+        assertFalse(pikachu.equals(pichu));
+    }
+
+    @Test
+    public void evolutionTest(){
+        Ash.addPokemonToBench(pikachu);
+        Ash.setSelectedPokemon(pikachu); // Seleccionamos al pikachu
+        Ash.evolution(raichu); // Pikachu -> raichu
+        Ash.setSelectedPokemon(raichu); //Seleccionamos al raichu
+        assertTrue(Ash.getBench().contains(raichu));
+        assertFalse(Ash.getBench().contains(pikachu));
     }
 
     @Test

@@ -7,6 +7,7 @@ import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.BasicEP;
 import cc3002.pokemon.electric.ElectricEnergy;
+import cc3002.pokemon.electric.Phase1EP;
 import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.fire.FireEnergy;
@@ -57,7 +58,7 @@ public class TrainerTest {
         audino = new BasicNP("Audino",1,100, new ArrayList<>());
         pikachu = new BasicEP("Pikachu",56,100, new ArrayList<>());
         charmeleon = new Phase1FP("Charmeleon",48,100, new ArrayList<>());
-        raichu = new Phase1FP("Raichu",56,100, new ArrayList<>());
+        raichu = new Phase1EP("Raichu",56,100, new ArrayList<>());
 
         // Creating attacks
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());

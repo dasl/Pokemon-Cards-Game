@@ -288,7 +288,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
     @Override
     public void evolution(IPokemon pokemon){
         changeFromBench(pokemon);
-        shuffleDeck();
+        trainerChanges();
     }
     /**
      * Change any Pokemon from bench.

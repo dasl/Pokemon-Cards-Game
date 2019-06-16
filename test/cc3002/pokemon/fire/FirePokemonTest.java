@@ -1,8 +1,5 @@
 package cc3002.pokemon.fire;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
@@ -23,6 +20,10 @@ import java.util.Arrays;
 import cc3002.pokemon.water.WaterEnergy;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+
 /**
  * Tests set for the FirePokemon class.
  *
@@ -31,9 +32,7 @@ import org.junit.Test;
 public class FirePokemonTest {
   private Trainer Ash;
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
-  private IPokemon
-      audino,
-      charmander;
+  private IPokemon audino, charmeleon,charizard,charmander;
   private FireAttack fireAttack;
   private GrassAttack grassAttack;
   private NormalAttack normalAttack;
@@ -53,8 +52,14 @@ public class FirePokemonTest {
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
 
     audino = new BasicNP("Audino", 1,100, new ArrayList<>());
-    charmander = new BasicFP("Charmander",1, 100,
-        new ArrayList<>(Arrays.asList(fireAttack, normalAttack)));
+
+
+    charmander = new BasicFP("Charmander",28, 100,
+            new ArrayList<>(Arrays.asList(fireAttack, normalAttack)));
+    charmeleon = new Phase1FP("Charmeleon",28,100, new ArrayList<>());
+
+    charizard = new Phase2FP("Charizard",28,100, new ArrayList<>());
+
 
     //Creating Trainer
     Ash = new Trainer("Ash",charmander,new ArrayList<>());
@@ -82,6 +87,8 @@ public class FirePokemonTest {
     assertEquals(fireAttack, charmander.getAbilityList().get(0));
     assertEquals(normalAttack, charmander.getAbilityList().get(1));
     assertNull(charmander.getSelectedAbility());
+    assertFalse(charizard.equals(charmeleon));
+    assertFalse(charmeleon.equals(charmander));
   }
 
   @Test

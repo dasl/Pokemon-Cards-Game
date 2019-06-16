@@ -1,8 +1,5 @@
 package cc3002.pokemon.normal;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
@@ -23,6 +20,9 @@ import cc3002.pokemon.water.WaterEnergy;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+
 /**
  * Tests set for the NormalPokemon class.
  *
@@ -33,9 +33,7 @@ import org.junit.Test;
 public class NormalPokemonTest {
   private Trainer Ash;
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
-  private IPokemon
-      charmander,
-      audino;
+  private IPokemon charmander, audino,megaudino,ultraudino;
   private FireAttack fireAttack;
   private GrassAttack grassAttack;
   private NormalAttack normalAttack;
@@ -53,8 +51,13 @@ public class NormalPokemonTest {
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
 
     charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
-    audino = new BasicNP("Audino",1, 100,
+
+    audino = new BasicNP("Audino",19, 100,
         new ArrayList<>(Arrays.asList(normalAttack, fireAttack)));
+    megaudino = new Phase1NP("Meagudino",19, 100,
+            new ArrayList<>(Arrays.asList(normalAttack, fireAttack)));
+    ultraudino = new Phase2NP("Ultraudino",19, 100,
+            new ArrayList<>(Arrays.asList(normalAttack, fireAttack)));
 
     //Creating Trainer
     Ash = new Trainer("Ash",audino,new ArrayList<>());
@@ -81,6 +84,8 @@ public class NormalPokemonTest {
     assertEquals(normalAttack, audino.getAbilityList().get(0));
     assertEquals(fireAttack, audino.getAbilityList().get(1));
     assertNull(audino.getSelectedAbility());
+    assertFalse(ultraudino.equals(megaudino));
+    assertFalse(megaudino.equals(audino));
   }
   @Test
   public void cardType(){

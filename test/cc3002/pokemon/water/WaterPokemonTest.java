@@ -1,8 +1,5 @@
 package cc3002.pokemon.water;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import cc3002.*;
 
 import java.util.ArrayList;
@@ -25,6 +22,8 @@ import cc3002.pokemon.psychic.PsychicAttack;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+
 /**
  * Tests set for the WaterPokemon class.
  *
@@ -34,9 +33,7 @@ import org.junit.Test;
 public class WaterPokemonTest {
   private Trainer Ash;
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
-  private IPokemon
-      charmander,
-      totodile;
+  private IPokemon charmander, Feraligatr,totodile,Croconaw;
   private FireAttack fireAttack;
   private GrassAttack grassAttack;
   private NormalAttack normalAttack;
@@ -54,8 +51,14 @@ public class WaterPokemonTest {
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
 
     charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
-    totodile = new BasicWP("Totodile",1,100,
-        new ArrayList<>(Arrays.asList(waterAttack, normalAttack)));
+
+
+    totodile = new BasicWP("Totodile",25,100,
+            new ArrayList<>(Arrays.asList(waterAttack, normalAttack)));
+    Croconaw = new Phase1WP("Croconaw", 25,100,
+            new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
+    Feraligatr = new Phase2WP("Feraligatr", 25,100,
+            new ArrayList<>(Arrays.asList(electricAttack, normalAttack)));
 
     //Creating Trainer
     Ash = new Trainer("Ash",totodile,new ArrayList<>());
@@ -82,6 +85,8 @@ public class WaterPokemonTest {
     assertEquals(waterAttack, totodile.getAbilityList().get(0));
     assertEquals(normalAttack, totodile.getAbilityList().get(1));
     assertNull(totodile.getSelectedAbility());
+    assertFalse(Croconaw.equals(totodile));
+    assertFalse(Feraligatr.equals(Croconaw));
   }
 
   @Test

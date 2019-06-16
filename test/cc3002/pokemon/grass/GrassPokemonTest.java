@@ -1,8 +1,5 @@
 package cc3002.pokemon.grass;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.IPokemon;
@@ -22,6 +19,10 @@ import java.util.Arrays;
 import cc3002.pokemon.water.WaterEnergy;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+
 /**
  * Tests set for the GrassPokemon class.
  *
@@ -30,9 +31,7 @@ import org.junit.Test;
 public class GrassPokemonTest {
   private Trainer Ash;
   private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
-  private IPokemon
-      charmander,
-      treecko;
+  private IPokemon charmander, grovyle,sceptile,treecko;
 
   private FireAttack fireAttack;
   private GrassAttack grassAttack;
@@ -51,8 +50,12 @@ public class GrassPokemonTest {
     electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
 
     charmander = new BasicFP("Charmander",1,100, new ArrayList<>());
-    treecko = new BasicGP("Treecko", 1,100,
+    treecko = new BasicGP("Treecko", 13,100,
         new ArrayList<>(Arrays.asList(grassAttack, normalAttack)));
+    grovyle = new Phase1GP("Grovyle", 13,100,
+            new ArrayList<>(Arrays.asList(grassAttack, normalAttack)));
+    sceptile = new Phase2GP("Sceptile", 13,100,
+            new ArrayList<>(Arrays.asList(grassAttack, normalAttack)));
 
     //Creating Trainer
     Ash = new Trainer("Ash",treecko,new ArrayList<>());
@@ -80,6 +83,8 @@ public class GrassPokemonTest {
     assertEquals(grassAttack, treecko.getAbilityList().get(0));
     assertEquals(normalAttack, treecko.getAbilityList().get(1));
     assertNull(treecko.getSelectedAbility());
+    assertFalse(sceptile.equals(grovyle));
+    assertFalse(grovyle.equals(treecko));
   }
 
   @Test

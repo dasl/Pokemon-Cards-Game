@@ -32,9 +32,7 @@ import static org.junit.Assert.*;
 public class PsychicPokemonTest {
     private Trainer Ash;
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, psychicEnergy, normalEnergy;
-    private IPokemon
-            charmander,
-            abra;
+    private IPokemon charmander, abra,kadabra, alakazam;
     private FireAttack fireAttack;
     private GrassAttack grassAttack;
     private NormalAttack normalAttack;
@@ -51,7 +49,12 @@ public class PsychicPokemonTest {
         waterAttack = new WaterAttack("Bubble", 40,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
         electricAttack = new ElectricAttack("Thunder Shock",30,"An attack that may cause paralysis.",new EnergyCounter());
         charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
-        abra = new BasicPP("Abra",1,100,
+
+        abra = new BasicPP("Abra",17,100,
+                new ArrayList<>(Arrays.asList(psychicAttack, normalAttack)));
+        kadabra = new Phase1PP("Kadabra",17,100,
+                new ArrayList<>(Arrays.asList(psychicAttack, normalAttack)));
+        alakazam = new Phase2PP("Alakazam",17,100,
                 new ArrayList<>(Arrays.asList(psychicAttack, normalAttack)));
 
         //Creating Trainer
@@ -85,6 +88,8 @@ public class PsychicPokemonTest {
         assertEquals(psychicAttack, abra.getAbilityList().get(0));
         assertEquals(normalAttack, abra.getAbilityList().get(1));
         assertNull(abra.getSelectedAbility());
+        assertFalse(alakazam.equals(kadabra));
+        assertFalse(kadabra.equals(abra));
     }
 
     @Test
