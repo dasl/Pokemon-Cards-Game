@@ -1,4 +1,4 @@
-package cc3002.pokemon.Abilities;
+package cc3002.pokemon.Abilities.otherAbilities;
 
 import cc3002.pokemon.Trainer.Trainer;
 
@@ -9,7 +9,7 @@ import cc3002.pokemon.Trainer.Trainer;
  * @author Diego Sandoval Leiva
  */
 
-public class WingBuzz extends AbstractAbilities{
+public class WingBuzz extends AbstractAbilities {
 
     public WingBuzz(String name, String text) {
         super(name, text);

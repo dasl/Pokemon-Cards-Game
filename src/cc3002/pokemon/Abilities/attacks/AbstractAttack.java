@@ -1,5 +1,6 @@
-package cc3002.pokemon.Abilities;
+package cc3002.pokemon.Abilities.attacks;
 
+import cc3002.pokemon.Abilities.visitor.IAbilityVisitor;
 import cc3002.pokemon.IEnergy;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricEnergy;

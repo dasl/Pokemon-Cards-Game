@@ -1,6 +1,9 @@
 package cc3002.pokemon;
 
 import cc3002.pokemon.Abilities.*;
+import cc3002.pokemon.Abilities.attacks.IAttack;
+import cc3002.pokemon.Abilities.visitor.AttackVisitor;
+import cc3002.pokemon.Abilities.visitor.ConcreteIAbilityVisitor;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
@@ -314,7 +317,8 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
     }
     else{
       this.selectedAbility.accept(attackVisitor);
-      attackVisitor.getAttack().attack(adversary.getActivePokemon());}
+      attackVisitor.getAttack().attack(adversary.getActivePokemon());
+    }
   }
 
 
@@ -326,6 +330,11 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   @Override
   public void receiveShiftEffect(Trainer trainer) {
     trainer.ShiftType();
+  }
+
+  @Override
+  public void receiveAfterimageAssaultEffect(Trainer trainer){
+    this.getTrainer().AIAEffect();
   }
 
   @Override

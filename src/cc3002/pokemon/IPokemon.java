@@ -1,8 +1,6 @@
 package cc3002.pokemon;
 
-import cc3002.pokemon.Abilities.AbstractAbilities;
 import cc3002.pokemon.Abilities.IAbilities;
-import cc3002.pokemon.Abilities.Shift;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -195,4 +193,5 @@ public interface IPokemon extends ICard{
 
   void setAbilities(IAbilities abilities);
 
+  void receiveAfterimageAssaultEffect(Trainer trainer);
 }

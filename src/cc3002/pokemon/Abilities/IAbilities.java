@@ -1,5 +1,6 @@
 package cc3002.pokemon.Abilities;
 
+import cc3002.pokemon.Abilities.visitor.IAbilityVisitor;
 import cc3002.pokemon.Trainer.Trainer;
 
 public interface IAbilities{

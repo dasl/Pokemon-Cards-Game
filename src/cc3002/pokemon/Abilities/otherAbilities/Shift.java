@@ -1,4 +1,4 @@
-package cc3002.pokemon.Abilities;
+package cc3002.pokemon.Abilities.otherAbilities;
 
 
 import cc3002.pokemon.Trainer.Trainer;

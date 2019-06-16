@@ -1,4 +1,4 @@
-package cc3002.pokemon.Abilities;
+package cc3002.pokemon.Abilities.attacks;
 
 
 import cc3002.pokemon.Abilities.IAbilities;

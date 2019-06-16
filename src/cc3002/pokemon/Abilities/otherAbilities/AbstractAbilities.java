@@ -1,7 +1,8 @@
-package cc3002.pokemon.Abilities;
+package cc3002.pokemon.Abilities.otherAbilities;
 
+import cc3002.pokemon.Abilities.IAbilities;
+import cc3002.pokemon.Abilities.visitor.IAbilityVisitor;
 import cc3002.pokemon.AbstractCard;
-import cc3002.pokemon.IPokemon;
 
 public abstract class AbstractAbilities extends AbstractCard implements IAbilities {
     private String text;

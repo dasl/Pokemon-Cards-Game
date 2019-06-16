@@ -1,6 +1,6 @@
 package cc3002.pokemon.normal;
 
-import cc3002.pokemon.Abilities.AbstractAttack;
+import cc3002.pokemon.Abilities.attacks.AbstractAttack;
 import cc3002.pokemon.IPokemon;
 
 /**

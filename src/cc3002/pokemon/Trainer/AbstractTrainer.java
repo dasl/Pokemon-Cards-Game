@@ -313,7 +313,6 @@ public abstract class AbstractTrainer {
 //        return  couldBeActived;
 //    }
 
-
     /**
      * Changer of a dead pokemon to an alive one.
      *
@@ -329,4 +328,13 @@ public abstract class AbstractTrainer {
     }
 
 
+    public void AIAEffect(){
+        int max = 2;
+        for (ICard poke : this.Deck){
+            if(poke.getClass().equals(getActivePokemon().getClass()) && max>0){
+                bench.add((IPokemon)poke);
+                max--;
+            }
+        }
+    }
 }

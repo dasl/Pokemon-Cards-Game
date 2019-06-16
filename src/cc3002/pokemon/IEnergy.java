@@ -1,7 +1,7 @@
 package cc3002.pokemon;
 
 
-import cc3002.pokemon.Abilities.AbstractAttack;
+import cc3002.pokemon.Abilities.attacks.AbstractAttack;
 
 /**
  * This function is performed through an interface, whose main function is to act as an intermediary to implement a double disptach, such that they can be

@@ -3,7 +3,7 @@ package cc3002.pokemon;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
-import cc3002.pokemon.Abilities.IAttack;
+import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.BasicEP;
 import cc3002.pokemon.electric.ElectricEnergy;
