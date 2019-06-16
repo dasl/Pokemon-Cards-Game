@@ -38,7 +38,9 @@ public class TrainerTest {
             totodile,
             audino,
             pikachu,
+            raichu,
             charmeleon;
+
     private Trainer
             juanito,
             Ash;
@@ -53,8 +55,9 @@ public class TrainerTest {
         treecko = new BasicGP("Treecko", 1,100, new ArrayList<>());
         totodile = new BasicWP("Totodile", 1,100, new ArrayList<>());
         audino = new BasicNP("Audino",1,100, new ArrayList<>());
-        pikachu = new BasicEP("Pikachu",1,100, new ArrayList<>());
-        charmeleon = new Phase1FP("Charmeleon",1,100, new ArrayList<>());
+        pikachu = new BasicEP("Pikachu",56,100, new ArrayList<>());
+        charmeleon = new Phase1FP("Charmeleon",48,100, new ArrayList<>());
+        raichu = new Phase1FP("Raichu",56,100, new ArrayList<>());
 
         // Creating attacks
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.");
@@ -62,7 +65,7 @@ public class TrainerTest {
         combolozicoAttack = new NormalAttack("Combolozico", 200,"The best attack of game, is lethal");
 
         // Creating trainers
-        charmander = new BasicFP("Charmander", 1,100, new ArrayList<>());
+        charmander = new BasicFP("Charmander", 48,100, new ArrayList<>());
         juanito = new Trainer("Juanoide",charmander,new ArrayList<>());
         charmander = new BasicFP("Charmander de Ash", 1,100, new ArrayList<>());
         Ash = new Trainer("Ash",charmander,new ArrayList<>());
@@ -111,6 +114,20 @@ public class TrainerTest {
         assertEquals("Charmander", juanito.getActivePokemonName());
     }
 
+    @Test
+    public void evolutionTest(){
+        Ash.setSelectedPokemon(pikachu); // Seleccionamos al pikachu
+        Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+        assertEquals(Ash.getSelectedPokemon().getElectricEnergies(),3);
+
+        Ash.evolution(raichu); // Pikachu -> raichu
+        Ash.setSelectedPokemon(raichu); //Seleccionamos al raichu
+        assertTrue(Ash.getBench().contains(raichu));
+        assertFalse(Ash.getBench().contains(pikachu));
+        assertEquals(Ash.getSelectedPokemon().getElectricEnergies(),3);
+    }
 
     @Test
     public void addingToDeck(){
@@ -130,9 +147,9 @@ public class TrainerTest {
     @Test
     public void adversaryDeck(){
         // Juanito vs Ash
-        assertFalse(Ash.getBench().equals(juanito.getBench()));
+        assertNotEquals(Ash.getBench(), juanito.getBench());
         // Active pokemon name is equal to the adversary active pokemon
-        assertFalse(Ash.getActivePokemonName().equals(juanito.getActivePokemonName()));
+        assertNotEquals(Ash.getActivePokemonName(), juanito.getActivePokemonName());
         // Active pokemon is not equal to the adversary active pokemon
         Ash.setActivePokemon(charmander);
         juanito.setActivePokemon(charmander);

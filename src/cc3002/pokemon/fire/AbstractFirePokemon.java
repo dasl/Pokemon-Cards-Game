@@ -31,4 +31,10 @@ public abstract class AbstractFirePokemon extends AbstractPokemon{
     receiveWeaknessAttack(attack);
   }
 
+  @Override
+  public int getID(){
+    return super.getID();
+  }
+
+
 }

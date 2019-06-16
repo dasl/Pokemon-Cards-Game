@@ -1,6 +1,7 @@
 package cc3002.pokemon.electric;
 
 import cc3002.pokemon.Abilities.IAbilities;
+import cc3002.pokemon.IPokemon;
 
 import java.util.List;
 
@@ -16,4 +17,5 @@ public class BasicEP extends AbstractElectricPokemon implements IElectricPokemon
     public BasicEP(String name, int id, int hp, List<IAbilities> abilitiesList) {
         super(name, id, hp, abilitiesList);
     }
+
 }

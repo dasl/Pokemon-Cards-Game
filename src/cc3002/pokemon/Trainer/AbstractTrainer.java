@@ -4,11 +4,17 @@ package cc3002.pokemon.Trainer;
 import cc3002.pokemon.AbstractPokemon;
 import cc3002.pokemon.ICard;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.BasicFP;
+import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.fire.IFirePokemon;
+import cc3002.pokemon.grass.GrassEnergy;
 import cc3002.pokemon.normal.BasicNP;
 import cc3002.pokemon.normal.INormalPokemon;
+import cc3002.pokemon.normal.NormalEnergy;
+import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.IWaterPokemon;
+import cc3002.pokemon.water.WaterEnergy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -165,6 +171,66 @@ public abstract class AbstractTrainer {
     }
 
 
+    /**
+     * Evolution of any Pokemon from bench.
+     *
+     */
+    public void evolution(IPokemon pokemon){
+        changeFromBench(pokemon);
+    }
+    /**
+     * Change any Pokemon from bench.
+     *
+     */
+    public void changeFromBench(IPokemon pokemon){
+        for (IPokemon poke : bench){
+            if (poke.getID()==pokemon.getID()){
+                intheritEnergies(poke,pokemon);
+                this.Cementery.add(poke);
+                bench.set(bench.indexOf(poke),pokemon);
+            }
+        }
+    }
+
+    /**
+     *
+     * inherit energies from another pokemon.
+     *
+     */
+    public void intheritEnergies(IPokemon pokemon, IPokemon evolution){
+        int currentEE = pokemon.getElectricEnergies();
+        int currentFE = pokemon.getFireEnergies();
+        int currentPE = pokemon.getPsychicEnergies();
+        int currentWE = pokemon.getWaterEnergies();
+        int currentNE = pokemon.getNormalEnergies();
+        int currentGE = pokemon.getGrassEnergies();
+
+        while (0<currentEE){
+            evolution.receiveElectricEnergy(new ElectricEnergy());
+            currentEE--;
+        }
+        while (0<currentFE){
+            evolution.receiveFireEnergy(new FireEnergy());
+            currentFE--;
+        }
+
+        while (0<currentPE){
+            evolution.receivePsychicEnergy(new PsychicEnergy());
+            currentPE--;
+        }
+        while (0<currentWE){
+            evolution.receiveWaterEnergy(new WaterEnergy());
+            currentWE--;
+        }
+        while (0<currentNE){
+            evolution.receiveNormalEnergy(new NormalEnergy());
+            currentNE--;
+        }
+        while (0<currentGE){
+            evolution.receiveGrassEnergy(new GrassEnergy());
+            currentGE--;
+        }
+    }
 
 
     /**
