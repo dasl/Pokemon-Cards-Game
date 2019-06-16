@@ -1,19 +1,13 @@
 package cc3002.pokemon.Trainer;
 
 
-import cc3002.pokemon.AbstractPokemon;
 import cc3002.pokemon.ICard;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.electric.ElectricEnergy;
-import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.fire.IFirePokemon;
 import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.normal.BasicNP;
-import cc3002.pokemon.normal.INormalPokemon;
 import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.psychic.PsychicEnergy;
-import cc3002.pokemon.water.IWaterPokemon;
 import cc3002.pokemon.water.WaterEnergy;
 
 import java.util.ArrayList;
@@ -35,7 +29,7 @@ public abstract class AbstractTrainer {
     private IPokemon ActivePoke;
     private IPokemon aux;
     private String name;
-
+    private AbstractTrainer oponent;
     /**
      * Creates a new Trainer.
      *
@@ -121,9 +115,7 @@ public abstract class AbstractTrainer {
     /**
      * Getter type of any Pokemon.
      *
-     * @return pokemon type
      */
-
     public void setPokemonType(IPokemon pokemon){
         if(bench.contains(pokemon)){
             this.aux = pokemon;
@@ -132,14 +124,30 @@ public abstract class AbstractTrainer {
             this.aux = getActivePokemon();
     }
 
+    /**
+     * Setter of oponent.
+     *
+     */
+    public void setOponent(AbstractTrainer trainer){
+        this.oponent = trainer;
+    }
+
+    /**
+     * Getter of oponent.
+     *
+     * @return oponent
+     */
+    public AbstractTrainer getOponent(){
+        return this.oponent;
+    }
+
 
     /**
      * Setter type of any Pokemon.
      *
-     * @return pokemon type
      */
     public void ShiftType(){
-        setActivePokemon(new BasicNP(getActivePokemon().getName(), getActivePokemon().getID(), getActivePokemon().getHP(), getActivePokemon().getAbilityList()));
+        getActivePokemon().copyType(this.selectedPokemon, (Trainer) this);
     }
 
     /**

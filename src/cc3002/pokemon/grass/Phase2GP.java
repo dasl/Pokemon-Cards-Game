@@ -1,6 +1,7 @@
 package cc3002.pokemon.grass;
 
 import cc3002.pokemon.Abilities.IAbilities;
+import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
@@ -12,7 +13,12 @@ public class Phase2GP extends AbstractGrassPokemon implements IGrassPokemon{
      * @param hp         Pokémon's hit points.
      * @param abilitiesList Pokémon's attacks.
      */
-    protected Phase2GP(String name, int id, int hp, List<IAbilities> abilitiesList) {
+    public Phase2GP(String name, int id, int hp, List<IAbilities> abilitiesList) {
         super(name, id, hp, abilitiesList);
+    }
+
+    @Override
+    public void getObjectType(Trainer trainer) {
+        trainer.getActivePokemon().sendType2GP(trainer);
     }
 }

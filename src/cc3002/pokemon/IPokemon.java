@@ -194,4 +194,45 @@ public interface IPokemon extends ICard{
   void setAbilities(IAbilities abilities);
 
   void receiveAfterimageAssaultEffect(Trainer trainer);
+
+  void getObjectType(Trainer trainer);
+
+  void copyType(IPokemon pokemon, Trainer trainer);
+
+  void sendTypeBEP(Trainer trainer);
+
+  void sendTypeBFP(Trainer trainer);
+
+  void sendTypeBNP(Trainer trainer);
+
+  void sendTypeBWP(Trainer trainer);
+
+  void sendType1FP(Trainer trainer);
+
+  void sendType2FP(Trainer trainer);
+
+  void sendTypeBGP(Trainer trainer);
+
+  void sendType1GP(Trainer trainer);
+
+  void sendType2GP(Trainer trainer);
+
+  void sendType1NP(Trainer trainer);
+
+  void sendType2NP(Trainer trainer);
+
+  void sendTypeBPP(Trainer trainer);
+
+  void sendType2PP(Trainer trainer);
+
+  void sendType2WP(Trainer trainer);
+
+  void sendType1EP(Trainer trainer);
+
+  void sendType2EP(Trainer trainer);
+
+  void sendType1PP(Trainer trainer);
+
+  void sendType1WP(Trainer trainer);
+
 }

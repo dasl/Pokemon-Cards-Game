@@ -37,6 +37,10 @@ public class TestAbilitiesVisitor {
         Brook = new Trainer("Brook",totodile,new ArrayList<>(Arrays.asList(audino)));
         Ash = new Trainer("Ash",charmander,new ArrayList<>(Arrays.asList(audino)));
 
+        // Set Turn Duel
+        Ash.setOponent(Brook);
+        Brook.setOponent(Ash);
+
     }
 
     @Test
@@ -54,10 +58,10 @@ public class TestAbilitiesVisitor {
     public void ConcreteAbilityVisitorTest(){
 
         Ash.selectAbility(0); // Habilidad: Shift
-        Ash.setPokemonType(audino); // Seteo el tipo de audino.
+        Ash.setSelectedPokemon(audino); // Seteo el tipo de audino.
         Ash.useAbility(Brook); // Ejecuto la habilidad.
-/*        System.out.println(Ash.getActivePokemon().getClass());
-        System.out.println(Brook.getActivePokemon().getClass());*/
+
+
     }
 
     @Test
@@ -67,7 +71,7 @@ public class TestAbilitiesVisitor {
         Ash.selectAbility(2);
         Ash.useAbility(Brook);
         assertEquals(Ash.getBench().size(),3);
-
+        assertTrue(Ash.getBench().contains(charmander));
 
     }
 

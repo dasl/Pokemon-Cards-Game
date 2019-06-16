@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Diego Sandoval Leiva
  */
-public abstract class AbstractFirePokemon extends AbstractPokemon{
+public abstract class AbstractFirePokemon extends AbstractPokemon {
 
 
   /**

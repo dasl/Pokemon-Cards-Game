@@ -1,7 +1,7 @@
 package cc3002.pokemon.electric;
 
 import cc3002.pokemon.Abilities.IAbilities;
-import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
@@ -18,4 +18,8 @@ public class BasicEP extends AbstractElectricPokemon implements IElectricPokemon
         super(name, id, hp, abilitiesList);
     }
 
+    @Override
+    public void getObjectType(Trainer trainer) {
+        trainer.getActivePokemon().sendTypeBEP(trainer);
+    }
 }

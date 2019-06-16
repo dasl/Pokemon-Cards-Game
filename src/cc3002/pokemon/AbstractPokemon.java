@@ -5,18 +5,12 @@ import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Abilities.visitor.AttackVisitor;
 import cc3002.pokemon.Abilities.visitor.ConcreteIAbilityVisitor;
 import cc3002.pokemon.Trainer.Trainer;
-import cc3002.pokemon.electric.ElectricEnergy;
-import cc3002.pokemon.fire.FireAttack;
-import cc3002.pokemon.fire.FireEnergy;
-import cc3002.pokemon.grass.GrassAttack;
-import cc3002.pokemon.grass.GrassEnergy;
-import cc3002.pokemon.normal.NormalAttack;
-import cc3002.pokemon.electric.ElectricAttack;
-import cc3002.pokemon.normal.NormalEnergy;
-import cc3002.pokemon.psychic.PsychicAttack;
-import cc3002.pokemon.psychic.PsychicEnergy;
-import cc3002.pokemon.water.WaterAttack;
-import cc3002.pokemon.water.WaterEnergy;
+import cc3002.pokemon.electric.*;
+import cc3002.pokemon.fire.*;
+import cc3002.pokemon.grass.*;
+import cc3002.pokemon.normal.*;
+import cc3002.pokemon.psychic.*;
+import cc3002.pokemon.water.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +36,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   private List<GrassEnergy > grassEnergies;
   private List<PsychicEnergy> psychicEnergies;
   private List<NormalEnergy> normalEnergies;
+  private IPokemon clonetype;
 
   /**
    * Creates a new Pokémon.
@@ -326,10 +321,9 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * Receives effect from a shift ability.
    *
    */
-
   @Override
   public void receiveShiftEffect(Trainer trainer) {
-    trainer.ShiftType();
+    trainer.getOponent().ShiftType();
   }
 
   @Override
@@ -356,6 +350,46 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
 
+  @Override
+  public void copyType(IPokemon pokemon,Trainer trainer){
+    pokemon.getObjectType(trainer);
+
+  }
+  public void sendTypeBFP(Trainer trainer) { trainer.setActivePokemon( new BasicFP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendTypeBNP(Trainer trainer) { trainer.setActivePokemon( new BasicNP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendTypeBWP(Trainer trainer) { trainer.setActivePokemon( new BasicWP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType1FP(Trainer trainer) { trainer.setActivePokemon( new Phase1FP(this.name,this.id,this.hp,this.abilities)); }
+
+  public void sendType2FP(Trainer trainer) { trainer.setActivePokemon( new Phase2FP(this.name,this.id,this.hp,this.abilities)); }
+
+  public void sendTypeBGP(Trainer trainer) { trainer.setActivePokemon( new BasicGP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType1GP(Trainer trainer) { trainer.setActivePokemon( new Phase1GP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType2GP(Trainer trainer) { trainer.setActivePokemon( new Phase2GP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType1NP(Trainer trainer) { trainer.setActivePokemon( new Phase1NP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType2NP(Trainer trainer) { trainer.setActivePokemon( new Phase2NP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendTypeBPP(Trainer trainer) { trainer.setActivePokemon( new BasicPP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType1PP(Trainer trainer) { trainer.setActivePokemon( new Phase1PP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType2PP(Trainer trainer) { trainer.setActivePokemon( new Phase2PP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType1WP(Trainer trainer) { trainer.setActivePokemon( new Phase1WP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType2WP(Trainer trainer) { trainer.setActivePokemon( new Phase2WP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendTypeBEP(Trainer trainer) { trainer.setActivePokemon( new BasicEP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType1EP(Trainer trainer) { trainer.setActivePokemon( new Phase1EP(this.name,this.id,this.hp,this.abilities));}
+
+  public void sendType2EP(Trainer trainer) { trainer.setActivePokemon( new Phase2EP(this.name,this.id,this.hp,this.abilities));}
 
   //endregion
 }
