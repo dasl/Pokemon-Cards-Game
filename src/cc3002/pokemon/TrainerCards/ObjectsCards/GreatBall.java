@@ -15,8 +15,8 @@ public class GreatBall extends ObjectsCard {
         for(ICard poke : getTrainer().getDeck()){
             if(getTrainer().getSelectedPokemon().equals(poke)){
                 getTrainer().addPokemonToBench((IPokemon) poke);
-                getTrainer().getDeck().remove(poke);
-                Collections.shuffle(getTrainer().getDeck());
+                getTrainer().removefromDeck((poke));
+                getTrainer().shuffleDeck();
                 break;
             }
         }

@@ -12,7 +12,7 @@ public class LuckyStadium extends StaduimCard {
     public void play() {
         int coinValue = coin.nextInt(2);
         if(coinValue==1){
-            getTrainer().getCard();
+            getTrainer().fromDeckToHand();
         }
     }
 

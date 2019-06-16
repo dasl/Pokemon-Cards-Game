@@ -13,6 +13,7 @@ import cc3002.pokemon.water.WaterEnergy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Observable;
 
 /**
  * Abstract class that represents a generic Trainer. This class contains the necessary methods to
@@ -21,7 +22,7 @@ import java.util.List;
  * @author Diego Sandoval Leiva
  */
 
-public abstract class AbstractTrainer {
+public abstract class AbstractTrainer extends Observable implements ITrainer{
     private List<IPokemon> bench;
     private List<ICard> hand;
     private List<ICard> Deck;
@@ -32,6 +33,12 @@ public abstract class AbstractTrainer {
     private IPokemon aux;
     private String name;
     private AbstractTrainer oponent;
+
+    public void trainerChanges(){
+        setChanged();
+        notifyObservers();
+    }
+
     /**
      * Creates a new Trainer.
      *
@@ -39,7 +46,6 @@ public abstract class AbstractTrainer {
      * @param bench bench.
 
      */
-
     protected AbstractTrainer(String name, IPokemon ActivePoke, List<IPokemon> bench) {
         this.ActivePoke = ActivePoke;
         this.bench = bench;
@@ -50,16 +56,50 @@ public abstract class AbstractTrainer {
         this.hand = new ArrayList<>(60);
     }
 
+
+    /**
+     * Take a card of pockedeck and put in the hand.
+     *
+     */
+     @Override
+     public void fromDeckToHand(){
+         addToCardsHand(getCard());
+         trainerChanges();
+     }
+
+    /**
+     * Take a card of pockedeck and put in the hand.
+     *
+     */
+    @Override
+    public void removefromDeck(ICard poke){
+        this.Deck.remove(poke);
+        trainerChanges();
+    }
+
+    /**
+     * Take a card of pockedeck and put in the hand.
+     *
+     */
+    @Override
+    public void shuffleDeck(){
+        Collections.shuffle(this.Deck);
+        trainerChanges();
+    }
+
+
+
     /**
      * Add a new pokemon to the pokedeck.
      *
      * @param pokemon Active Pokemon.
      */
-
+    @Override
     public void addPokemonToBench(IPokemon pokemon){
         if (bench.size()<5){
             this.bench.add(pokemon);
         }
+        trainerChanges();
     }
 
 
@@ -68,7 +108,7 @@ public abstract class AbstractTrainer {
      *
      * @param card Active Pokemon.
      */
-
+    @Override
     public void addToCardsDeck(ICard card){
         if (Deck.size()<60){
             this.Deck.add(card);
@@ -80,7 +120,7 @@ public abstract class AbstractTrainer {
      *
      * @param card Active Pokemon.
      */
-
+    @Override
     public void addToCardsHand(ICard card){
         if (hand.size()<60){
             this.hand.add(card);
@@ -93,6 +133,7 @@ public abstract class AbstractTrainer {
      *
      * @param index ability Pokemon.
      */
+    @Override
     public void selectAbility(int index) {
         ActivePoke.selectAbility(index);
     }
@@ -102,6 +143,7 @@ public abstract class AbstractTrainer {
      *
      * @param adversary adversary.
      */
+    @Override
     public void useAbility(Trainer adversary) {
         ActivePoke.useAbility(adversary);
     }
@@ -112,6 +154,7 @@ public abstract class AbstractTrainer {
      *
      * @param pokemon Active Pokemon.
      */
+    @Override
     public void setActivePokemon(IPokemon pokemon){
             this.ActivePoke = pokemon;
     }
@@ -120,7 +163,7 @@ public abstract class AbstractTrainer {
      * Getter of a Active Pokemon.
      *
      */
-
+    @Override
     public IPokemon getActivePokemon(){
         return this.ActivePoke;
     }
@@ -131,6 +174,7 @@ public abstract class AbstractTrainer {
      * Getter type of any Pokemon.
      *
      */
+    @Override
     public void setPokemonType(IPokemon pokemon){
         if(bench.contains(pokemon)){
             this.aux = pokemon;
@@ -143,6 +187,7 @@ public abstract class AbstractTrainer {
      * Setter of oponent.
      *
      */
+    @Override
     public void setOponent(AbstractTrainer trainer){
         this.oponent = trainer;
     }
@@ -152,6 +197,7 @@ public abstract class AbstractTrainer {
      *
      * @return oponent
      */
+    @Override
     public AbstractTrainer getOponent(){
         return this.oponent;
     }
@@ -161,28 +207,32 @@ public abstract class AbstractTrainer {
      *
      * @return card
      */
+    @Override
     public ICard getCard(){
         ICard aux = Deck.get(0);
         Deck.remove(0);
         return aux;
     }
 
+
     /**
      * Add card to the cementery
      *
      * @param card Any card
      */
+   @Override
     public void addToCementery(ICard card){
         ICard aux = card;
         this.Cementery.add(card);
         getHand().remove(getHand().indexOf(card));
-
+        trainerChanges();
     }
 
     /**
      * Delete all the cards because of picado.
      *
      */
+    @Override
     public void dropHand(){
         this.hand.clear();
     }
@@ -193,8 +243,10 @@ public abstract class AbstractTrainer {
      * Setter type of any Pokemon.
      *
      */
+    @Override
     public void ShiftType(){
         getActivePokemon().copyType(this.selectedPokemon, (Trainer) this);
+        trainerChanges();
     }
 
     /**
@@ -202,6 +254,7 @@ public abstract class AbstractTrainer {
      *
      * @return pokemon type
      */
+    @Override
     public void setSelectedPokemon(IPokemon pokemon){
         this.selectedPokemon=pokemon;
     }
@@ -211,6 +264,7 @@ public abstract class AbstractTrainer {
      *
      * @return pokemon type
      */
+    @Override
     public IPokemon getSelectedPokemon(){
         return this.selectedPokemon;
     }
@@ -221,6 +275,7 @@ public abstract class AbstractTrainer {
      *
      * @return dead pokemon
      */
+    @Override
     public boolean getDeadPokemon(IPokemon pokemon){
         return Cementery.contains(pokemon);
     }
@@ -230,13 +285,16 @@ public abstract class AbstractTrainer {
      * Evolution of any Pokemon from bench.
      *
      */
+    @Override
     public void evolution(IPokemon pokemon){
         changeFromBench(pokemon);
+        shuffleDeck();
     }
     /**
      * Change any Pokemon from bench.
      *
      */
+    @Override
     public void changeFromBench(IPokemon pokemon){
         for (IPokemon poke : bench){
             if (poke.getID()==pokemon.getID()){
@@ -245,6 +303,7 @@ public abstract class AbstractTrainer {
                 bench.set(bench.indexOf(poke),pokemon);
             }
         }
+        trainerChanges();
     }
 
     /**
@@ -252,6 +311,7 @@ public abstract class AbstractTrainer {
      * inherit energies from another pokemon.
      *
      */
+    @Override
     public void intheritEnergies(IPokemon pokemon, IPokemon evolution){
         int currentEE = pokemon.getElectricEnergies();
         int currentFE = pokemon.getFireEnergies();
@@ -292,17 +352,10 @@ public abstract class AbstractTrainer {
      * Getter of  Active Trainer name's.
      *
      */
+    @Override
     public String getName(){
         return this.name;
     }
-
-
-    /**
-     * Checks if this attack is equal to another.
-     *
-     * @param obj Object to compare this attack.
-     * @return <code>true</code> if the objects are equal, <code>false</code> otherwise.
-     */
 
 
 
@@ -310,6 +363,7 @@ public abstract class AbstractTrainer {
      * Getter of  Active Pokemon name's.
      *
      */
+    @Override
     public String getActivePokemonName(){
         return this.ActivePoke.getName();
     }
@@ -319,6 +373,7 @@ public abstract class AbstractTrainer {
      * Getter of pockebench sizes.
      *
      */
+    @Override
     public int sizePokeBench(){
         return this.bench.size();
     }
@@ -327,6 +382,7 @@ public abstract class AbstractTrainer {
      * Getter of pockedeck sizes.
      *
      */
+    @Override
     public int sizePokeDeck(){
         return this.Deck.size();
     }
@@ -335,6 +391,7 @@ public abstract class AbstractTrainer {
      * Getter of pockehand sizes.
      *
      */
+    @Override
     public int sizePokeHand(){
         return this.hand.size();
     }
@@ -344,6 +401,7 @@ public abstract class AbstractTrainer {
      * Getter of bench.
      *
      */
+    @Override
     public List<IPokemon> getBench(){
         return bench;
     }
@@ -352,6 +410,7 @@ public abstract class AbstractTrainer {
      * Getter of pockedeck.
      *
      */
+    @Override
     public List<ICard> getDeck(){
         return Deck;
     }
@@ -364,6 +423,7 @@ public abstract class AbstractTrainer {
      *
      * @param pokemon Active Pokemon.
      */
+    @Override
     public void pokeToCementery(IPokemon pokemon){
         if (pokemon.getHP()<=0){
             pokemon.resetEnergies();
@@ -371,6 +431,7 @@ public abstract class AbstractTrainer {
             this.ActivePoke= bench.get(0);
             this.bench.remove(0);
         }
+        trainerChanges();
     }
 
     /**
@@ -379,17 +440,18 @@ public abstract class AbstractTrainer {
      * use this ability and place them on the bench, then roll the deck..
      *
      */
+    @Override
     public void AIAEffect(){
         int max = 2;
         for (ICard poke : this.Deck){
             if(getActivePokemon().equals(poke) && max>0){
-                bench.add((IPokemon)poke);
-                Deck.remove(poke);
+                addPokemonToBench((IPokemon)poke);
+                removefromDeck(poke);
                 max--;
             }
         }
-        Collections.shuffle(Deck);
-
+        shuffleDeck();
+        trainerChanges();
     }
 
 
@@ -397,6 +459,7 @@ public abstract class AbstractTrainer {
      * Getter of hand
      *
      */
+    @Override
     public List<ICard> getHand() {
         return this.hand;
     }

@@ -3,6 +3,13 @@ package cc3002.pokemon;
 import java.util.EnumMap;
 import java.util.Map;
 
+/**
+ * EnergyCounter, this class implements a data structure for saving the different types of energies.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
+
 enum EnergyType {
     grass, fire, water, electric, normal, psychic
 }

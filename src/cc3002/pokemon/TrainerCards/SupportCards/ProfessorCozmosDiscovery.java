@@ -14,13 +14,13 @@ public class ProfessorCozmosDiscovery extends SupportCard {
     public void play() {
         int coinValue = coin.nextInt(2);
         if(coinValue==0){
-            getTrainer().addToCardsHand(getTrainer().getCard());
-            getTrainer().addToCardsHand(getTrainer().getCard());
+            getTrainer().fromDeckToHand();
+            getTrainer().fromDeckToHand();
         }
         if(coinValue==1){
-            getTrainer().addToCardsHand(getTrainer().getCard());
-            getTrainer().addToCardsHand(getTrainer().getCard());
-            getTrainer().addToCardsHand(getTrainer().getCard());
+            getTrainer().fromDeckToHand();
+            getTrainer().fromDeckToHand();
+            getTrainer().fromDeckToHand();
         }
         getTrainer().addToCementery(this);
     }

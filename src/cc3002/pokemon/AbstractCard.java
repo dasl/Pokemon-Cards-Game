@@ -2,7 +2,15 @@ package cc3002.pokemon;
 
 import cc3002.pokemon.Trainer.Trainer;
 
-public abstract class AbstractCard implements ICard{
+
+/**
+ * Abstract class that represents a generic car. This class contains the necessary methods to
+ * play any car, set and get trainer.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
+public abstract class AbstractCard implements ICard {
     private Trainer pokeMaster;
 
     /**

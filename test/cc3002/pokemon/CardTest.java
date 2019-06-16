@@ -63,7 +63,7 @@ public class CardTest {
         Ash.dropHand();
         Ash.addToCardsHand(stadium);
         Ash.play(stadium);
-        assertTrue(Ash.sizePokeHand()==0 || Ash.sizePokeHand()==1);
+        assertTrue(Ash.sizePokeHand()==1 || Ash.sizePokeHand()==2);
     }
 
     @Test

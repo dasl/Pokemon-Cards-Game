@@ -12,7 +12,7 @@ import java.util.List;
  * @author Diego Sandoval Leiva
  */
 
-public class Trainer extends AbstractTrainer{
+public class Trainer extends AbstractTrainer {
     /**
      * Creates a new Trainer.
      *
