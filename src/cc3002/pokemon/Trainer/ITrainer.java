@@ -2,6 +2,7 @@ package cc3002.pokemon.Trainer;
 
 import cc3002.pokemon.ICard;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.TrainerCards.StadiumCards.StadiumCard;
 
 import java.util.List;
 
@@ -37,6 +38,12 @@ public interface ITrainer {
     void setActivePokemon(IPokemon pokemon);
 
     IPokemon getActivePokemon();
+
+    List<ICard> getStadiumList();
+
+    void setStadiumList(StadiumCard stadiumCard);
+
+    void cleanStadiumList();
 
     void setPokemonType(IPokemon pokemon);
 

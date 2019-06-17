@@ -123,7 +123,7 @@ public class CardTest {
         Ash.setSelectedPokemon(pokemoncojo);
         assertEquals(Ash.getSelectedPokemon().getHP(),50);
         Ash.play(potion);
-        assertEquals(Ash.getSelectedPokemon().getHP(),70);
+        assertEquals(Ash.getSelectedPokemon().getHP(),50);
 
     }
 

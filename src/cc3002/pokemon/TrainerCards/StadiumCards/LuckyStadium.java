@@ -17,10 +17,20 @@ public class LuckyStadium extends StadiumCard {
     @Override
     public void play() {
         int coinValue = coin.nextInt(2);
-        if(coinValue==1){
-            getTrainer().fromDeckToHand();
+        if (!getTrainer().getStadiumList().isEmpty()){
+            getTrainer().cleanStadiumList();
+            if(coinValue==1){
+                getTrainer().fromDeckToHand();
+            }
+            getTrainer().setStadiumList(this);
         }
-        setStadiumCard();
+        else{
+            if(coinValue==1){
+                getTrainer().fromDeckToHand();
+            }
+            getTrainer().setStadiumList(this);
+        }
+
     }
 
 }

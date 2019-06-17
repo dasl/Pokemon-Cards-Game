@@ -27,6 +27,4 @@ public interface ICard {
     Trainer getTrainer();
 
     void accept(ICardVisitor visitor);
-
-    void setStadiumCard();
 }

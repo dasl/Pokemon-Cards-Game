@@ -39,7 +39,7 @@ public class cardObserver implements ICardObserver {
 
     @Override
     public void stadiumCardInGame(){
-        card.setStadiumCard();
+        card.getTrainer().getStadiumList();
     }
 
 

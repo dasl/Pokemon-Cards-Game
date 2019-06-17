@@ -3,6 +3,7 @@ package cc3002.pokemon.Trainer;
 
 import cc3002.pokemon.ICard;
 import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.TrainerCards.StadiumCards.StadiumCard;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireEnergy;
 import cc3002.pokemon.grass.GrassEnergy;
@@ -26,12 +27,13 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
     private List<IPokemon> bench;
     private List<ICard> hand;
     private List<ICard> Deck;
-    private List<ICard> Cementery;
+    private List<ICard> cementery;
     private List<ICard> cardPrizes;
     private IPokemon selectedPokemon;
     private IPokemon ActivePoke;
     private IPokemon aux;
     private String name;
+    private List<ICard> stadiumList;
     private AbstractTrainer oponent;
 
 
@@ -56,9 +58,10 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
         this.bench = bench;
         this.name = name;
         this.Deck =  new ArrayList<ICard>(60);
-        this.Cementery =  new ArrayList<ICard>();
+        this.cementery =  new ArrayList<ICard>();
         this.cardPrizes = new ArrayList<ICard>(6);
         this.hand = new ArrayList<>(60);
+        this.stadiumList = new ArrayList<>();
     }
 
 
@@ -195,6 +198,31 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
         return this.ActivePoke;
     }
 
+    /**
+     * Getter of a Stadium List.
+     *
+     */
+    @Override
+    public List<ICard> getStadiumList(){
+        return this.stadiumList;
+    }
+
+    /**
+     * Setter of a Stadium List.
+     *
+     */
+    @Override
+    public void setStadiumList(StadiumCard stadiumCard){
+        this.stadiumList.add(stadiumCard);
+    }
+    /**
+     * Cleaner of a Stadium List.
+     *
+     */
+    @Override
+    public void cleanStadiumList(){
+        stadiumList.clear();
+    }
 
 
     /**
@@ -250,7 +278,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
    @Override
     public void addToCementery(ICard card){
         ICard aux = card;
-        this.Cementery.add(card);
+        this.cementery.add(card);
         getHand().remove(getHand().indexOf(card));
     }
 
@@ -260,7 +288,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
      */
     @Override
     public void dropHand(){
-        this.Cementery.addAll(this.hand);
+        this.cementery.addAll(this.hand);
         this.hand.clear();
     }
 
@@ -294,7 +322,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
      */
     @Override
     public boolean getDeadPokemon(IPokemon pokemon){
-        return Cementery.contains(pokemon);
+        return cementery.contains(pokemon);
     }
 
 
@@ -316,7 +344,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
         for (IPokemon poke : bench){
             if (poke.getID()==pokemon.getID()){
                 intheritEnergies(poke,pokemon);
-                this.Cementery.add(poke);
+                this.cementery.add(poke);
                 bench.set(bench.indexOf(poke),pokemon);
             }
         }
@@ -444,7 +472,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
     public void pokeToCementery(IPokemon pokemon){
         if (pokemon.getHP()<=0){
             pokemon.resetEnergies();
-            this.Cementery.add(pokemon);
+            this.cementery.add(pokemon);
             this.ActivePoke= bench.get(0);
             this.bench.remove(0);
         }
