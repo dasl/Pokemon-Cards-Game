@@ -2,6 +2,12 @@ package cc3002.pokemon.TrainerCards.SupportCards;
 
 import java.util.Random;
 
+/**
+ * This class represents a Professor Coscmo's Discovery support card.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class ProfessorCozmosDiscovery extends SupportCard {
     private Random coin = new Random();
 

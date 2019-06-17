@@ -9,6 +9,7 @@ import cc3002.pokemon.TrainerCards.ObjectsCards.GreatBall;
 import cc3002.pokemon.TrainerCards.ObjectsCards.Potion;
 import cc3002.pokemon.TrainerCards.StadiumCards.LuckyStadium;
 import cc3002.pokemon.TrainerCards.SupportCards.ProfessorCozmosDiscovery;
+import cc3002.pokemon.TrainerCards.SupportCards.ProfessorJuniper;
 import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.water.BasicWP;
@@ -22,7 +23,7 @@ import java.util.Arrays;
 
 public class CardTest {
     private IPokemon charmander,totodile, pokemoncojo;
-    private ICard support,stadium, GreatBall,potion;
+    private ICard cosmo,juniper,stadium, GreatBall,potion;
     private Trainer Ash, Brook;
     private IAbilities fireAttack, heal,waterAttack, electricShock;
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
@@ -36,8 +37,9 @@ public class CardTest {
 
         charmander = new BasicFP("Charmander",1, 100, new ArrayList<>(Arrays.asList(heal,fireAttack, electricShock)));
         pokemoncojo = new BasicFP("Cojomonder",198, 50, new ArrayList<>(Arrays.asList(heal,fireAttack, electricShock)));
-        support = new ProfessorCozmosDiscovery("Professor Cozmo's Discovery","Juegos de azar y mujerzuelas");
+        cosmo = new ProfessorCozmosDiscovery("Professor Cozmo's Discovery","Juegos de azar y mujerzuelas");
         stadium = new LuckyStadium("Lucky Stadium","Si juego en casa, tengo ventaja jeje xd");
+        juniper = new ProfessorJuniper("Professor Juniper","Estoy entero picado, voy a resetear mi mano jajaxd");
         GreatBall = new GreatBall("Great Ball","Cacha como crece mi banca de pokemones jajaja.");
         potion = new Potion("Potion","Cacha como regenero a mi pokemon seleccionado, jaja sin picarse.");
 
@@ -65,16 +67,34 @@ public class CardTest {
 
     @Test
     public void testingSupportCards(){
-        // Mazo de charmanders
+        // Professor Cosmo
         Ash.addToCardsDeck(charmander);
         Ash.addToCardsDeck(charmander);
         Ash.addToCardsDeck(charmander);
         Ash.addToCardsDeck(charmander);
-        Ash.addToCardsHand(support);
+        Ash.addToCardsHand(cosmo);
         assertEquals(Ash.sizePokeHand(),1);
-        Ash.play(support);
+        Ash.play(cosmo);
         assertTrue(Ash.sizePokeHand()==2 || Ash.sizePokeHand()==3);
-        assertFalse(Ash.getHand().contains(support));
+        assertFalse(Ash.getHand().contains(cosmo));
+
+        // Professor Juniper
+        Ash.dropHand();
+        Ash.addToCardsHand(pokemoncojo);
+        Ash.addToCardsHand(pokemoncojo);
+        Ash.addToCardsHand(pokemoncojo);
+        assertEquals(Ash.getHand().size(),3);
+        Ash.addToCardsDeck(charmander);
+        Ash.addToCardsDeck(charmander);
+        Ash.addToCardsDeck(charmander);
+        Ash.addToCardsDeck(charmander);
+        Ash.addToCardsDeck(charmander);
+        Ash.addToCardsDeck(charmander);
+        Ash.addToCardsDeck(charmander);
+        Ash.addToCardsDeck(charmander);
+        Ash.play(juniper);
+        assertEquals(Ash.getHand().size(),7);
+
     }
 
     @Test
@@ -97,6 +117,7 @@ public class CardTest {
         assertTrue(Ash.sizePokeBench()==1);
 
         // Potion
+        Ash.addToCardsHand(potion);
         Ash.setSelectedPokemon(pokemoncojo);
         assertEquals(Ash.getSelectedPokemon().getHP(),50);
         Ash.play(potion);
@@ -107,7 +128,7 @@ public class CardTest {
     @Test
     public void cardStringType(){
         assertEquals("StadiumCard",stadium.getCardType());
-        assertEquals("SupportCard",support.getCardType());
+        assertEquals("SupportCard",cosmo.getCardType());
         assertEquals("ObjectsCard", GreatBall.getCardType());
     }
 }

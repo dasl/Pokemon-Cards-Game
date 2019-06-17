@@ -234,6 +234,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
      */
     @Override
     public void dropHand(){
+        this.Cementery.addAll(this.hand);
         this.hand.clear();
     }
 

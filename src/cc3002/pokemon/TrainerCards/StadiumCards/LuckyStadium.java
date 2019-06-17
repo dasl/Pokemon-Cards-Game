@@ -2,6 +2,12 @@ package cc3002.pokemon.TrainerCards.StadiumCards;
 
 import java.util.Random;
 
+/**
+ * This class represents a LuckyStadium stadium card.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class LuckyStadium extends StaduimCard {
     private Random coin = new Random();
 
