@@ -99,7 +99,7 @@ This card game implements different functionalism's of the real game, that was i
     other one for the Cards and a last one for the abilities. These observers check the correctly course of a turn in the game.       
             
 
-######Clarification: None of the method instanceOf() is used to disambiguate instead of double dispatch or visitor design pattern.
+###### Clarification: None of the method instanceOf() is used to disambiguate instead of double dispatch or visitor design pattern.
 ###### Exist an instanceOf() that disambiguate in observer design pattern because of the JAVA 8.
 
 ## Built With
