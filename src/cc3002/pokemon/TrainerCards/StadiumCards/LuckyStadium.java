@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Diego Sandoval Leiva
  */
 
-public class LuckyStadium extends StaduimCard {
+public class LuckyStadium extends StadiumCard {
     private Random coin = new Random();
 
     public LuckyStadium(String name, String text) {
@@ -20,6 +20,7 @@ public class LuckyStadium extends StaduimCard {
         if(coinValue==1){
             getTrainer().fromDeckToHand();
         }
+        setStadiumCard(this);
     }
 
 }

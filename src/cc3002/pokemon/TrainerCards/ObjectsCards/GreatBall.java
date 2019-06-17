@@ -27,7 +27,8 @@ public class GreatBall extends ObjectsCard {
                 break;
             }
         }
-        getTrainer().addToCementery(this);
+        getTrainer().getSelectedPokemon().setObjectlinked(this);
+        cardChanges();
     }
 
 }

@@ -7,6 +7,7 @@ import cc3002.pokemon.Abilities.visitor.AttackVisitor;
 import cc3002.pokemon.Abilities.visitor.ConcreteIAbilityVisitor;
 import cc3002.pokemon.CardVisitor.ICardVisitor;
 import cc3002.pokemon.Trainer.Trainer;
+import cc3002.pokemon.TrainerCards.ObjectsCards.ObjectsCard;
 import cc3002.pokemon.electric.*;
 import cc3002.pokemon.fire.*;
 import cc3002.pokemon.grass.*;
@@ -31,8 +32,8 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   private int hp;
   private List<IAbilities> abilities;
   private IAttack selectedAttack;
-  private IPokemon clonetype;
   private EnergyCounter energies;
+  private ObjectsCard objectlinked;
 
   /**
    * Creates a new Pokémon.
@@ -355,8 +356,6 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
 
 
 
-
-
   /**
    * Getter of ability by id.
    *
@@ -392,7 +391,24 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
     }
   }
 
+  /**
+   * Setter of objetc associate card.
+   *
+   * @param objectsCard
+   */
+  @Override
+  public void setObjectlinked(ObjectsCard objectsCard){
+      this.objectlinked = objectsCard;
+  }
 
+  /**
+   * Getter of objetc associate card.
+   *
+   */
+  @Override
+  public ObjectsCard getObjectlinked(){
+    return this.objectlinked;
+  }
 
 
   //endregion

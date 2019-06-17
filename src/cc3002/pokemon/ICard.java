@@ -2,6 +2,7 @@ package cc3002.pokemon;
 
 import cc3002.pokemon.CardVisitor.ICardVisitor;
 import cc3002.pokemon.Trainer.Trainer;
+import cc3002.pokemon.TrainerCards.StadiumCards.StadiumCard;
 
 /**
  * Common interface implemented by the two types of cards in the game, energies
@@ -11,15 +12,24 @@ import cc3002.pokemon.Trainer.Trainer;
  */
 
 public interface ICard {
+
     /**
      * Get the card type
      * If is an energy or a pokemon
      *
      */
     String getCardType();
+
     void play();
+
     void setTrainer(Trainer trainer);
+
     Trainer getTrainer();
+
     void accept(ICardVisitor visitor);
+
+    void setStadiumCard(StadiumCard stadiumCard);
+
+    StadiumCard getStadiumCard();
 
 }

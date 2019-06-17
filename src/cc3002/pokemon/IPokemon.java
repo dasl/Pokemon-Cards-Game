@@ -3,6 +3,7 @@ package cc3002.pokemon;
 import cc3002.pokemon.Abilities.IAbilities;
 import cc3002.pokemon.Abilities.attacks.ElectricShock;
 import cc3002.pokemon.Trainer.Trainer;
+import cc3002.pokemon.TrainerCards.ObjectsCards.ObjectsCard;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
 import cc3002.pokemon.fire.FireAttack;
@@ -221,5 +222,7 @@ public interface IPokemon extends ICard{
   void setAbilities(IAbilities abilities);
 
 
+    void setObjectlinked(ObjectsCard objectsCard);
 
+  ObjectsCard getObjectlinked();
 }

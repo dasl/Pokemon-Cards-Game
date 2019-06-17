@@ -8,7 +8,7 @@ import cc3002.pokemon.CardVisitor.TrainerCardVisitor;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.TrainerCards.AbstractTrainerCard;
 import cc3002.pokemon.TrainerCards.ObjectsCards.ObjectsCard;
-import cc3002.pokemon.TrainerCards.StadiumCards.StaduimCard;
+import cc3002.pokemon.TrainerCards.StadiumCards.StadiumCard;
 import cc3002.pokemon.TrainerCards.SupportCards.ProfessorCozmosDiscovery;
 import cc3002.pokemon.TrainerCards.SupportCards.SupportCard;
 import cc3002.pokemon.fire.BasicFP;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class CardVisitorTest {
     private IPokemon charmander,totodile;
     private SupportCard support;
-    private StaduimCard stadium;
+    private StadiumCard stadium;
     private ObjectsCard objectsCard;
     private Trainer Ash, Brook;
     private IAbilities fireAttack, shift,waterAttack,afterimageassault;

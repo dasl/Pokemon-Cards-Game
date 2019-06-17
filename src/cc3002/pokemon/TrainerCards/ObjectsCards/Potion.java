@@ -15,6 +15,7 @@ public class Potion extends ObjectsCard{
     @Override
     public void play(){
         getTrainer().getSelectedPokemon().setHP(20);
-        getTrainer().addToCementery(this);
+        getTrainer().getSelectedPokemon().setObjectlinked(this);
+        cardChanges();
     }
 }

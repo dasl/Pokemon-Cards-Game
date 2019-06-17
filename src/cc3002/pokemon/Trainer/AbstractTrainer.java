@@ -34,6 +34,11 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
     private String name;
     private AbstractTrainer oponent;
 
+
+    /**
+     * Notifiy to observers
+     *
+     */
     public void trainerChanges(){
         setChanged();
         notifyObservers();

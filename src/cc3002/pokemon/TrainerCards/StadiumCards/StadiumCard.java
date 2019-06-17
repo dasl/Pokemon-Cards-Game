@@ -9,9 +9,9 @@ import cc3002.pokemon.TrainerCards.AbstractTrainerCard;
  * @author Diego Sandoval Leiva
  */
 
-public class StaduimCard extends AbstractTrainerCard {
+public class StadiumCard extends AbstractTrainerCard {
     private String type = "StadiumCard";
-    public StaduimCard(String name, String text) {
+    public StadiumCard(String name, String text) {
         super(name, text);
     }
 
@@ -25,4 +25,6 @@ public class StaduimCard extends AbstractTrainerCard {
     public String getCardType() {
         return type;
     }
+
+
 }

@@ -15,6 +15,7 @@ public abstract class AbstractTrainerCard extends AbstractCard implements ICard 
     private String name;
     private String text;
 
+
     public AbstractTrainerCard(String name, String text){
         this.name = name;
         this.text = text;

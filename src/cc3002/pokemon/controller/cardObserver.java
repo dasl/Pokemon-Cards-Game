@@ -1,7 +1,9 @@
 package cc3002.pokemon.controller;
 
 import cc3002.pokemon.ICard;
-import cc3002.pokemon.Trainer.Trainer;
+import cc3002.pokemon.IPokemon;
+import cc3002.pokemon.TrainerCards.StadiumCards.StadiumCard;
+
 
 import java.util.Observable;
 import java.util.Observer;
@@ -15,7 +17,9 @@ import java.util.Observer;
 
 public class cardObserver implements Observer{
     Observable observable;
-    ICard card;
+    private ICard card;
+    private StadiumCard stadiumCard;
+    private IPokemon pokemon;
 
     /**
      * cardObserver constructor.
@@ -33,4 +37,11 @@ public class cardObserver implements Observer{
             card = (ICard) obs;
         }
     }
+
+    public void stadiumCardInGame(){
+        this.stadiumCard = card.getStadiumCard();
+    }
+
+
+
 }

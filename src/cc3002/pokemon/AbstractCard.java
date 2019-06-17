@@ -2,6 +2,9 @@ package cc3002.pokemon;
 
 import cc3002.pokemon.CardVisitor.ICardVisitor;
 import cc3002.pokemon.Trainer.Trainer;
+import cc3002.pokemon.TrainerCards.StadiumCards.StadiumCard;
+
+import java.util.Observable;
 
 
 /**
@@ -11,8 +14,18 @@ import cc3002.pokemon.Trainer.Trainer;
  * @author Diego Sandoval Leiva
  */
 
-public abstract class AbstractCard implements ICard {
+public abstract class AbstractCard extends Observable implements ICard {
     private Trainer pokeMaster;
+    private StadiumCard stadiumCard;
+
+    /**
+     * Notifiy to observers
+     *
+     */
+    public void cardChanges(){
+        setChanged();
+        notifyObservers();
+    }
 
     /**
      * Play this pokemon card.
@@ -38,6 +51,27 @@ public abstract class AbstractCard implements ICard {
         return this.pokeMaster;
     }
 
-
+    /**
+     * Accept the card visitor.
+     */
     public abstract void accept(ICardVisitor visitor);
+
+
+    /**
+     * Setter boolean of stadium card in game.
+     */
+    @Override
+    public void setStadiumCard(StadiumCard stadiumCard){
+        this.stadiumCard = stadiumCard;
+        cardChanges();
+    }
+
+    /**
+     * Getter of stadium card in game.
+     * @return stadium
+     */
+    @Override
+    public StadiumCard getStadiumCard(){
+        return this.stadiumCard;
+    }
 }
