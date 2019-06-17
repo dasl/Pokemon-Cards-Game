@@ -15,18 +15,17 @@ import java.util.Observer;
  * @author Diego Sandoval Leiva
  */
 
-public class cardObserver implements Observer{
+public class cardObserver implements ICardObserver {
     Observable observable;
     private ICard card;
-    private StadiumCard stadiumCard;
-    private IPokemon pokemon;
+
 
     /**
      * cardObserver constructor.
      * setter of observable
      *
      */
-    public cardObserver(){
+    public cardObserver(Observable observable){
         this.observable = observable;
         observable.addObserver(this);
     }
@@ -38,8 +37,9 @@ public class cardObserver implements Observer{
         }
     }
 
+    @Override
     public void stadiumCardInGame(){
-        this.stadiumCard = card.getStadiumCard();
+        card.setStadiumCard();
     }
 
 

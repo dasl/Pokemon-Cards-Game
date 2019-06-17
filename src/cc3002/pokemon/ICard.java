@@ -28,8 +28,5 @@ public interface ICard {
 
     void accept(ICardVisitor visitor);
 
-    void setStadiumCard(StadiumCard stadiumCard);
-
-    StadiumCard getStadiumCard();
-
+    void setStadiumCard();
 }

@@ -80,6 +80,7 @@ public class CardTest {
 
         // Professor Juniper
         Ash.dropHand();
+
         Ash.addToCardsHand(pokemoncojo);
         Ash.addToCardsHand(pokemoncojo);
         Ash.addToCardsHand(pokemoncojo);
@@ -92,6 +93,7 @@ public class CardTest {
         Ash.addToCardsDeck(charmander);
         Ash.addToCardsDeck(charmander);
         Ash.addToCardsDeck(charmander);
+
         Ash.play(juniper);
         assertEquals(Ash.getHand().size(),7);
 

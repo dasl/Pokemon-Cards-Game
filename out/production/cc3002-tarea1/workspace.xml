@@ -2,111 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e34a8405-c1d7-493e-a6af-6d455c5faaea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/IAbilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/IAbilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/attacks/AbstractAttack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/attacks/AbstractAttack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/attacks/AfterimageAssault.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/attacks/IAttack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/attacks/IAttack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/otherAbilities/AbstractAbilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/otherAbilities/AbstractAbilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/otherAbilities/Shift.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/visitor/AttackVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/visitor/AttackVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/visitor/ConcreteIAbilityVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Abilities/visitor/ConcreteIAbilityVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/AbstractCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/AbstractCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/AbstractEnergy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/AbstractEnergy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/AbstractPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/AbstractPokemon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitor/EnergyCardVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitor/EnergyCardVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitor/PokemonCardVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitor/PokemonCardVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitor/TrainerCardVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitor/TrainerCardVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/CardVisitorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/ICard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/ICard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/IPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/IPokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TestAbilitiesVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TestAbilitiesVisitor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Trainer/AbstractTrainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Trainer/AbstractTrainer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Trainer/ITrainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/Trainer/ITrainer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/AbstractTrainerCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/AbstractTrainerCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/ObjectsCards/ObjectsCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/ObjectsCards/ObjectsCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/StadiumCards/StaduimCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/StadiumCards/StaduimCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/SupportCards/SupportCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/SupportCards/SupportCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/AbstractElectricPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/AbstractElectricPokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/BasicEP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/BasicEP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/Phase1EP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/Phase1EP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/Phase2EP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/electric/Phase2EP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/AbstractFirePokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/AbstractFirePokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/BasicFP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/BasicFP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/FirePokemonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/FirePokemonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/Phase1FP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/Phase1FP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/Phase2FP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/fire/Phase2FP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/AbstractGrassPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/AbstractGrassPokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/BasicGP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/BasicGP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/GrassEnergyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/GrassEnergyTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/GrassPokemonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/GrassPokemonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/Phase1GP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/Phase1GP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/Phase2GP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/grass/Phase2GP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/AbstractNormalPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/AbstractNormalPokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/BasicNP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/BasicNP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/Phase1NP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/Phase1NP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/Phase2NP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/normal/Phase2NP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/AbstractPsychicPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/AbstractPsychicPokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/BasicPP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/BasicPP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/Phase1PP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/Phase1PP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/Phase2PP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/Phase2PP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/PsychicPokemonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/psychic/PsychicPokemonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/AbstractWaterPokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/AbstractWaterPokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/BasicWP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/BasicWP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/Phase1WP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/Phase1WP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/Phase2WP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/Phase2WP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/WaterPokemonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/water/WaterPokemonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/ObjectsCards/GreatBall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/ObjectsCards/GreatBall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/ObjectsCards/Potion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/ObjectsCards/Potion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/StadiumCards/StaduimCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/SupportCards/ProfessorJuniper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/TrainerCards/SupportCards/ProfessorJuniper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/controller/abilityObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/controller/cardObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/controller/cardObserver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/cc3002/pokemon/controller/trainerObvserver.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/cc3002-tarea1/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cc3002-tarea1/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/IAbilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/IAbilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/AbstractAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/AbstractAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/AfterimageAssault.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/ElectricShock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/AbstractAbilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/AbstractAbilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/Shift.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/visitor/AttackVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/visitor/AttackVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/visitor/ConcreteIAbilityVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/visitor/ConcreteIAbilityVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/AbstractCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/AbstractCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/AbstractEnergy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/AbstractEnergy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/AbstractPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/AbstractPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/EnergyCardVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/EnergyCardVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/ICardVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/PokemonCardVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/PokemonCardVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/TrainerCardVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/TrainerCardVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/IPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/IPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Trainer/AbstractTrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Trainer/AbstractTrainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/Trainer/ITrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/Trainer/ITrainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/AbstractTrainerCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/AbstractTrainerCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/electric/AbstractElectricPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/electric/AbstractElectricPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/electric/BasicEP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/electric/BasicEP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase1EP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase1EP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase2EP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase2EP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/fire/AbstractFirePokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/fire/AbstractFirePokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/fire/BasicFP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/fire/BasicFP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase1FP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase1FP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase2FP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase2FP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/grass/AbstractGrassPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/grass/AbstractGrassPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/grass/BasicGP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/grass/BasicGP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase1GP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase1GP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase2GP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase2GP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/normal/AbstractNormalPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/normal/AbstractNormalPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/normal/BasicNP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/normal/BasicNP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase1NP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase1NP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase2NP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase2NP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/AbstractPsychicPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/AbstractPsychicPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/BasicPP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/BasicPP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase1PP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase1PP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase2PP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase2PP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/PsychicEnergy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/psychic/PsychicEnergy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/water/AbstractWaterPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/water/AbstractWaterPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/water/BasicWP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/water/BasicWP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase1WP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase1WP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase2WP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase2WP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/ICard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/ICard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/SupportCards/ProfessorJuniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/SupportCards/ProfessorJuniper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/controller/cardObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/controller/cardObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cc3002/pokemon/controller/trainerObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cc3002/pokemon/controller/trainerObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/CardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/CardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/TestAbilitiesVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/TestAbilitiesVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/TrainerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/TrainerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/fire/FirePokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/fire/FirePokemonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassEnergyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassEnergyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassPokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassPokemonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/psychic/PsychicPokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/psychic/PsychicPokemonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/cc3002/pokemon/water/WaterPokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/cc3002/pokemon/water/WaterPokemonTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +38,7 @@
     <option name="myAddOrReplace" value="0" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="104" />
+    <option name="myElementSize" value="15" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -128,93 +48,118 @@
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/normal/BasicNP.java">
+        <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/TestAbilitiesVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="279">
+              <caret line="54" column="91" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase1NP.java">
+        <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/CardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="381">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="94" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase2NP.java">
+        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Trainer/AbstractTrainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="211">
+              <caret line="238" column="25" selection-start-line="238" selection-start-column="25" selection-end-line="238" selection-end-column="25" />
+              <folding>
+                <element signature="e#9425#9426#0" expanded="true" />
+                <element signature="e#9457#9458#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/psychic/BasicPP.java">
+        <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/ControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="395">
+              <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase1PP.java">
+        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/controller/cardObserver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="33" selection-start-line="33" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="429">
+              <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#860#861#0" expanded="true" />
+                <element signature="e#916#917#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase2PP.java">
+        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/controller/trainerObserver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="486">
+              <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/water/BasicWP.java">
+        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/AbstractCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/water/Phase1WP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="-285">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/water/Phase2WP.java">
+        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/ICard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase1GP.java">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="218">
+              <caret line="656" selection-start-line="656" selection-end-line="656" />
+              <folding>
+                <element signature="e#15590#15591#0" expanded="true" />
+                <element signature="e#15635#15636#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -224,8 +169,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -240,11 +185,18 @@
       <find>id</find>
       <find>setselectedpokemon</find>
       <find>getCard</find>
-      <find>add</find>
       <find>evolu</find>
       <find>electric</find>
       <find>addToPoke</find>
       <find>receiveEnergy</find>
+      <find>getHp</find>
+      <find>drop</find>
+      <find>trainerChanges();</find>
+      <find>trainerChanges()</find>
+      <find>getHand</find>
+      <find>add</find>
+      <find>from</find>
+      <find>use</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,57 +205,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/AbstractTrainerCard.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/ICard.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/EnergyCardVisitor.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/AbstractEnergy.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/PokemonCardVisitor.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/TrainerCardVisitor.java" />
-        <option value="$PROJECT_DIR$/test/cc3002/pokemon/CardVisitorTest.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/visitor/ConcreteIAbilityVisitor.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/AbstractAbilities.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/IAbilities.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/fire/FireAttack.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/ElectricAttack.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/water/WaterAttack.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/psychic/PsychicAttack.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/normal/NormalAttack.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/GrassAttack.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/AfterimageAssault.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/AbstractGrassPokemon.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/AbstractElectricPokemon.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/ElectricShock.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/visitor/AttackVisitor.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/AbstractAttack.java" />
-        <option value="$PROJECT_DIR$/test/cc3002/pokemon/psychic/PsychicPokemonTest.java" />
         <option value="$PROJECT_DIR$/test/cc3002/pokemon/TrainerTest.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/BasicEP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase1EP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase2EP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Trainer/AbstractTrainer.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/Trainer/ITrainer.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/AbstractPokemon.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/IPokemon.java" />
-        <option value="$PROJECT_DIR$/test/cc3002/pokemon/fire/FirePokemonTest.java" />
-        <option value="$PROJECT_DIR$/test/cc3002/pokemon/TestAbilitiesVisitor.java" />
-        <option value="$PROJECT_DIR$/test/cc3002/pokemon/CardTest.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/Shift.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/Heal.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase2GP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase1PP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase2PP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase2WP.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/electric/ElectricPokemonTest.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassPokemonTest.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/fire/FirePokemonTest.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/normal/NormalPokemonTest.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/psychic/PsychicPokemonTest.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/water/WaterPokemonTest.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase1GP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/water/BasicWP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase1WP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/psychic/BasicPP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase1NP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/normal/BasicNP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase2NP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/BasicGP.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/fire/BasicFP.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase1FP.java" />
         <option value="$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase2FP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/BasicGP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase1GP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase2GP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/normal/BasicNP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase1NP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase2NP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/psychic/BasicPP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase1PP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/psychic/Phase2PP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/water/BasicWP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase1WP.java" />
-        <option value="$PROJECT_DIR$/src/cc3002/pokemon/water/Phase2WP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/BasicEP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase1EP.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase2EP.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/TestAbilitiesVisitor.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/Heal.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/IPokemon.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/SupportCards/ProfessorCozmosDiscovery.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/controller/abilityObserver.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/Trainer/AbstractTrainer.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/AbstractTrainerCard.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/AbstractPokemon.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/ObjectsCards/GreatBall.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/StadiumCard.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/ObjectsCards/Potion.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/SupportCards/ProfessorJuniper.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/CardTest.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/controller/trainerObserver.java" />
+        <option value="$PROJECT_DIR$/test/cc3002/pokemon/ControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/controller/cardObserver.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/AbstractCard.java" />
+        <option value="$PROJECT_DIR$/src/cc3002/pokemon/ICard.java" />
       </list>
     </option>
   </component>
@@ -351,8 +303,7 @@
               <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="Abilities" type="462c0819:PsiDirectoryNode" />
-              <item name="otherAbilities" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
@@ -367,14 +318,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pokemon" type="462c0819:PsiDirectoryNode" />
               <item name="TrainerCards" type="462c0819:PsiDirectoryNode" />
-              <item name="ObjectsCards" type="462c0819:PsiDirectoryNode" />
+              <item name="StadiumCards" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
               <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="water" type="462c0819:PsiDirectoryNode" />
+              <item name="TrainerCards" type="462c0819:PsiDirectoryNode" />
+              <item name="SupportCards" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
@@ -386,41 +338,6 @@
               <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="electric" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="fire" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="grass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="psychic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-tarea1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-tarea1" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="pokemon" type="462c0819:PsiDirectoryNode" />
-              <item name="water" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -437,7 +354,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Codigo_base_semestre_pasado/Codigo Base" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -446,6 +363,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="cc3002.pokemon.controller" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cc3002.pokemon" />
       <recent name="cc3002.pokemon.fire" />
@@ -477,7 +397,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.cc3002.pokemon in cc3002-tarea1">
+  <component name="RunManager" selected="JUnit.ControllerTest.controllerTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <module name="cc3002-tarea1" />
@@ -485,31 +405,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in cc3002-tarea1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cc3002-tarea1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FirePokemonTest.constructorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cc3002-tarea1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cc3002.pokemon.fire.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="cc3002.pokemon.fire" />
-      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.fire.FirePokemonTest" />
-      <option name="METHOD_NAME" value="constructorTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestAbilitiesVisitor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cc3002-tarea1" />
       <extension name="coverage">
         <pattern>
@@ -518,13 +414,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cc3002.pokemon" />
-      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.TestAbilitiesVisitor" />
+      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.CardTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAbilitiesVisitor.ElectricShockTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardTest.testingObjectsCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cc3002-tarea1" />
       <extension name="coverage">
         <pattern>
@@ -533,14 +429,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cc3002.pokemon" />
-      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.TestAbilitiesVisitor" />
-      <option name="METHOD_NAME" value="ElectricShockTest" />
+      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.CardTest" />
+      <option name="METHOD_NAME" value="testingObjectsCards" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAbilitiesVisitor.increaseCoverage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CardTest.testingSupportCards" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cc3002-tarea1" />
       <extension name="coverage">
         <pattern>
@@ -549,8 +445,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="cc3002.pokemon" />
-      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.TestAbilitiesVisitor" />
-      <option name="METHOD_NAME" value="increaseCoverage" />
+      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.CardTest" />
+      <option name="METHOD_NAME" value="testingSupportCards" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cc3002-tarea1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cc3002.pokemon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cc3002.pokemon" />
+      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.ControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerTest.controllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cc3002-tarea1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cc3002.pokemon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cc3002.pokemon" />
+      <option name="MAIN_CLASS_NAME" value="cc3002.pokemon.ControllerTest" />
+      <option name="METHOD_NAME" value="controllerTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -572,11 +499,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FirePokemonTest.constructorTest" />
-        <item itemvalue="JUnit.TestAbilitiesVisitor.increaseCoverage" />
-        <item itemvalue="JUnit.TestAbilitiesVisitor.ElectricShockTest" />
-        <item itemvalue="JUnit.TestAbilitiesVisitor" />
-        <item itemvalue="JUnit.All in cc3002-tarea1" />
+        <item itemvalue="JUnit.ControllerTest.controllerTest" />
+        <item itemvalue="JUnit.ControllerTest" />
+        <item itemvalue="JUnit.CardTest.testingSupportCards" />
+        <item itemvalue="JUnit.CardTest" />
+        <item itemvalue="JUnit.CardTest.testingObjectsCards" />
       </list>
     </recent_temporary>
   </component>
@@ -598,7 +525,7 @@
       <workItem from="1560491679438" duration="16320000" />
       <workItem from="1560570211566" duration="45016000" />
       <workItem from="1560639629931" duration="18921000" />
-      <workItem from="1560659911967" duration="66081000" />
+      <workItem from="1560659911967" duration="83134000" />
     </task>
     <task id="LOCAL-00001" summary="comeback">
       <created>1559688114830</created>
@@ -803,43 +730,99 @@
       <option name="project" value="LOCAL" />
       <updated>1560745386314</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Improving coverage 93%. #Tarea2">
+      <created>1560767150675</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1560767150675</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Improving coverage 93%. #Tarea2">
+      <created>1560767207237</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560767207237</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Improving coverage 93%. #Tarea2">
+      <created>1560767255490</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1560767255490</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Heal implemented. #Tarea2">
+      <created>1560777196983</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560777196985</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Potion's implemented. #Tarea2">
+      <created>1560778346412</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1560778346413</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Implemented Professor Juniter. #Tarea2">
+      <created>1560780108928</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1560780108929</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Implementing observer. #Tarea2">
+      <created>1560783528018</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1560783528019</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Implementing observer. #Tarea2">
+      <created>1560786503758</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1560786503758</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="cc3002_pokemon_in_cc3002-tarea1 - 2019.06.17 at 05h 19m 58s.xml">
-      <configuration name="cc3002.pokemon in cc3002-tarea1" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 28m 47s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAbilitiesVisitor_increaseCoverage - 2019.06.17 at 05h 22m 08s.xml">
-      <configuration name="TestAbilitiesVisitor.increaseCoverage" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 29m 19s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="cc3002_pokemon_in_cc3002-tarea1 - 2019.06.17 at 05h 25m 39s.xml">
-      <configuration name="cc3002.pokemon in cc3002-tarea1" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 30m 53s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="cc3002_pokemon_in_cc3002-tarea1 - 2019.06.17 at 05h 27m 18s.xml">
-      <configuration name="cc3002.pokemon in cc3002-tarea1" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 32m 44s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="cc3002_pokemon_in_cc3002-tarea1 - 2019.06.17 at 05h 29m 02s.xml">
-      <configuration name="cc3002.pokemon in cc3002-tarea1" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 33m 10s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAbilitiesVisitor_increaseCoverage - 2019.06.17 at 05h 31m 05s.xml">
-      <configuration name="TestAbilitiesVisitor.increaseCoverage" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 35m 48s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="cc3002_pokemon_in_cc3002-tarea1 - 2019.06.17 at 05h 42m 49s.xml">
-      <configuration name="cc3002.pokemon in cc3002-tarea1" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 38m 59s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirePokemonTest_constructorTest - 2019.06.17 at 05h 53m 26s.xml">
-      <configuration name="FirePokemonTest.constructorTest" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 40m 53s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="cc3002_pokemon_in_cc3002-tarea1 - 2019.06.17 at 05h 53m 43s.xml">
-      <configuration name="cc3002.pokemon in cc3002-tarea1" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 42m 47s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="cc3002_pokemon_in_cc3002-tarea1 - 2019.06.17 at 05h 57m 29s.xml">
-      <configuration name="cc3002.pokemon in cc3002-tarea1" configurationId="JUnit" />
+    <history-entry file="ControllerTest_controllerTest - 2019.06.17 at 12h 44m 30s.xml">
+      <configuration name="ControllerTest.controllerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167368000" />
+    <option name="totallyTimeSpent" value="184421000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="all">
@@ -849,8 +832,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2675906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23081024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -859,7 +843,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26868907" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -879,10 +863,10 @@
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.1913646" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.04317697" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2675906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23933902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -891,7 +875,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26977247" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -911,15 +895,13 @@
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.1913646" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" visible="true" weight="0.04317697" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comeback" />
-    <MESSAGE value="Trainer implented, version #1 completly parsed." />
     <MESSAGE value="Trainer implented, version #2 completly parsed." />
     <MESSAGE value="Cementery + Implementing evolution fases. #Tarea2" />
     <MESSAGE value="Setting ideas. #Tarea2" />
@@ -940,7 +922,12 @@
     <MESSAGE value="Correcting Readme. #Tarea2" />
     <MESSAGE value="Improving coverage. #Tarea2" />
     <MESSAGE value="Improving javadocs. #Tarea2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improving javadocs. #Tarea2" />
+    <MESSAGE value="Improving coverage 93%. #Tarea2" />
+    <MESSAGE value="Heal implemented. #Tarea2" />
+    <MESSAGE value="Potion's implemented. #Tarea2" />
+    <MESSAGE value="Implemented Professor Juniter. #Tarea2" />
+    <MESSAGE value="Implementing observer. #Tarea2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing observer. #Tarea2" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -948,365 +935,45 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/cc3002_tarea1$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1559688652146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/cc3002_tarea1$cc3002_pokemon_in_cc3002_tarea1.ic" NAME="cc3002.pokemon in cc3002-tarea1 Coverage Results" MODIFIED="1560765445743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/cc3002_tarea1$cc3002_pokemon_in_cc3002_tarea1.ic" NAME="cc3002.pokemon in cc3002-tarea1 Coverage Results" MODIFIED="1560790177984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cc3002.pokemon.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/cc3002_tarea1$All_in_cc3002_tarea1__1_.ic" NAME="All in cc3002-tarea1 (1) Coverage Results" MODIFIED="1560751207120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/cc3002_tarea1$All_in_cc3002_tarea1.ic" NAME="All in cc3002-tarea1 Coverage Results" MODIFIED="1560758465415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/ICardVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase2NP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/grass/AbstractGrassPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" selection-start-line="12" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/visitor/AttackVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/ElectricShock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/IAttack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/IAbilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="124" column="21" selection-start-line="124" selection-start-column="21" selection-end-line="124" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/AbstractAttack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/IEnergy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/psychic/PsychicPokemonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1022">
-          <caret line="71" column="36" lean-forward="true" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/psychic/PsychicEnergy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="25" />
-          <folding>
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/psychic/PsychicAttackTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/AbstractElectricPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/BasicEP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase1EP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase2EP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Trainer/AbstractTrainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2450">
-          <caret line="240" selection-start-line="240" selection-end-line="240" />
-          <folding>
-            <element signature="e#3221#3222#0" expanded="true" />
-            <element signature="e#3268#3269#0" expanded="true" />
-            <element signature="e#3444#3445#0" expanded="true" />
-            <element signature="e#3492#3493#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Trainer/Trainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Trainer/ITrainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/water/IWaterPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/water/AbstractWaterPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/IPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379">
-          <caret line="147" column="19" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-          <folding>
-            <element signature="e#5748#5749#0" expanded="true" />
-            <element signature="e#5784#5785#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/AbstractAbilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/ObjectsCards/GreatBall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/AbstractPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="346" selection-start-line="346" selection-end-line="346" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/fire/AbstractFirePokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/CardVisitorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="58" selection-start-line="58" selection-end-line="60" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassPokemonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/psychic/PsychicEnergyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/fire/FirePokemonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="92" column="45" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassEnergyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/CardTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/Heal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/TrainerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-611">
-          <caret line="121" column="59" selection-start-line="121" selection-start-column="59" selection-end-line="121" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/TestAbilitiesVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="128" column="104" lean-forward="true" selection-start-line="128" selection-start-column="104" selection-end-line="128" selection-end-column="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/fire/BasicFP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase1FP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase2FP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        <state relative-caret-position="391">
+          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/grass/BasicGP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase2GP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="391">
           <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase1GP.java">
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase2FP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="374">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/normal/BasicNP.java">
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase1EP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase1NP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/normal/Phase2NP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/psychic/BasicPP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="374">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1324,17 +991,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/psychic/BasicPP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/water/BasicWP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="344">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/water/Phase1WP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="34" selection-start-line="34" selection-end-line="37" selection-end-column="25" />
+        <state relative-caret-position="374">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1342,6 +1016,388 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/grass/GrassPokemonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="90" column="42" lean-forward="true" selection-start-line="90" selection-start-column="42" selection-end-line="90" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase1GP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/grass/Phase2GP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/cc3002.pokemon">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>cc3002.pokemon</OriginalElement>
+          <nodes>
+            <node x="" y="">cc3002.pokemon.normal.INormalPokemon</node>
+            <node x="" y="">cc3002.pokemon.TrainerCards.SupportCards.SupportCard</node>
+            <node x="" y="">cc3002.pokemon.normal.NormalAttackTest</node>
+            <node x="" y="">cc3002.pokemon.TrainerCards.ObjectsCards.GreatBall</node>
+            <node x="" y="">cc3002.pokemon.grass.BasicGP</node>
+            <node x="" y="">cc3002.pokemon.water</node>
+            <node x="" y="">cc3002.pokemon.grass.AbstractGrassPokemon</node>
+            <node x="" y="">cc3002.pokemon.psychic.AbstractPsychicPokemon</node>
+            <node x="" y="">cc3002.pokemon.IPokemon</node>
+            <node x="" y="">cc3002.pokemon.psychic.PsychicAttackTest</node>
+            <node x="" y="">cc3002.pokemon.normal.NormalEnergyTest</node>
+            <node x="" y="">cc3002.pokemon.psychic.PsychicAttack</node>
+            <node x="" y="">cc3002.pokemon.psychic.PsychicEnergyTest</node>
+            <node x="" y="">cc3002.pokemon.normal.BasicNP</node>
+            <node x="" y="">cc3002.pokemon.electric</node>
+            <node x="" y="">cc3002.pokemon.normal.NormalPokemonTest</node>
+            <node x="" y="">cc3002.pokemon.psychic.PsychicEnergy</node>
+            <node x="" y="">cc3002.pokemon.grass.GrassAttack</node>
+            <node x="" y="">cc3002.pokemon.Abilities</node>
+            <node x="" y="">cc3002.pokemon.AbstractEnergy</node>
+            <node x="" y="">cc3002.pokemon.psychic.Phase2PP</node>
+            <node x="" y="">cc3002.pokemon.TrainerCards.AbstractTrainerCard</node>
+            <node x="" y="">cc3002.pokemon.TrainerCards.StadiumCards.StaduimCard</node>
+            <node x="" y="">cc3002.pokemon.TrainerCards.ObjectsCards.ObjectsCard</node>
+            <node x="" y="">cc3002.pokemon.psychic.Phase1PP</node>
+            <node x="" y="">cc3002.pokemon.psychic.IPsychicPokemon</node>
+            <node x="" y="">cc3002.pokemon.grass.GrassEnergy</node>
+            <node x="" y="">cc3002.pokemon.ICard</node>
+            <node x="" y="">cc3002.pokemon.psychic.PsychicPokemonTest</node>
+            <node x="" y="">cc3002.pokemon.IEnergy</node>
+            <node x="" y="">cc3002.pokemon.grass.GrassAttackTest</node>
+            <node x="" y="">cc3002.pokemon.AbstractPokemon</node>
+            <node x="" y="">cc3002.pokemon.grass.GrassEnergyTest</node>
+            <node x="" y="">cc3002.pokemon.psychic.BasicPP</node>
+            <node x="" y="">cc3002.pokemon.normal.Phase1NP</node>
+            <node x="" y="">cc3002.pokemon.AbstractCard</node>
+            <node x="" y="">cc3002.pokemon.normal.Phase2NP</node>
+            <node x="" y="">cc3002.pokemon.grass.Phase1GP</node>
+            <node x="" y="">cc3002.pokemon.grass.GrassPokemonTest</node>
+            <node x="" y="">cc3002.pokemon.grass.Phase2GP</node>
+            <node x="" y="">cc3002.pokemon.fire</node>
+            <node x="" y="">cc3002.pokemon.normal.NormalAttack</node>
+            <node x="" y="">cc3002.pokemon.normal.AbstractNormalPokemon</node>
+            <node x="" y="">cc3002.pokemon.grass.IGrassPokemon</node>
+            <node x="" y="">cc3002.pokemon.TrainerCards.StadiumCards.LuckyStadium</node>
+            <node x="" y="">cc3002.pokemon.normal.NormalEnergy</node>
+            <node x="" y="">cc3002.pokemon.TrainerCards.SupportCards.ProfessorCozmosDiscovery</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.518213058419244" x="1444.9999999999998" y="253.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/Phase2EP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/fire/Phase1FP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="298">
+            <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/otherAbilities/Heal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/SupportCards/SupportCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/BasicEP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/electric/AbstractElectricPokemon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/AbstractAttack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/ElectricShock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Abilities/attacks/IAttack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/controller/abilityObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/IPokemon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/AbstractTrainerCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/StadiumCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/ObjectsCards/GreatBall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/CardVisitor/EnergyCardVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/ObjectsCards/Potion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/SupportCards/ProfessorCozmosDiscovery.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/SupportCards/ProfessorJuniper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/ObjectsCards/ObjectsCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/controller/ITrainerObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/CardVisitorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Trainer/Trainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/AbstractPokemon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="346" selection-start-line="346" selection-end-line="346" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/TrainerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="121" column="59" selection-start-line="121" selection-start-column="59" selection-end-line="121" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/TestAbilitiesVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="54" column="91" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/CardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="656" selection-start-line="656" selection-end-line="656" />
+          <folding>
+            <element signature="e#15590#15591#0" expanded="true" />
+            <element signature="e#15635#15636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/TrainerCards/StadiumCards/LuckyStadium.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/Trainer/AbstractTrainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="238" column="25" selection-start-line="238" selection-start-column="25" selection-end-line="238" selection-end-column="25" />
+          <folding>
+            <element signature="e#9425#9426#0" expanded="true" />
+            <element signature="e#9457#9458#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/cc3002/pokemon/ControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/controller/trainerObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/controller/cardObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/AbstractCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc3002/pokemon/ICard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>

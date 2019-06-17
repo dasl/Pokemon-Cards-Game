@@ -16,7 +16,7 @@ import java.util.Observable;
 
 public abstract class AbstractCard extends Observable implements ICard {
     private Trainer pokeMaster;
-    private StadiumCard stadiumCard;
+    private boolean stadiumCard;
 
     /**
      * Notifiy to observers
@@ -61,17 +61,10 @@ public abstract class AbstractCard extends Observable implements ICard {
      * Setter boolean of stadium card in game.
      */
     @Override
-    public void setStadiumCard(StadiumCard stadiumCard){
-        this.stadiumCard = stadiumCard;
+    public void setStadiumCard(){
+        this.stadiumCard = true;
         cardChanges();
     }
 
-    /**
-     * Getter of stadium card in game.
-     * @return stadium
-     */
-    @Override
-    public StadiumCard getStadiumCard(){
-        return this.stadiumCard;
-    }
+
 }

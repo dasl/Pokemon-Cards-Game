@@ -20,7 +20,7 @@ public class LuckyStadium extends StadiumCard {
         if(coinValue==1){
             getTrainer().fromDeckToHand();
         }
-        setStadiumCard(this);
+        setStadiumCard();
     }
 
 }

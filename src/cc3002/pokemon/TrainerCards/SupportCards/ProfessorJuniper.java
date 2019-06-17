@@ -19,6 +19,7 @@ public class ProfessorJuniper extends SupportCard{
             getTrainer().fromDeckToHand();
             aux--;
         }
+        getTrainer().addToCardsHand(this);
         getTrainer().addToCementery(this);
     }
 }

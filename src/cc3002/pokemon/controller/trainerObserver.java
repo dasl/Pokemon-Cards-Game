@@ -13,7 +13,7 @@ import java.util.Observer;
  * @author Diego Sandoval Leiva
  */
 
-public class trainerObserver implements Observer {
+public class trainerObserver implements ITrainerObserver {
     Observable observable;
     private ITrainer trainer;
 
@@ -34,18 +34,22 @@ public class trainerObserver implements Observer {
         }
     }
 
+    @Override
     public void StealAndPut(){
         trainer.fromDeckToHand();
     }
 
+    @Override
     public void LookHisHandAndPlay(){
         trainer.fromHandToBench();
     }
 
+    @Override
     public void LookinTheScenario(){
         trainer.lookAtTheScenario();
     }
 
+    @Override
     public void useAbility(){
         trainer.useAbility((Trainer) trainer.getOponent());
     }
