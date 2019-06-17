@@ -302,6 +302,11 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
   @Override
+  public void setHP(int hp) {
+     this.hp=hp;
+  }
+
+  @Override
   public int getID() {
     return id;
   }

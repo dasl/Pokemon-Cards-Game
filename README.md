@@ -77,7 +77,7 @@ This card game implements different functionalism's of the real game, that was i
     * Considering an attack as a particular ability, and the existence of a differentiate between (no-damage) abilities and
     attacks then a visitor pattern design was implemented to disambiguate the different types of abilities.
     
-        * Heal, is an ability.
+        * Heal, is an ability. (Assuming that a generic pokemon have 100HP at an initial point.)
     
 * TrainerCards:
     * These cards alter the state of the game at the time of being played, they were implemented 
@@ -98,8 +98,13 @@ This card game implements different functionalism's of the real game, that was i
     * This features was implemented using a observer pattern design. There are tree different observer, one for the Trainer,
     other one for the Cards and a last one for the abilities. These observers check the correctly course of a turn in the game.       
             
+* Test's clarifications:
+    * Each of the tests implemented, only show the correct functioning of the characteristics and identities of the game, 
+so that supposed scenarios of the game have been created to check these tests.
 
-###### Clarification: None of the method instanceOf() is used to disambiguate instead of double dispatch or visitor design pattern.
+
+
+###### IMPORTANT: None of the method instanceOf() is used to disambiguate instead of double dispatch or visitor design pattern.
 ###### Exist an instanceOf() that disambiguate in observer design pattern because of the JAVA 8.
 
 ## Built With

@@ -27,27 +27,36 @@ import java.util.Arrays;
 
 public class TestAbilitiesVisitor {
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
-    private IPokemon charmander,totodile,audino,charmeleon,charizard;
+    private IPokemon charmander,totodile,audino,charmeleon,charizard,pokemonherido;
     private Trainer Ash, Brook;
-    private IAbilities fireAttack, shift,waterAttack,electricShock;
+    private IAbilities fireAttack, heal,waterAttack,electricShock;
+
     // INCREASING COVERAGE
     IAbilityVisitor attackVisitor,concreteIAbilityVisitor;
     AbstractAttack abstractAttack;
     AbstractAbilities abstractAbilities;
     // INCREASING COVERAGE
 
+    /**
+     * Los siguientes test muestran el correcto funcionamiento de los visitors, no así del juego.
+     * Por lo que se asumen escenarios hipoteticos para cada caso.
+     *
+     */
+
+
     @Before
     public void setUp() {
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
         fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter());
         electricShock= new ElectricShock("ElectricShock", 40,"An attack entero pulento. jajaxd",new EnergyCounter());
-        shift = new Heal("Heal","Soy entero pulento",new EnergyCounter());
+        heal = new Heal("Heal","Soy entero pulento y me regenero jajaja",new EnergyCounter());
 
         // Pokemons
         audino = new BasicNP("Audino",1, 100, new ArrayList<>(Arrays.asList(electricShock)));
-        charmander = new BasicFP("Charmander",1, 100, new ArrayList<>(Arrays.asList(shift,fireAttack,electricShock)));
-        totodile = new BasicWP("Totodile", 1,100, new ArrayList<>(Arrays.asList(shift,waterAttack)));
+        charmander = new BasicFP("Charmander",1, 100, new ArrayList<>(Arrays.asList(heal,fireAttack,electricShock)));
+        totodile = new BasicWP("Totodile", 1,100, new ArrayList<>(Arrays.asList(heal,waterAttack)));
         charmeleon = new Phase1FP("Charmeleon",28,100, new ArrayList<>());
+        pokemonherido = new Phase1FP("Heridomon",28,30, new ArrayList<>());
 
         charizard = new Phase2FP("Charizard",28,100, new ArrayList<>());
         // Trainers
@@ -75,28 +84,26 @@ public class TestAbilitiesVisitor {
         normalEnergy.setTrainer(Ash);
 
         //Setting Energies requieres
-        shift.receiveRequiredEnergy(waterEnergy);
-        shift.receiveRequiredEnergy(fireEnergy);
-        shift.receiveRequiredEnergy(grassEnergy);
-        shift.receiveRequiredEnergy(electricEnergy);
-        shift.receiveRequiredEnergy(pyshicEnergy);
-        shift.receiveRequiredEnergy(normalEnergy);
-
+        heal.receiveRequiredEnergy(waterEnergy);
+        heal.receiveRequiredEnergy(fireEnergy);
+        heal.receiveRequiredEnergy(grassEnergy);
+        heal.receiveRequiredEnergy(electricEnergy);
+        heal.receiveRequiredEnergy(pyshicEnergy);
+        heal.receiveRequiredEnergy(normalEnergy);
     }
 
     @Test
     public void abilityRequiredEnergiesTest(){
-        assertEquals(shift.getElectricRequiredEnergies(),1);
-        assertEquals(shift.getFireRequiredEnergies(),1);
-        assertEquals(shift.getNormalRequiredEnergies(),1);
-        assertEquals(shift.getPsychicRequiredEnergies(),1);
-        assertEquals(shift.getGrassRequiredEnergies(),1);
-        assertEquals(shift.getWaterRequiredEnergies(),1);
+        assertEquals(heal.getElectricRequiredEnergies(),1);
+        assertEquals(heal.getFireRequiredEnergies(),1);
+        assertEquals(heal.getNormalRequiredEnergies(),1);
+        assertEquals(heal.getPsychicRequiredEnergies(),1);
+        assertEquals(heal.getGrassRequiredEnergies(),1);
+        assertEquals(heal.getWaterRequiredEnergies(),1);
     }
 
     @Test
     public void AttackVisitorTest(){
-
         Ash.selectAbility(1); // Ataque
         Ash.useAbility(Brook);
         assertEquals(Brook.getActivePokemon().getHP(),60);
@@ -107,12 +114,18 @@ public class TestAbilitiesVisitor {
 
     }
 
+
+    /**
+     * Este test prueba el funcionamiento de Heal, para un pokemon herido con 30 de hp.
+     *
+     */
     @Test
     public void ConcreteAbilityVisitorTest(){
-
-
-
-
+        Ash.setSelectedPokemon(pokemonherido);
+        Ash.selectAbility(0);
+        assertEquals(Ash.getSelectedPokemon().getHP(),30);
+        Ash.useAbility(Brook);
+        assertTrue(Ash.getSelectedPokemon().getHP()==100 || Ash.getSelectedPokemon().getHP()==30);
     }
 
     @Test
@@ -129,7 +142,7 @@ public class TestAbilitiesVisitor {
         // Este test no prueba nada, solo esta implementado para dar coverage al visitor de habilidades.
         concreteIAbilityVisitor = new ConcreteIAbilityVisitor();
         attackVisitor = new AttackVisitor();
-        shift.accept(concreteIAbilityVisitor);
+        heal.accept(concreteIAbilityVisitor);
         concreteIAbilityVisitor.visitAttack(abstractAttack);
         waterAttack.accept(attackVisitor);
         attackVisitor.visitConcreteAbility(abstractAbilities);
