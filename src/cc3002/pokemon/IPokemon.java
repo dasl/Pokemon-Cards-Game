@@ -1,6 +1,7 @@
 package cc3002.pokemon;
 
 import cc3002.pokemon.Abilities.IAbilities;
+import cc3002.pokemon.Abilities.attacks.AfterimageAssault;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -140,6 +141,12 @@ public interface IPokemon extends ICard{
   void receiveElectricAttack(ElectricAttack attack);
 
   /**
+   * Receives damage from a AfterimageAssault attack.
+   *
+   * @param afterimageAssault Received attack.
+   */
+  void receiveAIAAttack(AfterimageAssault afterimageAssault);
+  /**
    * Receives an energy from a water energy.
    *
    * @param energy Received energy.
@@ -234,6 +241,5 @@ public interface IPokemon extends ICard{
   void sendType1PP(Trainer trainer);
 
   void sendType1WP(Trainer trainer);
-
 
 }

@@ -451,6 +451,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
             }
         }
         shuffleDeck();
+        this.getActivePokemon().attack(getOponent().getActivePokemon());
         trainerChanges();
     }
 

@@ -4,8 +4,8 @@ import cc3002.pokemon.Trainer.Trainer;
 
 
 /**
- * Abstract class that represents a generic car. This class contains the necessary methods to
- * play any car, set and get trainer.
+ * Abstract class that represents a generic card. This class contains the necessary methods to
+ * play any card, set and get trainer.
  *
  * @author Diego Sandoval Leiva
  */

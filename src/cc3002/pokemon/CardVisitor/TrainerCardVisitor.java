@@ -5,13 +5,17 @@ import cc3002.pokemon.AbstractPokemon;
 
 import cc3002.pokemon.TrainerCards.AbstractTrainerCard;
 
+/**
+ * Visitor of TrainerCard
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class TrainerCardVisitor implements ICardVisitor {
     private AbstractTrainerCard trainerCard;
 
     @Override
-    public void visitPokemonCard(AbstractPokemon pokemonCard) {
-
-    }
+    public void visitPokemonCard(AbstractPokemon pokemonCard) { }
 
     @Override
     public void visitTrainerCard(AbstractTrainerCard trainerCard) {

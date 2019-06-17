@@ -5,6 +5,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a Grass type basic Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class BasicGP extends AbstractGrassPokemon implements IGrassPokemon{
 
     /**

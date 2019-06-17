@@ -5,6 +5,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a water type phase 1 Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class Phase1WP extends AbstractWaterPokemon implements IWaterPokemon{
     /**
      * Creates a new electric Pokémon.

@@ -5,6 +5,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a Normal type basic Pokémon.
+ *
+ * @author Diego Sandovcal Leiva
+ */
+
 public class BasicNP extends AbstractNormalPokemon implements INormalPokemon{
 
     /**

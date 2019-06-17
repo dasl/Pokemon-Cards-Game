@@ -12,6 +12,13 @@ import cc3002.pokemon.normal.NormalEnergy;
 import cc3002.pokemon.psychic.PsychicEnergy;
 import cc3002.pokemon.water.WaterEnergy;
 
+/**
+ * Base class for all the generic abilities. This contains the methods to access the ability's properties, like
+ * it's name, text, and energy's cost.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public abstract class AbstractAbilities implements IAbilities {
     private String text;
     private String name;

@@ -5,6 +5,13 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+
+/**
+ * Class that represents a electric type basic Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class BasicEP extends AbstractElectricPokemon implements IElectricPokemon{
 
     /**

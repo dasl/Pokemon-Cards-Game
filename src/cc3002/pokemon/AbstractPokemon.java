@@ -1,6 +1,7 @@
 package cc3002.pokemon;
 
 import cc3002.pokemon.Abilities.*;
+import cc3002.pokemon.Abilities.attacks.AfterimageAssault;
 import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Abilities.visitor.AttackVisitor;
 import cc3002.pokemon.Abilities.visitor.ConcreteIAbilityVisitor;
@@ -142,9 +143,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    */
 
   @Override
-  public void receiveWaterAttack(WaterAttack attack) {
-    receiveAttack(attack);
-  }
+  public void receiveWaterAttack(WaterAttack attack) { receiveAttack(attack); }
   /**
    * Receives damage from a fire attack.
    *
@@ -153,6 +152,16 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   @Override
   public void receiveGrassAttack(GrassAttack attack) {
     receiveAttack(attack);
+  }
+
+  /**
+   * Receives damage from a fire attack.
+   *
+   * @param afterimageAssault Received attack.
+   */
+  @Override
+  public void receiveAIAAttack(AfterimageAssault afterimageAssault) {
+    receiveAttack(afterimageAssault);
   }
 
 

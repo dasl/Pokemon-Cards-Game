@@ -5,6 +5,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a psychic type phase 2 Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class Phase2PP extends AbstractPsychicPokemon implements IPsychicPokemon{
     /**
      * Creates a new electric Pokémon.

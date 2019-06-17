@@ -6,6 +6,12 @@ import cc3002.pokemon.fire.Phase1FP;
 
 import java.util.List;
 
+/**
+ * Class that represents a Grass type phase 1 Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class Phase1GP extends AbstractGrassPokemon implements IGrassPokemon{
     /**
      * Creates a new electric Pokémon.

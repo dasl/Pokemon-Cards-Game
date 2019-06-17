@@ -6,6 +6,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a fire type phase 1 Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class Phase1FP extends AbstractFirePokemon implements IFirePokemon{
     /**
      * Creates a new electric Pokémon.

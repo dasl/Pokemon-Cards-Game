@@ -4,6 +4,12 @@ import cc3002.pokemon.AbstractEnergy;
 import cc3002.pokemon.AbstractPokemon;
 import cc3002.pokemon.TrainerCards.AbstractTrainerCard;
 
+/**
+ * Visitor of PokemonCard
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class PokemonCardVisitor implements ICardVisitor {
     private AbstractPokemon pokemonCard;
 

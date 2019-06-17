@@ -29,7 +29,7 @@ public class TestAbilitiesVisitor {
         shift = new Shift("Shift","Soy entero pulento",new EnergyCounter());
 
         // Pokemons
-        audino = new BasicNP("Audino",1, 100, new ArrayList<>());
+        audino = new BasicNP("Audino",1, 100, new ArrayList<>(Arrays.asList(afterimageassault)));
         charmander = new BasicFP("Charmander",1, 100, new ArrayList<>(Arrays.asList(shift,fireAttack,afterimageassault)));
         totodile = new BasicWP("Totodile", 1,100, new ArrayList<>(Arrays.asList(shift,waterAttack)));
 
@@ -52,6 +52,7 @@ public class TestAbilitiesVisitor {
         Brook.getActivePokemon().selectAbility(1); // Ataque
         Brook.getActivePokemon().useAbility(Ash);
         assertEquals(Ash.getActivePokemon().getHP(),0);
+
     }
 
     @Test
@@ -68,10 +69,12 @@ public class TestAbilitiesVisitor {
     public void AfterimageAssaultTest(){
         Ash.addPokemonToBench(charmander);
         Ash.addPokemonToBench(charmander);
-        Ash.selectAbility(2);
+        Ash.setActivePokemon(audino);
+        Ash.selectAbility(0);
         Ash.useAbility(Brook);
         assertEquals(Ash.getBench().size(),3);
         assertTrue(Ash.getBench().contains(charmander));
+        assertEquals(Brook.getActivePokemon().getHP(),60);
 
     }
 

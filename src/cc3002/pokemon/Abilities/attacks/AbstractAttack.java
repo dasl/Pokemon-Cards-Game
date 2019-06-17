@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * Base class for all the attacks. This contains the methods to access the attack's properties, like
- * it's name and base damage.
+ * it's name, base damage and energy's costs.
  *
  * @author Diego Sandoval Leiva
  */

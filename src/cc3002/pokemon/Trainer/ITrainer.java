@@ -5,6 +5,13 @@ import cc3002.pokemon.IPokemon;
 
 import java.util.List;
 
+/**
+ * Common interface implemented for all the trainer in the game.
+ * This includes all the necessary methods to play as trainer.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public interface ITrainer {
 
     void fromDeckToHand();

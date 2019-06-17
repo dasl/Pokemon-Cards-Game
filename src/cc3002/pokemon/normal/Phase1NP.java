@@ -5,6 +5,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a Normal type phase 1 Pokémon.
+ *
+ * @author Diego Sandovcal Leiva
+ */
+
 public class Phase1NP extends AbstractNormalPokemon implements INormalPokemon{
     /**
      * Creates a new Normal Pokémon.

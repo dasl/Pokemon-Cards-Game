@@ -5,6 +5,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a fire type  basic Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class BasicFP extends AbstractFirePokemon implements IFirePokemon{
 
     /**

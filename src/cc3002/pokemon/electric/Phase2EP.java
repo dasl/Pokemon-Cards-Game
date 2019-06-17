@@ -5,6 +5,12 @@ import cc3002.pokemon.Trainer.Trainer;
 
 import java.util.List;
 
+/**
+ * Class that represents a electric type phase 2 Pokémon.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class Phase2EP extends AbstractElectricPokemon implements IElectricPokemon {
     /**
      * Creates a new electric Pokémon.

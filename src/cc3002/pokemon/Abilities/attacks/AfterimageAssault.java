@@ -5,6 +5,12 @@ import cc3002.pokemon.EnergyCounter;
 import cc3002.pokemon.IPokemon;
 import cc3002.pokemon.Trainer.Trainer;
 
+/**
+ * AfterimageAssault contains the required methods to use this ability.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class AfterimageAssault extends AbstractAttack {
 
 
@@ -23,6 +29,7 @@ public class AfterimageAssault extends AbstractAttack {
     @Override
     public void applyEffect(Trainer trainer){
         trainer.getActivePokemon().receiveAfterimageAssaultEffect(trainer);
+        trainer.getActivePokemon().attack(trainer.getOponent().getActivePokemon());
     }
 
     /**
@@ -32,5 +39,7 @@ public class AfterimageAssault extends AbstractAttack {
      * @param other Pokémon that receives the attack.
      */
     @Override
-    public void attack(IPokemon other) {}
+    public void attack(IPokemon other) {
+        other.receiveAIAAttack(this);
+    }
 }
