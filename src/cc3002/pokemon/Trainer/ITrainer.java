@@ -16,6 +16,10 @@ public interface ITrainer {
 
     void fromDeckToHand();
 
+    void fromHandToBench();
+
+    void lookAtTheScenario();
+
     void removefromDeck(ICard poke);
 
     void shuffleDeck();

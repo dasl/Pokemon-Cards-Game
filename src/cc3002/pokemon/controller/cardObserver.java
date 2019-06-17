@@ -15,14 +15,22 @@ import java.util.Observer;
 
 public class cardObserver implements Observer{
     Observable observable;
-    Trainer trainer, oponentTrainer;
+    ICard card;
 
+    /**
+     * cardObserver constructor.
+     * setter of observable
+     *
+     */
+    public cardObserver(){
+        this.observable = observable;
+        observable.addObserver(this);
+    }
 
     @Override
     public void update(Observable obs, Object arg) {
         if (obs instanceof ICard) {
-            ICard cartas = (ICard) obs;
-
+            card = (ICard) obs;
         }
     }
 }

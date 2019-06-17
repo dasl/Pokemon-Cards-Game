@@ -68,13 +68,35 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
      }
 
     /**
+     * Take a card of hand and put in the bench.
+     *
+     */
+    @Override
+    public void fromHandToBench(){
+        if(hand.contains(selectedPokemon))
+            addPokemonToBench(selectedPokemon);
+        trainerChanges();
+    }
+
+    /**
+     * Look at the scenario
+     *
+     */
+    @Override
+    public void lookAtTheScenario(){
+        getBench();
+        getOponent().getBench();
+        trainerChanges();
+    }
+
+    /**
      * Take a card of pockedeck and put in the hand.
      *
      */
     @Override
     public void removefromDeck(ICard poke){
         this.Deck.remove(poke);
-        trainerChanges();
+
     }
 
     /**
@@ -84,7 +106,6 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
     @Override
     public void shuffleDeck(){
         Collections.shuffle(this.Deck);
-        trainerChanges();
     }
 
 
@@ -99,7 +120,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
         if (bench.size()<5){
             this.bench.add(pokemon);
         }
-        trainerChanges();
+
     }
 
 
@@ -146,6 +167,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
     @Override
     public void useAbility(Trainer adversary) {
         ActivePoke.useAbility(adversary);
+        trainerChanges();
     }
 
 
@@ -225,7 +247,6 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
         ICard aux = card;
         this.Cementery.add(card);
         getHand().remove(getHand().indexOf(card));
-        trainerChanges();
     }
 
     /**
@@ -279,7 +300,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
     @Override
     public void evolution(IPokemon pokemon){
         changeFromBench(pokemon);
-        trainerChanges();
+
     }
     /**
      * Change any Pokemon from bench.
@@ -294,7 +315,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
                 bench.set(bench.indexOf(poke),pokemon);
             }
         }
-        trainerChanges();
+
     }
 
     /**
@@ -422,7 +443,7 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
             this.ActivePoke= bench.get(0);
             this.bench.remove(0);
         }
-        trainerChanges();
+
     }
 
 
