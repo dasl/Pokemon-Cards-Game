@@ -77,7 +77,7 @@ This card game implements different functionalism's of the real game, that was i
     * Considering an attack as a particular ability, and the existence of a differentiate between (no-damage) abilities and
     attacks then a visitor pattern design was implemented to disambiguate the different types of abilities.
     
-        * Shift, is an ability.
+        * Heal, is an ability.
     
 * TrainerCards:
     * These cards alter the state of the game at the time of being played, they were implemented 
