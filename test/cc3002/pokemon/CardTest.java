@@ -6,11 +6,9 @@ import cc3002.pokemon.Abilities.attacks.ElectricShock;
 import cc3002.pokemon.Abilities.otherAbilities.Heal;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.TrainerCards.ObjectsCards.GreatBall;
-import cc3002.pokemon.TrainerCards.ObjectsCards.ObjectsCard;
+import cc3002.pokemon.TrainerCards.ObjectsCards.Potion;
 import cc3002.pokemon.TrainerCards.StadiumCards.LuckyStadium;
-import cc3002.pokemon.TrainerCards.StadiumCards.StaduimCard;
 import cc3002.pokemon.TrainerCards.SupportCards.ProfessorCozmosDiscovery;
-import cc3002.pokemon.TrainerCards.SupportCards.SupportCard;
 import cc3002.pokemon.fire.BasicFP;
 import cc3002.pokemon.fire.FireAttack;
 import cc3002.pokemon.water.BasicWP;
@@ -23,25 +21,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CardTest {
-    private IPokemon charmander,totodile;
-    private SupportCard support;
-    private StaduimCard stadium;
-    private ObjectsCard objectsCard;
+    private IPokemon charmander,totodile, pokemoncojo;
+    private ICard support,stadium, GreatBall,potion;
     private Trainer Ash, Brook;
-    private IAbilities fireAttack, shift,waterAttack,afterimageassault;
+    private IAbilities fireAttack, heal,waterAttack, electricShock;
     private IEnergy waterEnergy, fireEnergy, electricEnergy, grassEnergy, pyshicEnergy, normalEnergy;
 
     @Before
     public void setUp() {
         waterAttack = new WaterAttack("Bubble", 50,"An attack using bubbles. May lower the foe's Speed.",new EnergyCounter());
         fireAttack = new FireAttack("Ember", 40,"An attack that may inflict a burn.",new EnergyCounter());
-        afterimageassault = new ElectricShock("ElectricShock", 40,"An attack that may inflict a burn.",new EnergyCounter());
-        shift = new Heal("Heal","Soy entero pulento",new EnergyCounter());
+        electricShock = new ElectricShock("ElectricShock", 40,"An attack that may inflict a burn.",new EnergyCounter());
+        heal = new Heal("Heal","Soy entero pulento",new EnergyCounter());
 
-        charmander = new BasicFP("Charmander",1, 100, new ArrayList<>(Arrays.asList(shift,fireAttack,afterimageassault)));
+        charmander = new BasicFP("Charmander",1, 100, new ArrayList<>(Arrays.asList(heal,fireAttack, electricShock)));
+        pokemoncojo = new BasicFP("Cojomonder",198, 50, new ArrayList<>(Arrays.asList(heal,fireAttack, electricShock)));
         support = new ProfessorCozmosDiscovery("Professor Cozmo's Discovery","Juegos de azar y mujerzuelas");
         stadium = new LuckyStadium("Lucky Stadium","Si juego en casa, tengo ventaja jeje xd");
-        objectsCard = new GreatBall("Great Ball","Cacha como crece mi banca de pokemones jajaja.");
+        GreatBall = new GreatBall("Great Ball","Cacha como crece mi banca de pokemones jajaja.");
+        potion = new Potion("Potion","Cacha como regenero a mi pokemon seleccionado, jaja sin picarse.");
+
 
         totodile = new BasicWP("Totodile",25,100, new ArrayList<>());
         Ash = new Trainer("Ash",charmander,new ArrayList<>());
@@ -89,18 +88,26 @@ public class CardTest {
 
     @Test
     public void testingObjectsCards(){
+        // GreatBall
         Ash.addToCardsDeck(charmander);
         Ash.dropHand();
-        Ash.addToCardsHand(objectsCard);
+        Ash.addToCardsHand(GreatBall);
         Ash.setSelectedPokemon(charmander);
-        Ash.play(objectsCard);
+        Ash.play(GreatBall);
         assertTrue(Ash.sizePokeBench()==1);
+
+        // Potion
+        Ash.setSelectedPokemon(pokemoncojo);
+        assertEquals(Ash.getSelectedPokemon().getHP(),50);
+        Ash.play(potion);
+        assertEquals(Ash.getSelectedPokemon().getHP(),70);
+
     }
 
     @Test
     public void cardStringType(){
         assertEquals("StadiumCard",stadium.getCardType());
         assertEquals("SupportCard",support.getCardType());
-        assertEquals("ObjectsCard",objectsCard.getCardType());
+        assertEquals("ObjectsCard", GreatBall.getCardType());
     }
 }

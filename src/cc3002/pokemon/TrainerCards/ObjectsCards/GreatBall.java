@@ -5,6 +5,13 @@ import cc3002.pokemon.IPokemon;
 
 import java.util.Collections;
 
+
+/**
+ * This class represents a GreatBall objects card.
+ *
+ * @author Diego Sandoval Leiva
+ */
+
 public class GreatBall extends ObjectsCard {
     public GreatBall(String name, String text) {
         super(name, text);

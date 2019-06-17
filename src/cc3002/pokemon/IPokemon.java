@@ -72,6 +72,10 @@ public interface IPokemon extends ICard{
    */
   void setHP(int hp);
 
+  /**
+   * Reset of Pokémon's hit points
+   */
+  void resetHP();
 
   /**
    * Pokémon's id

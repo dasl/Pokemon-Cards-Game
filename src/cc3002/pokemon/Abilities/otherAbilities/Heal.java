@@ -25,7 +25,7 @@ public class Heal extends AbstractAbilities {
     public void applyEffect(Trainer trainer){
         int coinValue = coin.nextInt(2);
         if(coinValue==1){
-            trainer.getOponent().getSelectedPokemon().setHP(100);
+            trainer.getOponent().getSelectedPokemon().resetHP();
         }
     }
 
