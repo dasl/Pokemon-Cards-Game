@@ -240,16 +240,6 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
 
 
     /**
-     * Setter type of any Pokemon.
-     *
-     */
-    @Override
-    public void ShiftType(){
-        getActivePokemon().copyType(this.selectedPokemon, (Trainer) this);
-        trainerChanges();
-    }
-
-    /**
      * Setter any Pokemon to selected.
      *
      * @return pokemon type
@@ -434,26 +424,6 @@ public abstract class AbstractTrainer extends Observable implements ITrainer{
         trainerChanges();
     }
 
-    /**
-     *
-     * Search your deck for up to 2 Pokemon of the same species as the one
-     * use this ability and place them on the bench, then roll the deck..
-     *
-     */
-    @Override
-    public void AIAEffect(){
-        int max = 2;
-        for (ICard poke : this.Deck){
-            if(getActivePokemon().equals(poke) && max>0){
-                addPokemonToBench((IPokemon)poke);
-                removefromDeck(poke);
-                max--;
-            }
-        }
-        shuffleDeck();
-        this.getActivePokemon().attack(getOponent().getActivePokemon());
-        trainerChanges();
-    }
 
 
     /**

@@ -23,21 +23,18 @@ public class Phase2EP extends AbstractElectricPokemon implements IElectricPokemo
         super(name, id, hp, abilitiesList);
     }
 
-    @Override
-    public void getObjectType(Trainer trainer) {
-        trainer.getActivePokemon().sendType2EP(trainer);
-    }
 
     /**
-     * Cheacks equals type (ONLY TYPE)
+     * Checks equals type (ONLY TYPE)
      *
      * @param o The target Pokemon object
      * @return True if are equals, false otherwise
      */
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        else if (!(o instanceof Phase2EP)) return false;
-        else return false;
+        if (this == o || (o instanceof Phase2EP))
+            return true;
+        else
+            return false;
     }
 }

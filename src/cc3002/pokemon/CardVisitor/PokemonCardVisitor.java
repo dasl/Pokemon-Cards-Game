@@ -11,24 +11,35 @@ import cc3002.pokemon.TrainerCards.AbstractTrainerCard;
  */
 
 public class PokemonCardVisitor implements ICardVisitor {
-    private AbstractPokemon pokemonCard;
 
+
+    /**
+     * Pokemon card's visitor.
+     *
+     * @param pokemonCard
+     */
     @Override
     public void visitPokemonCard(AbstractPokemon pokemonCard) {
-        this.pokemonCard = pokemonCard;
+
     }
 
+    /**
+     * Trainer card's visitor.
+     *
+     * @param trainerCard
+     */
     @Override
     public void visitTrainerCard(AbstractTrainerCard trainerCard) {
 
     }
 
+    /**
+     * Energy card's visitor.
+     *
+     * @param energyCard
+     */
     @Override
     public void visitEnergyCard(AbstractEnergy energyCard) {
 
-    }
-
-    public void play(){
-        this.pokemonCard.play();
     }
 }

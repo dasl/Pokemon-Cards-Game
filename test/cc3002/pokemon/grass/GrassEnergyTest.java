@@ -26,7 +26,7 @@ public class GrassEnergyTest {
     }
 
     @Test
-    public void cardType(){
+    public void cardStringType(){
         assertEquals("Energy",grassEnergy.getCardType());
     }
 

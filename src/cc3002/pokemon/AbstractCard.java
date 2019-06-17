@@ -1,5 +1,6 @@
 package cc3002.pokemon;
 
+import cc3002.pokemon.CardVisitor.ICardVisitor;
 import cc3002.pokemon.Trainer.Trainer;
 
 
@@ -38,4 +39,5 @@ public abstract class AbstractCard implements ICard {
     }
 
 
+    public abstract void accept(ICardVisitor visitor);
 }

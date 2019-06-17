@@ -122,9 +122,9 @@ public interface IAbilities{
      * Add an effect to an abstractPokemon
      * This is the handshake of the double dispatch
      *
-     * @param abstractPokemon
+     * @param trainer
      */
-    void applyEffect(Trainer abstractPokemon);
+    void applyEffect(Trainer trainer);
 
     int getBaseDamage();
 

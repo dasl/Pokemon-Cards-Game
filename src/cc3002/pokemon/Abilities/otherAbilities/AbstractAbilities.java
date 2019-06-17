@@ -67,7 +67,7 @@ public abstract class AbstractAbilities implements IAbilities {
     @Override
     public void setElectricRequiredEnergies(ElectricEnergy energy) {this.costs.setElectricEnergy(); }
     @Override
-    public void setPsychicRequiredEnergies(PsychicEnergy energy) {this.costs.setNormalEnergy(); }
+    public void setPsychicRequiredEnergies(PsychicEnergy energy) {this.costs.setPsychicEnergy(); }
     @Override
     public void setGrassRequiredEnergies(GrassEnergy energy) {this.costs.setGrassEnergy(); }
     @Override

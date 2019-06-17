@@ -119,6 +119,7 @@ public class TrainerTest {
     public void evolutionTest(){
         Ash.setSelectedPokemon(pikachu); // Seleccionamos al pikachu
         Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
+        Ash.getSelectedPokemon().receiveEnergy(pyshicEnergy);
         Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
         Ash.getSelectedPokemon().receiveEnergy(electricEnergy);
         assertEquals(Ash.getSelectedPokemon().getElectricEnergies(),3);

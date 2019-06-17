@@ -85,6 +85,10 @@ public class GrassPokemonTest {
     assertNull(treecko.getSelectedAbility());
     assertFalse(sceptile.equals(grovyle));
     assertFalse(grovyle.equals(treecko));
+    assertTrue(treecko.equals(treecko));
+    assertTrue(grovyle.equals(grovyle));
+    assertTrue(sceptile.equals(sceptile));
+    assertFalse(treecko.equals(sceptile));
   }
 
   @Test

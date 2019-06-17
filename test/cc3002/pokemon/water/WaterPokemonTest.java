@@ -87,6 +87,11 @@ public class WaterPokemonTest {
     assertNull(totodile.getSelectedAbility());
     assertFalse(Croconaw.equals(totodile));
     assertFalse(Feraligatr.equals(Croconaw));
+    assertFalse(totodile.equals(Croconaw));
+    assertTrue(totodile.equals(totodile));
+    assertTrue(Feraligatr.equals(Feraligatr));
+    assertTrue(Croconaw.equals(Croconaw));
+
   }
 
   @Test

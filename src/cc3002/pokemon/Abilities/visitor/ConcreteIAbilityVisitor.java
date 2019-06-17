@@ -18,7 +18,4 @@ public class ConcreteIAbilityVisitor implements IAbilityVisitor {
         return visitador;
     }
 
-    public String visitedNameAbility(){
-        return visitador.getName();
-    }
 }

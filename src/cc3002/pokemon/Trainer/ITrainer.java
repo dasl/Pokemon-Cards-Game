@@ -46,7 +46,6 @@ public interface ITrainer {
 
     void dropHand();
 
-    void ShiftType();
 
     void setSelectedPokemon(IPokemon pokemon);
 
@@ -76,7 +75,6 @@ public interface ITrainer {
 
     void pokeToCementery(IPokemon pokemon);
 
-    void AIAEffect();
 
     List<ICard> getHand();
 }

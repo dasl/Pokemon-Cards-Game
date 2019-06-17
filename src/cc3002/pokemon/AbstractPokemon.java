@@ -1,7 +1,7 @@
 package cc3002.pokemon;
 
 import cc3002.pokemon.Abilities.*;
-import cc3002.pokemon.Abilities.attacks.AfterimageAssault;
+import cc3002.pokemon.Abilities.attacks.ElectricShock;
 import cc3002.pokemon.Abilities.attacks.IAttack;
 import cc3002.pokemon.Abilities.visitor.AttackVisitor;
 import cc3002.pokemon.Abilities.visitor.ConcreteIAbilityVisitor;
@@ -14,7 +14,6 @@ import cc3002.pokemon.normal.*;
 import cc3002.pokemon.psychic.*;
 import cc3002.pokemon.water.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,6 +50,10 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
     this.energies = new EnergyCounter();
   }
 
+  /**
+   * Accept card visitor
+   *
+   */
   @Override
   public void accept(ICardVisitor visitor){
     visitor.visitPokemonCard(this);
@@ -60,7 +63,10 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    * Play this pokemon card.
    */
   @Override
-  public void play(){ }
+  public void play(){
+    getTrainer().setSelectedPokemon(this);
+    getTrainer().addPokemonToBench(getTrainer().getSelectedPokemon());
+  }
 
   /**
    * Receives an energy from a water energy.
@@ -145,7 +151,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   @Override
   public void receiveWaterAttack(WaterAttack attack) { receiveAttack(attack); }
   /**
-   * Receives damage from a fire attack.
+   * Receives damage from a Grass attack.
    *
    * @param attack Received attack.
    */
@@ -155,16 +161,24 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
   /**
-   * Receives damage from a fire attack.
+   * Receives damage from a ExtraElectricShock attack.
    *
-   * @param afterimageAssault Received attack.
+   * @param electricShock Received attack.
    */
   @Override
-  public void receiveAIAAttack(AfterimageAssault afterimageAssault) {
-    receiveAttack(afterimageAssault);
+  public void receiveExtraElectricShockAttack(ElectricShock electricShock) {
+    receiveExtraAttack();
   }
 
-
+  /**
+   * Receives damage from a ExtraElectricShock attack.
+   *
+   * @param electricShock Received attack.
+   */
+  @Override
+  public void receiveElectricShockAttack(ElectricShock electricShock) {
+    receiveAttack(electricShock);
+  }
   /**
    * Receives damage from a fire attack.
    *
@@ -215,6 +229,13 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
    */
   protected void receiveAttack(IAttack attack) {
     this.hp -= attack.getBaseDamage();
+  }
+
+  /**
+   * Receives an attack.
+   */
+  protected void receiveExtraAttack() {
+    this.hp -= 20;
   }
 
   /**
@@ -323,25 +344,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
 
-  /**
-   * Receives effect from a shift ability.
-   *
-   * @param trainer
-   */
-  @Override
-  public void receiveShiftEffect(Trainer trainer) {
-    trainer.getOponent().ShiftType();
-  }
 
-  /**
-   * Receives effect from a AfterimageAssaultEffect ability.
-   *
-   * @param trainer
-   */
-  @Override
-  public void receiveAfterimageAssaultEffect(Trainer trainer){
-    this.getTrainer().AIAEffect();
-  }
 
 
   /**
@@ -380,43 +383,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon {
   }
 
 
-  /**
-   * Handler of double dispatch for Shift
-   *
-   * @param pokemon
-   * @param trainer
-   */
-  @Override
-  public void copyType(IPokemon pokemon,Trainer trainer){
-    pokemon.getObjectType(trainer);
 
-  }
-
-
-  /**
-   * Creators of a new instance of determinate pokemon type.
-   * There are the result of the double dispatch of Shift ability.
-   *
-   * @param trainer
-   */
-  public void sendTypeBFP(Trainer trainer) { trainer.setActivePokemon( new BasicFP(this.name,this.id,this.hp,this.abilities));}
-  public void sendTypeBNP(Trainer trainer) { trainer.setActivePokemon( new BasicNP(this.name,this.id,this.hp,this.abilities));}
-  public void sendTypeBWP(Trainer trainer) { trainer.setActivePokemon( new BasicWP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType1FP(Trainer trainer) { trainer.setActivePokemon( new Phase1FP(this.name,this.id,this.hp,this.abilities)); }
-  public void sendType2FP(Trainer trainer) { trainer.setActivePokemon( new Phase2FP(this.name,this.id,this.hp,this.abilities)); }
-  public void sendTypeBGP(Trainer trainer) { trainer.setActivePokemon( new BasicGP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType1GP(Trainer trainer) { trainer.setActivePokemon( new Phase1GP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType2GP(Trainer trainer) { trainer.setActivePokemon( new Phase2GP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType1NP(Trainer trainer) { trainer.setActivePokemon( new Phase1NP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType2NP(Trainer trainer) { trainer.setActivePokemon( new Phase2NP(this.name,this.id,this.hp,this.abilities));}
-  public void sendTypeBPP(Trainer trainer) { trainer.setActivePokemon( new BasicPP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType1PP(Trainer trainer) { trainer.setActivePokemon( new Phase1PP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType2PP(Trainer trainer) { trainer.setActivePokemon( new Phase2PP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType1WP(Trainer trainer) { trainer.setActivePokemon( new Phase1WP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType2WP(Trainer trainer) { trainer.setActivePokemon( new Phase2WP(this.name,this.id,this.hp,this.abilities));}
-  public void sendTypeBEP(Trainer trainer) { trainer.setActivePokemon( new BasicEP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType1EP(Trainer trainer) { trainer.setActivePokemon( new Phase1EP(this.name,this.id,this.hp,this.abilities));}
-  public void sendType2EP(Trainer trainer) { trainer.setActivePokemon( new Phase2EP(this.name,this.id,this.hp,this.abilities));}
 
   //endregion
 }

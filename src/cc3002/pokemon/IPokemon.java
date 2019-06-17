@@ -1,7 +1,7 @@
 package cc3002.pokemon;
 
 import cc3002.pokemon.Abilities.IAbilities;
-import cc3002.pokemon.Abilities.attacks.AfterimageAssault;
+import cc3002.pokemon.Abilities.attacks.ElectricShock;
 import cc3002.pokemon.Trainer.Trainer;
 import cc3002.pokemon.electric.ElectricAttack;
 import cc3002.pokemon.electric.ElectricEnergy;
@@ -75,7 +75,6 @@ public interface IPokemon extends ICard{
    */
   void resetEnergies();
 
-  void receiveShiftEffect(Trainer trainer);
 
   IAbilities getAbility(int index);
 
@@ -113,6 +112,19 @@ public interface IPokemon extends ICard{
   void receiveGrassAttack(GrassAttack attack);
 
   /**
+   * Receives damage from a ElectricShock attack.
+   *
+   * @param electricShock Received attack.
+   */
+  void receiveElectricShockAttack(ElectricShock electricShock);
+
+  /**
+   * Receives damage from a ElectricShock attack.
+   *
+   * @param electricShock Received attack.
+   */
+  void receiveExtraElectricShockAttack(ElectricShock electricShock);
+  /**
    * Receives damage from a fire attack.
    *
    * @param attack Received attack.
@@ -140,12 +152,8 @@ public interface IPokemon extends ICard{
    */
   void receiveElectricAttack(ElectricAttack attack);
 
-  /**
-   * Receives damage from a AfterimageAssault attack.
-   *
-   * @param afterimageAssault Received attack.
-   */
-  void receiveAIAAttack(AfterimageAssault afterimageAssault);
+
+
   /**
    * Receives an energy from a water energy.
    *
@@ -200,46 +208,6 @@ public interface IPokemon extends ICard{
 
   void setAbilities(IAbilities abilities);
 
-  void receiveAfterimageAssaultEffect(Trainer trainer);
 
-  void getObjectType(Trainer trainer);
-
-  void copyType(IPokemon pokemon, Trainer trainer);
-
-  void sendTypeBEP(Trainer trainer);
-
-  void sendTypeBFP(Trainer trainer);
-
-  void sendTypeBNP(Trainer trainer);
-
-  void sendTypeBWP(Trainer trainer);
-
-  void sendType1FP(Trainer trainer);
-
-  void sendType2FP(Trainer trainer);
-
-  void sendTypeBGP(Trainer trainer);
-
-  void sendType1GP(Trainer trainer);
-
-  void sendType2GP(Trainer trainer);
-
-  void sendType1NP(Trainer trainer);
-
-  void sendType2NP(Trainer trainer);
-
-  void sendTypeBPP(Trainer trainer);
-
-  void sendType2PP(Trainer trainer);
-
-  void sendType2WP(Trainer trainer);
-
-  void sendType1EP(Trainer trainer);
-
-  void sendType2EP(Trainer trainer);
-
-  void sendType1PP(Trainer trainer);
-
-  void sendType1WP(Trainer trainer);
 
 }

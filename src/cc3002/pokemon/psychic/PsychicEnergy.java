@@ -13,7 +13,7 @@ import cc3002.pokemon.Abilities.attacks.AbstractAttack;
 public class PsychicEnergy extends AbstractEnergy{
     private String NameType = "Psychic";
     /**
-     * Creates a new attack.
+     * Creates a new Psychic energy
      *
 
      */

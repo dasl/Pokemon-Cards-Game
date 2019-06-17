@@ -5,6 +5,8 @@ import cc3002.pokemon.Abilities.otherAbilities.AbstractAbilities;
 
 public class AttackVisitor implements IAbilityVisitor {
     AbstractAttack abstractAttack;
+
+
     @Override
     public void visitAttack(AbstractAttack abstractAttack) {
         this.abstractAttack = abstractAttack;
@@ -15,5 +17,6 @@ public class AttackVisitor implements IAbilityVisitor {
 
 
     public AbstractAttack getAttack(){return abstractAttack;}
+
 
 }

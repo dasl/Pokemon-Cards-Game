@@ -86,6 +86,10 @@ public class NormalPokemonTest {
     assertNull(audino.getSelectedAbility());
     assertFalse(ultraudino.equals(megaudino));
     assertFalse(megaudino.equals(audino));
+    assertFalse(audino.equals(megaudino));
+    assertTrue(audino.equals(audino));
+    assertTrue(ultraudino.equals(ultraudino));
+    assertTrue(megaudino.equals(megaudino));
   }
   @Test
   public void cardType(){

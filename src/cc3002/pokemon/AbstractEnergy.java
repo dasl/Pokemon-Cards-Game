@@ -22,17 +22,22 @@ public abstract class AbstractEnergy extends AbstractCard implements IEnergy {
         this.typeCard = "Energy";
     }
 
-
+    /**
+     * Accept card visitor
+     *
+     */
     @Override
     public void accept(ICardVisitor visitor){
         visitor.visitEnergyCard(this);
     }
 
     /**
-     * Play this pokemon card.
+     * Play this energy card.
      */
     @Override
-    public void play(){ }
+    public void play(){
+        getTrainer().getSelectedPokemon().receiveEnergy(this);
+    }
 
     /**
      * Get the Card Type

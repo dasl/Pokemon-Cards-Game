@@ -89,6 +89,11 @@ public class FirePokemonTest {
     assertNull(charmander.getSelectedAbility());
     assertFalse(charizard.equals(charmeleon));
     assertFalse(charmeleon.equals(charmander));
+    assertFalse(charmander.equals(charizard));
+    assertFalse(charmander.equals(waterAttack));
+    assertTrue(charmeleon.equals(charmeleon));
+    assertTrue(charizard.equals(charizard));
+
   }
 
   @Test

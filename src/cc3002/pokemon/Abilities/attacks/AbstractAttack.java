@@ -49,7 +49,7 @@ public abstract class AbstractAttack implements IAttack {
 
 
   @Override
-  public void applyEffect(Trainer abstractPokemon){}
+  public void applyEffect(Trainer trainer){}
 
   //region Properties
   @Override

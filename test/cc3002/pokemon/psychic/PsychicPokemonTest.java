@@ -72,6 +72,8 @@ public class PsychicPokemonTest {
         grassEnergy.setTrainer(Ash);
         normalEnergy = new NormalEnergy();
         normalEnergy.setTrainer(Ash);
+        psychicEnergy = new ElectricEnergy();
+        psychicEnergy.setTrainer(Ash);
     }
 
 
@@ -90,6 +92,11 @@ public class PsychicPokemonTest {
         assertNull(abra.getSelectedAbility());
         assertFalse(alakazam.equals(kadabra));
         assertFalse(kadabra.equals(abra));
+        assertFalse(abra.equals(kadabra));
+        assertTrue(kadabra.equals(kadabra));
+        assertTrue(abra.equals(abra));
+        assertTrue(alakazam.equals(alakazam));
+
     }
 
     @Test

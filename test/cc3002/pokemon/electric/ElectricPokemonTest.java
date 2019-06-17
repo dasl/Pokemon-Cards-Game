@@ -89,6 +89,7 @@ public class ElectricPokemonTest {
         assertFalse(pichu.equals(raichu));
         assertFalse(raichu.equals(pikachu));
         assertFalse(pikachu.equals(pichu));
+        assertTrue(pichu.equals(pichu));
     }
 
     @Test

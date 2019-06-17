@@ -20,15 +20,14 @@ public abstract class AbstractTrainerCard extends AbstractCard implements ICard 
         this.text = text;
     }
 
+    /**
+     * Accept card visitor
+     *
+     */
     @Override
     public void accept(ICardVisitor visitor){
         visitor.visitTrainerCard(this);
     }
 
-    /**
-     * Play this pokemon card.
-     */
-    @Override
-    public void play(){ }
 
 }
